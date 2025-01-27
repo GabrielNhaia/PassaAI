@@ -96,6 +96,4 @@ Se você tiver dúvidas ou sugestões, entre em contato:
 
 Este projeto está licenciado sob a **[MIT License](LICENSE)**.  
 
---- 
-
-Se precisar personalizar mais algo ou adicionar seções específicas, é só avisar! 😊
+---
