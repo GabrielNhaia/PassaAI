@@ -88,7 +88,7 @@ Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 
 Se você tiver dúvidas ou sugestões, entre em contato:  
 **Email**: [gabriel.nhaia@gmail.com](mailto:gabriel.nhaia@gmail.com)  
-**LinkedIn**: [Seu Perfil](https://linkedin.com/in/gabrielnhaia)  
+**LinkedIn**: [Gabriel Nhaia](https://linkedin.com/in/gabrielnhaia)  
 
 ---
 
