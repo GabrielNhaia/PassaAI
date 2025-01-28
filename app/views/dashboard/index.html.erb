@@ -4,9 +4,9 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              Perfil
-            </a>
+            <%= link_to profile_path, class: "nav-link #{current_page?(profile_path) ? 'active' : ''}" do %>
+              <i class="bi bi-person me-2"></i>Perfil
+            <% end %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
