@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex align-items-center">
+        <%= link_to dashboard_path, class: "btn btn-outline-secondary me-3" do %>
+          <i class="bi bi-arrow-left"></i> Voltar
+        <% end %>
+        <h1 class="h2">Simulados</h1>
+      </div>
+      <div class="row g-4">
+        <% @exam_categories.each do |category| %>
+          <div class="col-md-6">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="bi bi-<%= category[:icon] %> me-2"></i>
+                  <%= category[:name] %>
+                </h5>
+                <% if category[:questions] %>
+                  <p class="card-text">Total de questões: <%= category[:questions] %></p>
+                <% end %>
+                <% if category[:subjects] %>
+                  <p class="card-text">Disciplinas:</p>
+                  <ul class="list-unstyled">
+                    <% category[:subjects].each do |subject| %>
+                      <li><i class="bi bi-dot"></i><%= subject %></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+                <%= button_to exams_path, 
+                    params: { exam: { category: category[:name].downcase.gsub(' e suas tecnologias', '').parameterize } },
+                    class: "btn btn-primary mt-3" do %>
+                  Iniciar Simulado
+                  <i class="bi bi-arrow-right ms-2"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </main>
+  </div>
+</div>

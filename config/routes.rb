@@ -1,15 +1,30 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
+  # Rotas do dashboard e perfil
+  get 'dashboard', to: 'dashboard#index'
+  get 'profile', to: 'dashboard#profile'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
-
-  # Envolver a rota raiz dentro de um bloco devise_scope
+  get 'simulados', to: 'exams#index', as: :simulados
+  
+  # Rota raiz dentro do devise_scope
   devise_scope :user do
     root to: 'devise/sessions#new'
+  end
+  
+  # Rotas protegidas que requerem autenticação
+  authenticate :user do
+    # Adicione aqui outras rotas que precisam de autenticação
+  end
+
+  resources :exams do
+    member do
+      get :start
+      post :answer
+      get :result
+    end
+    collection do
+      get :completed
+    end
   end
 end
