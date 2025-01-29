@@ -1,25 +1,15 @@
 <div class="container-fluid">
   <div class="row">
-    <%# Sidebar do dashboard existente %>
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <%= link_to profile_path, class: "nav-link #{current_page?(profile_path) ? 'active' : ''}" do %>
-              <i class="bi bi-person me-2"></i>Perfil
-            <% end %>
-          </li>
-          <%# ...rest of navigation items... %>
-        </ul>
-      </div>
-    </nav>
+    <%= render 'shared/sidebar' %>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <!-- Cabeçalho com dropdown de perfil -->
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Meu Perfil</h1>
-        <%# ...existing dropdown profile code... %>
+        <div class="d-flex align-items-center">
+          <%= link_to dashboard_path, class: "btn btn-outline-secondary me-3" do %>
+            <i class="bi bi-arrow-left"></i> Voltar
+          <% end %>
+          <h1 class="h2">Meu Perfil</h1>
+        </div>
       </div>
-      <!-- Card de informações do usuário -->
       <div class="row mb-4">
         <div class="col-md-12">
           <div class="card">

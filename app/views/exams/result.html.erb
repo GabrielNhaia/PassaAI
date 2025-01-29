@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="row"></div>
+  <div class="col-12"></div>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Resultado do Simulado</h2>
+    <%= link_to simulados_path, class: "btn btn-outline-secondary" do %>
+      <i class="bi bi-arrow-left"></i> Voltar
+    <% end %>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Desempenho</h5>
+      <p class="card-text">Total de Questões: <%= @total_questions %></p>
+      <p class="card-text">Respostas Corretas: <%= @correct_answers %></p>
+      <p class="card-text">Pontuação: <%= @score %>%</p>
+    </div>
+  </div>
+  <div class="mt-4">
+    <h5>Detalhamento das Questões</h5>
+    <ul class="list-group">
+      <% @exam.exam_questions.each_with_index do |exam_question, index| %>
+        <li class="list-group-item d-flex justify-content-between align-items-center"></li>
+        <span>
+          <strong>Questão <%= index + 1 %>:</strong> <%= exam_question.question.content %>
+          <br>
+          <strong>Sua Resposta:</strong> <%= exam_question.selected_answer %>
+          <br>
+          <strong>Resposta Correta:</strong> <%= exam_question.question.correct_answer %>
+        </span>
+        <% if exam_question.correct %>
+          <span class="badge bg-success">Correta</span>
+        <% else %>
+          <span class="badge bg-danger">Incorreta</span>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+</div>
+</div>
+</div>

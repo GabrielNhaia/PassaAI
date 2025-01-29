@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Rotas do dashboard e perfil
   get 'dashboard', to: 'dashboard#index'
   get 'profile', to: 'dashboard#profile'
+
+  get 'simulados', to: 'exams#index', as: :simulados
   
   # Rota raiz dentro do devise_scope
   devise_scope :user do
@@ -13,5 +15,16 @@ Rails.application.routes.draw do
   # Rotas protegidas que requerem autenticação
   authenticate :user do
     # Adicione aqui outras rotas que precisam de autenticação
+  end
+
+  resources :exams do
+    member do
+      get :start
+      post :answer
+      get :result
+    end
+    collection do
+      get :completed
+    end
   end
 end
