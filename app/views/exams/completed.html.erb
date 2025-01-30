@@ -1,15 +1,18 @@
-<div class="container mt-4">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-12">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Simulados Realizados</h2>
-        <%= link_to simulados_path, class: "btn btn-outline-secondary" do %>
-          <i class="bi bi-arrow-left"></i> Voltar
-        <% end %>
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="d-flex align-items-center">
+          <%= link_to simulados_path, class: "btn btn-outline-secondary me-3" do %>
+            <i class="bi bi-arrow-left"></i> Voltar
+          <% end %>
+          <h1 class="h2 mb-0">Simulados Realizados</h1>
+        </div>
       </div>
       <div class="list-group">
         <% @completed_exams.each do |exam| %>
-          <a href="<%= result_exam_path(exam) %>" class="list-group-item list-group-item-action">
+          <a href="<%= result_exam_path(exam) %>" class="list-group-item list-group-item-action mb-3">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1"><%= exam.category.titleize %></h5>
               <small>Finalizado em: <%= exam.finished_at.strftime("%d/%m/%Y %H:%M") %></small>
@@ -18,6 +21,6 @@
           </a>
         <% end %>
       </div>
-    </div>
+    </main>
   </div>
 </div>

@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <div class="d-flex align-items-center">
+          <%= link_to dashboard_path, class: "btn btn-outline-secondary me-3" do %>
+            <i class="bi bi-arrow-left"></i> Voltar
+          <% end %>
+          <h1 class="h2 mb-0">Materiais de Estudo</h1>
+        </div>
+      </div>
+      <div class="study-section mb-4">
+        <h2 class="h4">Sites Recomendados</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://www.stoodi.com.br/" target="_blank">Stoodi</a> - Plataforma de estudos com videoaulas e exercícios.</li>
+          <li class="list-group-item"><a href="https://www.descomplica.com.br/" target="_blank">Descomplica</a> - Aulas online e material de apoio para o ENEM.</li>
+          <li class="list-group-item"><a href="https://www.khanacademy.org/" target="_blank">Khan Academy</a> - Recursos gratuitos para diversas disciplinas.</li>
+          <li class="list-group-item"><a href="https://www.qconcursos.com/" target="_blank">Qconcursos</a> - Questões de provas anteriores e simulados.</li>
+        </ul>
+      </div>
+      <div class="study-section mb-4">
+        <h2 class="h4">Dicas de Estudo</h2>
+        <ul class="list-group">
+          <li class="list-group-item">Crie um cronograma de estudos e siga-o rigorosamente.</li>
+          <li class="list-group-item">Faça resumos e mapas mentais para facilitar a memorização.</li>
+          <li class="list-group-item">Resolva provas anteriores para se familiarizar com o formato do exame.</li>
+          <li class="list-group-item">Estude em um ambiente tranquilo e sem distrações.</li>
+          <li class="list-group-item">Faça pausas regulares para evitar a fadiga mental.</li>
+        </ul>
+      </div>
+      <div class="study-section mb-4">
+        <h2 class="h4">Recursos Adicionais</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><a href="https://www.youtube.com/user/mundovestibular" target="_blank">Mundo Vestibular</a> - Canal no YouTube com dicas e aulas para o ENEM.</li>
+          <li class="list-group-item"><a href="https://www.todamateria.com.br/" target="_blank">Toda Matéria</a> - Conteúdos e exercícios de diversas disciplinas.</li>
+          <li class="list-group-item"><a href="https://www.biologianet.com.br/" target="_blank">Biologia Net</a> - Material de apoio específico para biologia.</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+</div>

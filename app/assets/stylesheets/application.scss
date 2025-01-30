@@ -54,3 +54,49 @@
     background-color: #4A90E2;
     border-color: #4A90E2;
   }
+
+  .study-section {
+    margin-bottom: 2rem;
+  }
+  
+  .study-section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .list-group-item {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .list-group-item a:hover {
+    text-decoration: underline;
+  }
+
+
+  .list-group-item {
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .list-group-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .list-group-item h5 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .list-group-item p {
+    margin-bottom: 0;
+  }
+  
+  

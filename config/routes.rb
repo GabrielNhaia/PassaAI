@@ -6,6 +6,15 @@ Rails.application.routes.draw do
   get 'profile', to: 'dashboard#profile'
 
   get 'simulados', to: 'exams#index', as: :simulados
+
+  get 'settings', to: 'settings#index'
+  post 'save_settings', to: 'settings#save'
+  get 'edit_password', to: 'settings#edit_password'
+  get 'edit_email', to: 'settings#edit_email'
+  delete 'delete_account', to: 'settings#delete_account'
+  
+  get 'study_materials', to: 'study_materials#index'
+  get 'progress_tracking', to: 'progress_tracking#index'
   
   # Rota raiz dentro do devise_scope
   devise_scope :user do
