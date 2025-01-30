@@ -1,0 +1,24 @@
+<h1>Configurações</h1>
+<div class="settings-section">
+  <h2>Conta</h2>
+  <ul>
+    <li><%= link_to 'Alterar Senha', edit_password_path %></li>
+    <li><%= link_to 'Atualizar Email', edit_email_path %></li>
+    <li><%= link_to 'Excluir Conta', delete_account_path, method: :delete, data: { confirm: 'Tem certeza que deseja excluir sua conta?' } %></li>
+  </ul>
+</div>
+<div class="settings-section">
+  <h2>Notificações</h2>
+  <ul>
+    <li><%= check_box_tag 'email_notifications', '1', current_user.email_notifications %> Receber notificações por email</li>
+    <li><%= check_box_tag 'sms_notifications', '1', current_user.sms_notifications %> Receber notificações por SMS</li>
+  </ul>
+</div>
+<div class="settings-section">
+  <h2>Preferências</h2>
+  <ul>
+    <li><%= check_box_tag 'dark_mode', '1', current_user.dark_mode %> Modo Escuro</li>
+    <li><%= check_box_tag 'language', '1', current_user.language %> Idioma</li>
+  </ul>
+</div>
+<%= button_to 'Salvar Configurações', save_settings_path, method: :post %>

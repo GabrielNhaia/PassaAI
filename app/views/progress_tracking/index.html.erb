@@ -1,0 +1,53 @@
+<h1>Acompanhamento de Progresso</h1>
+<div class="progress-section">
+  <h2>Estatísticas Gerais</h2>
+  <ul>
+    <li>Total de Simulados Realizados: <%= @total_exams %></li>
+    <li>Média de Pontuação: <%= @average_score %></li>
+    <li>Melhor Pontuação: <%= @best_score %></li>
+    <li>Pior Pontuação: <%= @worst_score %></li>
+  </ul>
+</div>
+<div class="progress-section">
+  <h2>Gráficos de Desempenho</h2>
+  <div id="performance-chart"></div>
+</div>
+<div class="progress-section">
+  <h2>Histórico de Simulados</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Pontuação</th>
+        <th>Tempo Gasto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @exams.each do |exam| %>
+        <tr>
+          <td><%= exam.date %></td>
+          <td><%= exam.score %></td>
+          <td><%= exam.time_spent %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<script>
+  // Código JavaScript para renderizar o gráfico de desempenho
+  document.addEventListener('DOMContentLoaded', function() {
+    var chartData = <%= @chart_data.to_json.html_safe %>;
+    var ctx = document.getElementById('performance-chart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: chartData,
+      options: {
+        responsive: true,
+        title: {
+          display: true,
+          text: 'Desempenho ao Longo do Tempo'
+        }
+      }
+    });
+  });
+</script>
