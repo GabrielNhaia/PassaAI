@@ -1,24 +1,33 @@
-<h1>Configurações</h1>
-<div class="settings-section">
-  <h2>Conta</h2>
-  <ul>
-    <li><%= link_to 'Alterar Senha', edit_password_path %></li>
-    <li><%= link_to 'Atualizar Email', edit_email_path %></li>
-    <li><%= link_to 'Excluir Conta', delete_account_path, method: :delete, data: { confirm: 'Tem certeza que deseja excluir sua conta?' } %></li>
-  </ul>
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Configurações</h1>
+      </div>
+      <div class="settings-section mb-4">
+        <h2 class="h4">Conta</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><%= link_to 'Alterar Senha', edit_password_path %></li>
+          <li class="list-group-item"><%= link_to 'Atualizar Email', edit_email_path %></li>
+          <li class="list-group-item"><%= link_to 'Excluir Conta', delete_account_path, method: :delete, data: { confirm: 'Tem certeza que deseja excluir sua conta?' } %></li>
+        </ul>
+      </div>
+      <div class="settings-section mb-4">
+        <h2 class="h4">Notificações</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><%= check_box_tag 'email_notifications', '1', current_user.email_notifications %> Receber notificações por email</li>
+          <li class="list-group-item"><%= check_box_tag 'sms_notifications', '1', current_user.sms_notifications %> Receber notificações por SMS</li>
+        </ul>
+      </div>
+      <div class="settings-section mb-4">
+        <h2 class="h4">Preferências</h2>
+        <ul class="list-group">
+          <li class="list-group-item"><%= check_box_tag 'dark_mode', '1', current_user.dark_mode %> Modo Escuro</li>
+          <li class="list-group-item"><%= check_box_tag 'language', '1', current_user.language %> Idioma</li>
+        </ul>
+      </div>
+      <%= button_to 'Salvar Configurações', save_settings_path, method: :post, class: "btn btn-primary" %>
+    </main>
+  </div>
 </div>
-<div class="settings-section">
-  <h2>Notificações</h2>
-  <ul>
-    <li><%= check_box_tag 'email_notifications', '1', current_user.email_notifications %> Receber notificações por email</li>
-    <li><%= check_box_tag 'sms_notifications', '1', current_user.sms_notifications %> Receber notificações por SMS</li>
-  </ul>
-</div>
-<div class="settings-section">
-  <h2>Preferências</h2>
-  <ul>
-    <li><%= check_box_tag 'dark_mode', '1', current_user.dark_mode %> Modo Escuro</li>
-    <li><%= check_box_tag 'language', '1', current_user.language %> Idioma</li>
-  </ul>
-</div>
-<%= button_to 'Salvar Configurações', save_settings_path, method: :post %>

@@ -4,7 +4,8 @@ class SettingsController < ApplicationController
   end
 
   def save
-    # Lógica para salvar as configurações
+    current_user.update(settings_params)
+    redirect_to settings_path, notice: 'Configurações salvas com sucesso.'
   end
 
   def edit_password
@@ -17,5 +18,11 @@ class SettingsController < ApplicationController
 
   def delete_account
     # Lógica para excluir a conta
+  end
+
+  private
+
+  def settings_params
+    params.require(:user).permit(:email_notifications, :sms_notifications, :dark_mode, :language)
   end
 end

@@ -6,4 +6,10 @@ class User < ApplicationRecord
   has_many :exams
   has_many :questions
   has_many :exam_questions, through: :exams
+
+  # Adicionar os novos atributos
+  attribute :email_notifications, :boolean, default: false
+  attribute :sms_notifications, :boolean, default: false
+  attribute :dark_mode, :boolean, default: false
+  attribute :language, :string, default: 'pt-BR'
 end
