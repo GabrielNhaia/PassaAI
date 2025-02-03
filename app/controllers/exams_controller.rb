@@ -6,13 +6,14 @@ class ExamsController < ApplicationController
       {
         name: "Matemática e suas Tecnologias",
         questions: 45,
+        subjects: ["Matemática Básica", "Geometria", "Operações Básicas", "Potenciação e Radiciação", "Conversões de Unidades"],
         icon: "calculator"
       },
       {
         name: "Ciências da Natureza",
         questions: 45,
         subjects: ["Biologia", "Química", "Física"],
-        icon: "flask"
+        icon: "clipboard-data-fill"
       },
       {
         name: "Linguagens e suas Tecnologias",
@@ -27,7 +28,7 @@ class ExamsController < ApplicationController
         icon: "globe"
       },
       {
-        name: "Redação",
+        name: "Redação [Inteligência Artificial de correção]",
         icon: "pencil"
       }
     ]

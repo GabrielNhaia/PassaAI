@@ -5,29 +5,55 @@
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Configurações</h1>
       </div>
-      <div class="settings-section mb-4">
-        <h2 class="h4">Conta</h2>
-        <ul class="list-group">
-          <li class="list-group-item"><%= link_to 'Alterar Senha', edit_password_path %></li>
-          <li class="list-group-item"><%= link_to 'Atualizar Email', edit_email_path %></li>
-          <li class="list-group-item"><%= link_to 'Excluir Conta', delete_account_path, method: :delete, data: { confirm: 'Tem certeza que deseja excluir sua conta?' } %></li>
-        </ul>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title mb-4">Configurações da Conta</h5>
+          <%= form_for(current_user, url: save_settings_path, method: :post, data: { turbo: true }) do |f| %>
+            <div class="mb-3">
+              <div class="form-check form-switch">
+                <%= f.check_box :email_notifications, class: "form-check-input" %>
+                <%= f.label :email_notifications, "Notificações por E-mail", class: "form-check-label" %>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check form-switch">
+                <%= f.check_box :dark_mode, class: "form-check-input" %>
+                <%= f.label :dark_mode, "Modo Escuro", class: "form-check-label" %>
+              </div>
+            </div>
+            <%= f.submit "Salvar Configurações", class: "btn btn-primary" %>
+          <% end %>
+          <!-- Botão de teste modificado para usar Stimulus -->
+          <button type="button" 
+                  class="btn btn-secondary mt-2" 
+                  data-controller="alerts"
+                  data-action="click->alerts#test">
+            Teste Alert
+          </button>
+        </div>
       </div>
-      <div class="settings-section mb-4">
-        <h2 class="h4">Notificações</h2>
-        <ul class="list-group">
-          <li class="list-group-item"><%= check_box_tag 'email_notifications', '1', current_user.email_notifications %> Receber notificações por email</li>
-          <li class="list-group-item"><%= check_box_tag 'sms_notifications', '1', current_user.sms_notifications %> Receber notificações por SMS</li>
-        </ul>
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title mb-4">Segurança</h5>
+          <div class="d-grid gap-2">
+            <%= link_to edit_user_registration_path, class: "btn btn-outline-primary mb-2" do %>
+              <i class="bi bi-shield-lock me-2"></i>Alterar Senha
+            <% end %>
+            <%= link_to edit_user_registration_path, class: "btn btn-outline-primary mb-2" do %>
+              <i class="bi bi-envelope me-2"></i>Alterar E-mail
+            <% end %>
+            <%= button_to delete_account_path, 
+                method: :delete,
+                class: "btn btn-outline-danger",
+                data: { 
+                  controller: "alerts",
+                  action: "alerts#confirm"
+                } do %>
+              <i class="bi bi-trash me-2"></i>Excluir Conta
+            <% end %>
+          </div>
+        </div>
       </div>
-      <div class="settings-section mb-4">
-        <h2 class="h4">Preferências</h2>
-        <ul class="list-group">
-          <li class="list-group-item"><%= check_box_tag 'dark_mode', '1', current_user.dark_mode %> Modo Escuro</li>
-          <li class="list-group-item"><%= check_box_tag 'language', '1', current_user.language %> Idioma</li>
-        </ul>
-      </div>
-      <%= button_to 'Salvar Configurações', save_settings_path, method: :post, class: "btn btn-primary" %>
     </main>
   </div>
 </div>
