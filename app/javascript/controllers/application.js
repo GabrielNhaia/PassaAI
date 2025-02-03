@@ -1,4 +1,5 @@
 import { Application } from "@hotwired/stimulus"
+import Swal from 'sweetalert2'
 
 const application = Application.start()
 

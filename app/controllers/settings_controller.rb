@@ -1,11 +1,23 @@
 class SettingsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    # Renderiza a página de configurações
   end
 
   def save
-    current_user.update(settings_params)
-    redirect_to settings_path, notice: 'Configurações salvas com sucesso.'
+    respond_to do |format|
+      if current_user.update(settings_params)
+        format.html { 
+          flash[:notice] = 'Configurações atualizadas com sucesso!'
+          redirect_to settings_path
+        }
+      else
+        format.html { 
+          flash[:alert] = 'Erro ao atualizar configurações.'
+          redirect_to settings_path
+        }
+      end
+    end
   end
 
   def edit_password
@@ -17,12 +29,16 @@ class SettingsController < ApplicationController
   end
 
   def delete_account
-    # Lógica para excluir a conta
+    if current_user.destroy
+      redirect_to root_path, notice: 'Sua conta foi excluída com sucesso.'
+    else
+      redirect_to settings_path, alert: 'Erro ao excluir conta.'
+    end
   end
 
   private
 
   def settings_params
-    params.require(:user).permit(:email_notifications, :sms_notifications, :dark_mode, :language)
+    params.require(:user).permit(:email_notifications, :dark_mode)
   end
 end
