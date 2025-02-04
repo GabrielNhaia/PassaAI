@@ -5,11 +5,11 @@ class Exam < ApplicationRecord
 
   enum status: { in_progress: 0, completed: 1 }
   enum category: {
-    matematica: 'matematica',
-    natureza: 'natureza',
-    linguagens: 'linguagens',
-    humanas: 'humanas',
-    redacao: 'redacao'
+    matematica: 0,
+    natureza: 1,
+    linguagens: 2,
+    humanas: 3,
+    redacao: 4
   }
 
   def generate_questions

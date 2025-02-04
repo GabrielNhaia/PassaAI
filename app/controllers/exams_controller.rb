@@ -28,7 +28,7 @@ class ExamsController < ApplicationController
         icon: "globe"
       },
       {
-        name: "Redação [Inteligência Artificial de correção]",
+        name: "Redação",
         icon: "pencil"
       }
     ]
@@ -38,8 +38,12 @@ class ExamsController < ApplicationController
     @exam = current_user.exams.build(exam_params)
     
     if @exam.save
-      @exam.generate_questions
-      redirect_to start_exam_path(@exam)
+      if @exam.redacao?
+        redirect_to writing_exam_path(@exam)
+      else
+        @exam.generate_questions
+        redirect_to start_exam_path(@exam)
+      end
     else
       redirect_to simulados_path, alert: 'Erro ao criar simulado'
     end
@@ -81,6 +85,27 @@ class ExamsController < ApplicationController
     @completed_exams = current_user.exams.completed
   end
 
+  def writing
+    @exam = current_user.exams.find(params[:id])
+    @themes = [
+      "Novas Tecnologias",
+      "Racismo e Discriminação Social",
+      "Desigualdade Social no Brasil",
+      "Preconceito Linguístico",
+      "Violência Escolar"
+    ]
+  end
+
+  def submit_writing
+    @exam = current_user.exams.find(params[:id])
+    if @exam.update(writing_params)
+      @exam.update(status: :completed, finished_at: Time.current)
+      redirect_to result_exam_path(@exam)
+    else
+      redirect_to writing_exam_path(@exam), alert: 'Erro ao salvar redação'
+    end
+  end
+
   private
 
   def exam_params
@@ -89,5 +114,9 @@ class ExamsController < ApplicationController
 
   def answer_params
     params.require(:exam_question).permit(:selected_answer)
+  end
+
+  def writing_params
+    params.require(:exam).permit(:selected_theme, :essay_text)
   end
 end

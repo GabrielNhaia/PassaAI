@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Redação ENEM</h1>
+      </div>
+      <%= form_with(model: @exam, url: submit_writing_exam_path(@exam), method: :patch, local: true, class: "needs-validation") do |f| %>
+        <div class="mb-4">
+          <label for="selected_theme" class="form-label">Selecione o tema da redação:</label>
+          <%= f.select :selected_theme, 
+                      options_for_select(@themes),
+                      { prompt: "Escolha um tema" },
+                      class: "form-select",
+                      required: true %>
+        </div>
+        <div class="mb-4">
+          <label for="essay_text" class="form-label">Digite sua redação:</label>
+          <%= f.text_area :essay_text,
+                         class: "form-control",
+                         rows: 20,
+                         placeholder: "Desenvolva seu texto aqui...",
+                         required: true %>
+          <div class="form-text">
+            Mínimo de 500 caracteres e máximo de 3000 caracteres.
+          </div>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <%= f.submit "Enviar Redação", class: "btn btn-primary", data: { confirm: "Tem certeza que deseja enviar sua redação?" } %>
+        </div>
+      <% end %>
+    </main>
+  </div>
+</div>

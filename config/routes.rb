@@ -31,9 +31,13 @@ Rails.application.routes.draw do
       get :start
       post :answer
       get :result
+      get :writing
+      patch :submit_writing
     end
     collection do
       get :completed
     end
   end
+
+  resources :users, only: [:update]
 end
