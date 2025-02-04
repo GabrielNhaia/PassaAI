@@ -61,6 +61,18 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_174359) do
     t.datetime "updated_at", null: false
     t.string "selected_theme"
     t.text "essay_text"
+    t.integer "comp1_score"
+    t.integer "comp2_score"
+    t.integer "comp3_score"
+    t.integer "comp4_score"
+    t.integer "comp5_score"
+    t.text "comp1_feedback"
+    t.text "comp2_feedback"
+    t.text "comp3_feedback"
+    t.text "comp4_feedback"
+    t.text "comp5_feedback"
+    t.integer "essay_total_score"
+    t.text "essay_general_feedback"
     t.index ["user_id"], name: "index_exams_on_user_id"
   end
 

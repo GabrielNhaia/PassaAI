@@ -98,8 +98,28 @@ class ExamsController < ApplicationController
 
   def submit_writing
     @exam = current_user.exams.find(params[:id])
+    
     if @exam.update(writing_params)
-      @exam.update(status: :completed, finished_at: Time.current)
+      correction_service = EssayCorrectionService.new(@exam.essay_text, @exam.selected_theme)
+      correction_result = correction_service.correct
+
+      @exam.update(
+        comp1_score: correction_result["comp1"]["score"],
+        comp2_score: correction_result["comp2"]["score"],
+        comp3_score: correction_result["comp3"]["score"],
+        comp4_score: correction_result["comp4"]["score"],
+        comp5_score: correction_result["comp5"]["score"],
+        comp1_feedback: correction_result["comp1"]["feedback"],
+        comp2_feedback: correction_result["comp2"]["feedback"],
+        comp3_feedback: correction_result["comp3"]["feedback"],
+        comp4_feedback: correction_result["comp4"]["feedback"],
+        comp5_feedback: correction_result["comp5"]["feedback"],
+        essay_total_score: correction_result["total_score"],
+        essay_general_feedback: correction_result["general_feedback"],
+        status: :completed,
+        finished_at: Time.current
+      )
+
       redirect_to result_exam_path(@exam)
     else
       redirect_to writing_exam_path(@exam), alert: 'Erro ao salvar redação'
