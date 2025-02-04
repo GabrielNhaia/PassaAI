@@ -1,0 +1,94 @@
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #212529;
+  --bg-secondary: #f8f9fa;
+  --border-color: #dee2e6;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-color: #212529;
+  --link-color: #0d6efd;
+  --link-hover-color: #0a58ca;
+  --btn-color: #6c757d;
+  --navbar-bg: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #212529;
+  --text-primary: #f8f9fa;
+  --bg-secondary: #343a40;
+  --border-color: #495057;
+  --card-bg: #2c3034;
+  --input-bg: #343a40;
+  --input-color: #f8f9fa;
+  --link-color: #8bb9fe;
+  --link-hover-color: #6ea8fd;
+  --btn-color: #adb5bd;
+  --navbar-bg: #343a40;
+}
+
+// Aplicação dos estilos
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+.form-control {
+  background-color: var(--input-bg) !important;
+  color: var(--input-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.btn-outline-secondary {
+  color: var(--btn-color) !important;
+  border-color: var(--btn-color) !important;
+}
+
+.text-muted {
+  color: var(--btn-color) !important;
+}
+
+.navbar, .sidebar {
+  background-color: var(--navbar-bg) !important;
+}
+
+.nav-link {
+  color: var(--text-primary) !important;
+}
+
+.border-bottom {
+  border-color: var(--border-color) !important;
+}
+
+// Ajustes específicos para links e textos
+a {
+  color: var(--link-color);
+  
+  &:hover {
+    color: var(--link-hover-color);
+  }
+}
+
+// Ajuste para modais e dropdowns
+.modal-content {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  
+  .dropdown-item {
+    color: var(--text-primary) !important;
+    
+    &:hover {
+      background-color: var(--bg-secondary) !important;
+    }
+  }
+}

@@ -1,8 +1,16 @@
+// Remover requires já que usaremos @import
 /*
- *= require_tree .
  *= require_self
  */
+
+// Primeiro importar o Bootstrap
+@import "bootstrap";
+
+// Depois nossos estilos customizados
 @import "custom";
+
+// Por último o dark mode para ter maior precedência
+@import "dark_mode";
 
 // Estilos personalizados para o PassaAI
 .btn-primary {
@@ -133,5 +141,4 @@
     background-color: #0056b3;
     border-color: #0056b3;
   }
-  
-  
+

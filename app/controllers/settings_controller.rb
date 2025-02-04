@@ -21,11 +21,9 @@ class SettingsController < ApplicationController
   end
 
   def edit_password
-    # Lógica para editar a senha
   end
 
   def edit_email
-    # Lógica para editar o email
   end
 
   def delete_account

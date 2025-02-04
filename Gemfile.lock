@@ -317,7 +317,7 @@ DEPENDENCIES
   capybara
   debug
   devise
-  image_processing (~> 1.0)
+  image_processing (~> 1.2)
   importmap-rails
   jbuilder
   puma (>= 5.0)
