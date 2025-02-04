@@ -16,12 +16,18 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-3 text-center">
-                  <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
+                  <% if current_user.avatar.attached? %>
+                    <%= image_tag current_user.avatar_thumbnail, class: "rounded-circle img-thumbnail", style: "width: 150px; height: 150px; object-fit: cover;" %>
+                  <% else %>
+                    <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
+                  <% end %>
                 </div>
                 <div class="col-md-9">
-                  <h4><%= current_user.email %></h4>
+                  <h3 class="mb-3"><%= current_user.nickname %></h3>
+                  <h5 class="text-muted mb-3"><%= current_user.email %></h5>
                   <p class="text-muted mb-2">Membro desde: <%= current_user.created_at.strftime("%d/%m/%Y") %></p>
                   <p class="text-muted">Total de simulados realizados: <%= @total_simulados %></p>
+                  <%= link_to "Editar Conta", edit_user_registration_path, class: "btn btn-outline-primary mt-3" if current_page?(profile_path) %>
                 </div>
               </div>
             </div>

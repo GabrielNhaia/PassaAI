@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_174359) do
   end
 
   create_table "exams", force: :cascade do |t|
-    t.string "category"
+    t.integer "category"
     t.integer "status"
     t.integer "score"
     t.datetime "started_at"
@@ -59,6 +59,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_04_174359) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "selected_theme"
+    t.text "essay_text"
     t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
