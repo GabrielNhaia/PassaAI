@@ -7,13 +7,16 @@
           <%= link_to dashboard_path, class: "btn btn-outline-secondary me-3" do %>
             <i class="bi bi-arrow-left"></i> Voltar
           <% end %>
-          <h1 class="h2">Configurações</h1>
+          <h1 class="h2">
+            Configurações
+          </h1>
         </div>
       </div>
       <div class="card mb-4">
         <div class="card-body">
-          <h5 class="card-title mb-4">Configurações da Conta</h5>
-          <%= form_for(current_user, url: save_settings_path, method: :post, data: { turbo: true }) do |f| %>
+          <h5 class="card-title mb-2">Configurações da Conta</h5>
+          <p class="text-muted small mb-4">Ajuste as preferências de notificações e aparência.</p>
+          <%= form_for(current_user, url: save_settings_path, method: :post, data: { controller: "theme" }) do |f| %>
             <div class="mb-3">
               <div class="form-check form-switch">
                 <%= f.check_box :email_notifications, class: "form-check-input" %>
@@ -22,24 +25,23 @@
             </div>
             <div class="mb-3">
               <div class="form-check form-switch">
-                <%= f.check_box :dark_mode, class: "form-check-input" %>
+                <%= f.check_box :dark_mode, 
+                    class: "form-check-input",
+                    data: { 
+                      theme_target: "switch",
+                      action: "change->theme#toggle"
+                    } %>
                 <%= f.label :dark_mode, "Modo Escuro", class: "form-check-label" %>
               </div>
             </div>
             <%= f.submit "Salvar Configurações", class: "btn btn-primary" %>
           <% end %>
-          <!-- Botão de teste modificado para usar Stimulus -->
-          <button type="button" 
-                  class="btn btn-secondary mt-2" 
-                  data-controller="alerts"
-                  data-action="click->alerts#test">
-            Teste Alert
-          </button>
         </div>
       </div>
       <div class="card mb-4">
         <div class="card-body">
-          <h5 class="card-title mb-4">Segurança</h5>
+          <h5 class="card-title mb-2">Segurança</h5>
+          <p class="text-muted small mb-4">Mantenha sua conta protegida e atualize suas credenciais.</p>
           <div class="d-grid gap-2">
             <%= link_to edit_user_registration_path, class: "btn btn-outline-primary mb-2" do %>
               <i class="bi bi-shield-lock me-2"></i>Alterar Senha
@@ -47,12 +49,18 @@
             <%= link_to edit_user_registration_path, class: "btn btn-outline-primary mb-2" do %>
               <i class="bi bi-envelope me-2"></i>Alterar E-mail
             <% end %>
+            <%= button_to destroy_user_session_path, method: :delete, class: "btn btn-outline-secondary btn-lg mb-2" do %>
+              <i class="bi bi-box-arrow-right me-1"></i>Sair
+            <% end %>
             <%= button_to delete_account_path, 
                 method: :delete,
-                class: "btn btn-outline-danger",
+                class: "btn btn-outline-danger btn-lg mb-2",
                 data: { 
                   controller: "alerts",
-                  action: "alerts#confirm"
+                  action: "alerts#confirm",
+                  bs_toggle: "tooltip",
+                  bs_placement: "top",
+                  bs_title: "Ação irreversível!"
                 } do %>
               <i class="bi bi-trash me-2"></i>Excluir Conta
             <% end %>

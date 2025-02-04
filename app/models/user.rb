@@ -13,6 +13,10 @@ class User < ApplicationRecord
   attribute :dark_mode, :boolean, default: false
   attribute :language, :string, default: 'pt-BR'
 
+  has_one_attached :avatar
+
+  validates :nickname, presence: true, uniqueness: true
+
   def media_por_materia_from_exams
     exam_averages = exams
       .joins(:questions)
@@ -49,6 +53,15 @@ class User < ApplicationRecord
           media: result.average_score.to_i
         }}
     end
+  end
+
+  def avatar_thumbnail
+    return unless avatar.attached?
+    
+    avatar.variant(resize_to_fill: [100, 100]).processed
+  rescue StandardError => e
+    Rails.logger.error("Erro ao processar thumbnail: #{e.message}")
+    nil
   end
 
   private

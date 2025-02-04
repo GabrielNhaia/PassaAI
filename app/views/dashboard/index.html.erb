@@ -6,8 +6,12 @@
         <h1 class="h2">Dashboard</h1>
         <div class="dropdown">
           <button class="btn btn-link text-dark dropdown-toggle d-flex align-items-center text-decoration-none" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-person-circle fs-4 me-2"></i>
-            <span><%= current_user.email %></span>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar_thumbnail, class: "rounded-circle me-2", style: "width: 32px; height: 32px; object-fit: cover;" %>
+            <% else %>
+              <i class="bi bi-person-circle fs-4 me-2"></i>
+            <% end %>
+            <span><%= current_user.nickname %></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
             <li>

@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # Adicione aqui quaisquer campos adicionais que você queira permitir no devise
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :avatar])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :avatar])
   end
 
   def after_sign_in_path_for(resource)
