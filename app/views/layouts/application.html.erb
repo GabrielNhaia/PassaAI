@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "rails_admin", media: "all", "data-turbo-track": "reload" if content_for?(:rails_admin_content) %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <meta name="theme-color" content="<%= current_theme == 'dark' ? '#212529' : '#ffffff' %>">
   </head>
   <body>
