@@ -55,10 +55,11 @@
         <p class="text-muted">
           Deseja cancelar sua conta? Esta ação não pode ser desfeita.
         </p>
-        <%= button_to "Cancelar minha conta", registration_path(resource_name), 
-            data: { confirm: "Tem certeza?", turbo_confirm: "Tem certeza?" }, 
-            method: :delete, 
-            class: "btn btn-outline-danger" %>
+        <%= button_to "Cancelar minha conta", 
+            registration_path(resource_name),
+            method: :delete,
+            class: "btn btn-outline-danger",
+            data: { confirm: "Tem certeza?", turbo_confirm: "Tem certeza?" } %>
       </div>
       <div class="text-center mt-3">
         <%= link_to "Voltar", :back, class: "btn btn-link text-muted" %>

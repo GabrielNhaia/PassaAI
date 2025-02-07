@@ -2,22 +2,17 @@ class EssayCorrectionService
   def initialize(essay_text, theme)
     @essay_text = essay_text
     @theme = theme
-    @client = OpenAI::Client.new(access_token: ENV['OPENAI_ACCESS_TOKEN'])
   end
 
   def correct
-    response = @client.chat(
-      parameters: {
-        model: "gpt-3.5-turbo",
-        messages: [
-          { role: "system", content: correction_prompt },
-          { role: "user", content: @essay_text }
-        ],
-        temperature: 0.7
-      }
-    )
+    response = OpenAiApi::GetResponse.new(
+      prompt: correction_prompt,
+      user_input: @essay_text
+    ).call
 
-    parse_response(response.dig("choices", 0, "message", "content"))
+    parse_response(response)
+  rescue StandardError => e
+    { error: e.message }
   end
 
   private
@@ -50,8 +45,6 @@ class EssayCorrectionService
   def parse_response(response)
     JSON.parse(response)
   rescue JSON::ParserError
-    {
-      error: "Erro ao processar a correção da redação"
-    }
+    { error: "Erro ao processar a correção da redação" }
   end
 end

@@ -103,7 +103,12 @@ class ExamsController < ApplicationController
       correction_service = EssayCorrectionService.new(@exam.essay_text, @exam.selected_theme)
       correction_result = correction_service.correct
 
-      @exam.update(
+      if correction_result[:error].present?
+        redirect_to writing_exam_path(@exam), alert: correction_result[:error]
+        return
+      end
+
+      @exam.update!(
         comp1_score: correction_result["comp1"]["score"],
         comp2_score: correction_result["comp2"]["score"],
         comp3_score: correction_result["comp3"]["score"],
