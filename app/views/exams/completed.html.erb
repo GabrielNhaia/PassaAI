@@ -41,7 +41,14 @@
                 <h5 class="mb-1"><%= format_exam_category(exam.category) %></h5>
                 <small>Finalizado em: <%= exam.finished_at&.strftime("%d/%m/%Y %H:%M") %></small>
               </div>
-              <p class="mb-1">Pontuação: <%= (exam.exam_questions.where(correct: true).count.to_f / exam.exam_questions.count * 100).round(2) %>%</p>
+              <p class="mb-1">
+                Pontuação: 
+                <% if exam.redacao? %>
+                  <%= exam.essay_total_score %>
+                <% else %>
+                  <%= (exam.exam_questions.where(correct: true).count.to_f / exam.exam_questions.count * 100).round(2) %>%
+                <% end %>
+              </p>
             </a>
           <% end %>
         </div>
