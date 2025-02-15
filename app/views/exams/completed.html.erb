@@ -42,11 +42,11 @@
                 <small>Finalizado em: <%= exam.finished_at&.strftime("%d/%m/%Y %H:%M") %></small>
               </div>
               <p class="mb-1">
-                Pontuação: 
                 <% if exam.redacao? %>
-                  <%= exam.essay_total_score %>
+                  <strong>Tema:</strong> <%= exam.selected_theme %><br>
+                  <strong>Nota:</strong> <%= exam.essay_total_score %>
                 <% else %>
-                  <%= (exam.exam_questions.where(correct: true).count.to_f / exam.exam_questions.count * 100).round(2) %>%
+                  Pontuação: <%= (exam.exam_questions.where(correct: true).count.to_f / exam.exam_questions.count * 100).round(2) %>%
                 <% end %>
               </p>
             </a>

@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'shared/sidebar' %>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <div id="calendar"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Adicionar Evento</h5>
+            </div>
+            <div class="card-body">
+              <%= form_with(model: @study_event, local: true) do |f| %>
+                <div class="mb-3">
+                  <%= f.label :title, "Título", class: "form-label" %>
+                  <%= f.text_field :title, class: "form-control" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :start_time, "Início", class: "form-label" %>
+                  <%= f.datetime_local_field :start_time, class: "form-control" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :end_time, "Fim", class: "form-label" %>
+                  <%= f.datetime_local_field :end_time, class: "form-control" %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :subject_list, "Matérias", class: "form-label" %>
+                  <%= f.text_field :subject_list, class: "form-control", 
+                      data: { role: "tagsinput" }, 
+                      placeholder: "Adicione matérias..." %>
+                </div>
+                <div class="mb-3">
+                  <%= f.label :description, "Descrição", class: "form-label" %>
+                  <%= f.text_area :description, class: "form-control", rows: 3 %>
+                </div>
+                <%= f.submit "Salvar", class: "btn btn-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'timeGridWeek',
+      headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay'
+    },
+    events: '<%= study_events_path(format: :json) %>',
+    editable: true,
+    selectable: true,
+    selectMirror: true,
+    dayMaxEvents: true
+  });
+  calendar.render();
+  });
+</script>

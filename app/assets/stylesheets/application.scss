@@ -142,3 +142,28 @@
     border-color: #0056b3;
   }
 
+// Calendário
+@import '@fullcalendar/common/main';
+@import '@fullcalendar/daygrid/main';
+@import '@fullcalendar/timegrid/main';
+
+// Bootstrap Tags Input
+@import 'bootstrap-tagsinput';
+
+.bootstrap-tagsinput {
+  width: 100%;
+  .tag {
+    background-color: #0d6efd;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-right: 2px;
+  }
+}
+
+#calendar {
+  .fc-event {
+    cursor: pointer;
+  }
+}
+

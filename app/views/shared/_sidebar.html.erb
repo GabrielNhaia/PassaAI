@@ -28,8 +28,8 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to study_materials_path, class: "nav-link #{current_page?(study_materials_path) ? 'active fw-bold' : ''}" do %>
-          <i class="bi bi-book me-2"></i>Materiais de Estudo
+        <%= link_to study_events_path, class: "nav-link #{current_page?(study_events_path) ? 'active fw-bold' : ''}" do %>
+          <i class="bi bi-calendar-check me-2"></i>Cronograma de Estudos
         <% end %>
       </li>
       <li class="nav-item">
@@ -44,6 +44,11 @@
       <li class="nav-item">
         <%= link_to settings_path, class: "nav-link #{current_page?(settings_path) ? 'active fw-bold' : ''}" do %>
           <i class="bi bi-gear me-2"></i>Configurações
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-danger" do %>
+          <i class="bi bi-box-arrow-right me-2"></i>Sair
         <% end %>
       </li>
     </ul>
