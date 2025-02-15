@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :exams
   has_many :questions
   has_many :exam_questions, through: :exams
+  has_many :study_events, dependent: :destroy
 
   # Adicionar os novos atributos
   attribute :email_notifications, :boolean, default: true
