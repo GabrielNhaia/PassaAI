@@ -47,6 +47,7 @@ gem 'devise'
 gem 'bootstrap', '~> 5.1.3'
 gem 'sassc-rails'
 gem 'ruby-openai'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]

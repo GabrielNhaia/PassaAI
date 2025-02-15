@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get 'edit_email', to: 'settings#edit_email'
   delete 'delete_account', to: 'settings#delete_account'
   
-  get 'study_materials', to: 'study_materials#index'
+  get 'study_events', to: 'study_events#index'
   get 'progress_tracking', to: 'progress_tracking#index'
   
   # Rota raiz dentro do devise_scope
@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   authenticate :user do
     # Adicione aqui outras rotas que precisam de autenticação
   end
+
+  resources :study_events
 
   resources :exams do
     member do
