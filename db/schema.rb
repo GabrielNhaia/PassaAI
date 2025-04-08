@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_02_165800) do
+ActiveRecord::Schema[7.1].define(version: 2025_10_10_123456) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -40,8 +40,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_02_165800) do
   end
 
   create_table "exam_questions", force: :cascade do |t|
-    t.integer "exam_id", null: false
-    t.integer "question_id", null: false
+    t.integer "exam_id"
+    t.integer "question_id"
     t.string "selected_answer"
     t.boolean "correct"
     t.datetime "created_at", null: false
@@ -52,11 +52,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_02_165800) do
 
   create_table "exams", force: :cascade do |t|
     t.integer "category"
-    t.integer "status"
+    t.integer "status", default: 0
     t.integer "score"
     t.datetime "started_at"
     t.datetime "finished_at"
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "selected_theme"
@@ -73,7 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_02_165800) do
     t.text "comp5_feedback"
     t.integer "essay_total_score"
     t.text "essay_general_feedback"
-    t.text "improvement_recommendations"
     t.index ["user_id"], name: "index_exams_on_user_id"
   end
 
@@ -145,24 +144,13 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_02_165800) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.string "nickname"
     t.boolean "email_notifications", default: false
     t.boolean "sms_notifications", default: false
     t.boolean "dark_mode", default: false
     t.string "language", default: "pt-BR"
-    t.string "nickname"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  create_table "versions", force: :cascade do |t|
-    t.string "whodunnit"
-    t.datetime "created_at"
-    t.bigint "item_id", null: false
-    t.string "item_type", null: false
-    t.string "event", null: false
-    t.text "object", limit: 1073741823
-    t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
