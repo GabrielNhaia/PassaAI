@@ -7,13 +7,16 @@ bundle install
 
 # Configurar o ambiente para evitar problemas de concorrência durante a compilação de assets
 export RAILS_ENV=production
-export NODE_OPTIONS=--max_old_space_size=4096
 export RAILS_SERVE_STATIC_FILES=true 
+export NODE_OPTIONS="--max-old-space-size=1536"
 
-# Limpar assets existentes e compilar novamente com configuração de concorrência personalizada
-bundle exec rake assets:clobber
-RAILS_MAX_THREADS=2 bundle exec rake assets:precompile
-bundle exec rake assets:clean
+# Criar pastas necessárias
+mkdir -p tmp/pids
+mkdir -p public/assets
+
+# Compilação simplificada de assets
+echo "Compilando assets..."
+SECRET_KEY_BASE=dummyvalue bundle exec rake assets:precompile --trace
 
 # Migrar e semear o banco de dados
 bundle exec rake db:migrate

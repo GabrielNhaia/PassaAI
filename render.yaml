@@ -21,4 +21,10 @@ services:
       - key: RAILS_ENV
         value: production
       - key: RAILS_LOG_TO_STDOUT
-        value: true
+        value: "true"
+      - key: RAILS_SERVE_STATIC_FILES
+        value: "true"
+      - key: NODE_OPTIONS
+        value: "--max-old-space-size=1536"
+      - key: SECRET_KEY_BASE
+        generateValue: true

@@ -32,12 +32,17 @@ Rails.application.configure do
   # Compress CSS using a preprocessor.
   config.assets.css_compressor = :sass
 
-  # Do not fall back to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  # Em ambiente de deploy no Render, permitimos compilação sob demanda apenas durante a migração
+  config.assets.compile = ENV['RENDER_SERVICE_ID'].present?
   
-  # Enable concurrent asset compilation for better performance
+  # Configurações simplificadas para assets
+  config.assets.debug = false
+  config.assets.digest = true
+  config.assets.js_compressor = :terser
+  
+  # Configura timeout longo para compilação de assets
   config.assets.configure do |env|
-    env.cache = ActiveSupport::Cache::MemoryStore.new(expires_in: 1.hour)
+    env.cache = ActiveSupport::Cache::MemoryStore.new(expires_in: 1.day)
   end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
