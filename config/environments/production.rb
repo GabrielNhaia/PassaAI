@@ -20,14 +20,25 @@ Rails.application.configure do
   # key such as config/credentials/production.key. This key is used to decrypt credentials (and other encrypted files).
   # config.require_master_key = true
 
-  # Disable serving static files from `public/`, relying on NGINX/Apache to do so instead.
-  # config.public_file_server.enabled = false
+  # Enable serving static files from the `/public` folder in production for Render
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  
+  # Set cache headers for static assets
+  config.public_file_server.headers = {
+    "Cache-Control" => "public, max-age=31536000",
+    "Expires" => 1.year.from_now.to_formatted_s(:rfc822)
+  }
 
   # Compress CSS using a preprocessor.
-  # config.assets.css_compressor = :sass
+  config.assets.css_compressor = :sass
 
   # Do not fall back to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
+  
+  # Enable concurrent asset compilation for better performance
+  config.assets.configure do |env|
+    env.cache = ActiveSupport::Cache::MemoryStore.new(expires_in: 1.hour)
+  end
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
