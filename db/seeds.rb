@@ -1,5 +1,5 @@
-# db/seeds.rb
-# Este arquivo é responsável por popular o banco de dados com dados iniciais.
+# Questões de Matemática
+
 questoes_matematica = [
   # Operações Básicas
   {
@@ -786,11 +786,8 @@ questoes_matematica = [
   }
 ]
 
-questoes_matematica.each do |questao|
-  Question.create!(questao.merge(user_id: User.first.id))
-end
-
 # Questões de Ciências da Natureza
+
 questoes_ciencias_da_natureza = [
   # Questões de Ciências da Natureza
   {
@@ -1314,11 +1311,9 @@ questoes_ciencias_da_natureza = [
     explanation: "Energia cinética é a energia associada ao movimento de um corpo."
   }
 ]
-questoes_ciencias_da_natureza.each do |questao|
-  Question.create!(questao.merge(user_id: User.first.id))
-end
 
 # Questões de Ciências Humanas
+
 questoes_ciencias_humanas = [
   {
     content: "(ENEM 2020) Qual foi o principal objetivo da Lei Áurea, assinada em 1888 no Brasil?",
@@ -2621,39 +2616,323 @@ questoes_ciencias_humanas = [
   explanation: "Arte românica é um estilo medieval europeu, com destaque para a arquitetura de igrejas e mosteiros."
 }
 ]
+
+# Questões de Linguagens e suas Tecnologias
+
+questoes_linguagens = [
+    {
+    content: "(ENEM 2022) Na análise do texto literário, o que caracteriza o Romantismo brasileiro?",
+    answer_a: "Valorização do objetivismo e descrições impessoais",
+    answer_b: "Exaltação do indígena como herói nacional e valorização da natureza brasileira",
+    answer_c: "Experimentação linguística e ruptura com a sintaxe tradicional",
+    answer_d: "Linguagem rebuscada e uso de referências clássicas greco-romanas",
+    answer_e: "Crítica social através da ironia e humor corrosivo",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2022,
+    explanation: "O Romantismo brasileiro se caracteriza pela idealização do indígena como herói nacional, valorização da natureza brasileira, subjetivismo, nacionalismo e sentimentalismo."
+  },
+  {
+    content: "(ENEM 2023) O que é coesão sequencial em um texto?",
+    answer_a: "O uso de conectivos para estabelecer relações lógicas entre partes do texto",
+    answer_b: "A repetição de palavras para enfatizar uma ideia",
+    answer_c: "O uso de pronomes para retomar referentes anteriores",
+    answer_d: "A ordenação alfabética de termos em um glossário",
+    answer_e: "A grafia correta das palavras de acordo com a norma-padrão",
+    correct_answer: "a",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2023,
+    explanation: "A coesão sequencial estabelece conexões lógico-semânticas entre partes do texto através de conectivos e expressões que indicam tempo, causa, consequência, oposição, etc."
+  },
+  {
+    content: "(ENEM 2021) O que é denotação?",
+    answer_a: "Uso figurado da linguagem",
+    answer_b: "Sentido literal da palavra",
+    answer_c: "Expressão com duplo sentido",
+    answer_d: "Uso regional de certos termos",
+    answer_e: "Linguagem técnica de uma área específica",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2021,
+    explanation: "Denotação é o sentido básico, literal ou dicionarizado de uma palavra, sem acréscimos subjetivos ou contextuais."
+  },
+  {
+    content: "(ENEM 2024) O que é uma crônica?",
+    answer_a: "Texto curto que narra um fato cotidiano com uma visão crítica ou humorística.",
+    answer_b: "Texto científico que apresenta dados e pesquisas.",
+    answer_c: "Texto literário longo com enredo complexo.",
+    answer_d: "Texto jornalístico que informa sobre eventos atuais.",
+    answer_e: "Texto publicitário que visa vender um produto.",
+    correct_answer: "a",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2024,
+    explanation: "A crônica é um gênero textual que aborda temas do cotidiano, geralmente com uma linguagem leve e crítica."
+  },
+  {
+    content: "(ENEM 2023) O que é uma metáfora?",
+    answer_a: "Comparação implícita entre dois elementos diferentes.",
+    answer_b: "Repetição de sons consonantais.",
+    answer_c: "Exagero para efeito dramático.",
+    answer_d: "Uso de palavras com som semelhante.",
+    answer_e: "Apenas descrição literal.",
+    correct_answer: "a",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2023,
+    explanation: "A metáfora é uma figura de linguagem que estabelece uma relação de semelhança entre dois elementos."
+  },
+  {
+    content: "(ENEM 2023) Na análise literária, o que caracteriza o Modernismo brasileiro?",
+    answer_a: "Linguagem rebuscada e valorização da métrica rígida",
+    answer_b: "Ruptura com padrões estéticos tradicionais e linguagem coloquial",
+    answer_c: "Exaltação do índio como herói nacional idealizado",
+    answer_d: "Descrições objetivas da natureza brasileira",
+    answer_e: "Obediência às normas clássicas europeias",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2023,
+    explanation: "O Modernismo brasileiro se caracteriza pela ruptura com os padrões estéticos anteriores, valorização da linguagem coloquial brasileira e liberdade formal."
+  },
+  {
+    content: "(ENEM 2022) No contexto da variação linguística, o que é um registro formal da língua?",
+    answer_a: "Uso da língua apenas em ambientes familiares",
+    answer_b: "Linguagem utilizada exclusivamente por jovens",
+    answer_c: "Modo de falar característico de uma região específica",
+    answer_d: "Uso da norma-padrão em situações que exigem maior monitoramento",
+    answer_e: "Linguagem utilizada apenas em redes sociais",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2022,
+    explanation: "O registro formal da língua corresponde ao uso da norma-padrão em contextos que demandam maior monitoramento linguístico, como documentos oficiais, textos acadêmicos e situações profissionais."
+  },
+  {
+    content: "(ENEM 2022) O que caracteriza o gênero textual 'artigo de opinião'?",
+    answer_a: "Narrativa ficcional com personagens e enredo",
+    answer_b: "Texto informativo imparcial sobre fatos recentes",
+    answer_c: "Defesa de um ponto de vista com argumentos",
+    answer_d: "Poema com versos livres e linguagem metafórica",
+    answer_e: "Texto instrucional com sequência de passos",
+    correct_answer: "c",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2022,
+    explanation: "O artigo de opinião é um gênero textual caracterizado pela defesa de um ponto de vista através de argumentos, com o objetivo de convencer o leitor sobre determinada posição."
+  },
+  {
+    content: "(ENEM 2022) No estudo da linguagem poética, o que são aliterações?",
+    answer_a: "Comparações diretas entre elementos usando 'como', 'tal', 'qual'",
+    answer_b: "Exageros utilizados para enfatizar uma ideia",
+    answer_c: "Repetições de fonemas consonantais próximos criando efeito sonoro",
+    answer_d: "Atribuições de características humanas a seres inanimados",
+    answer_e: "Palavras com significados opostos usadas próximas",
+    correct_answer: "c",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2022,
+    explanation: "Aliterações são repetições de fonemas consonantais em palavras próximas, criando um efeito sonoro que contribui para a expressividade do texto poético."
+  },
+  {
+    content: "(ENEM 2021) O que caracteriza a função emotiva da linguagem?",
+    answer_a: "Foco no canal de comunicação para verificar seu funcionamento",
+    answer_b: "Centralidade na mensagem e em sua organização estética",
+    answer_c: "Ênfase no referente, com informações objetivas sobre o mundo",
+    answer_d: "Foco no emissor e na expressão de seus sentimentos e emoções",
+    answer_e: "Direcionamento ao receptor visando influenciar seu comportamento",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2021,
+    explanation: "A função emotiva ou expressiva da linguagem é centrada no emissor, expressando seus sentimentos, opiniões e estados emocionais, geralmente marcada pelo uso da primeira pessoa."
+  },
+  {
+    content: "(ENEM 2021) Qual recurso linguístico é fundamental para garantir a coesão textual entre parágrafos?",
+    answer_a: "Uso de vocabulário técnico específico",
+    answer_b: "Emprego de conectivos e elementos de transição",
+    answer_c: "Utilização de frases curtas e objetivas",
+    answer_d: "Presença de exemplificações e citações",
+    answer_e: "Emprego de linguagem figurada",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2021,
+    explanation: "Os conectivos e elementos de transição são fundamentais para garantir a coesão textual entre parágrafos, estabelecendo relações lógicas como causa, consequência, adição, oposição, entre outras."
+  },
+  {
+    content: "(ENEM 2021) No contexto da literatura contemporânea brasileira, o que caracteriza as obras de Conceição Evaristo?",
+    answer_a: "Retratos da aristocracia rural do século XIX",
+    answer_b: "Narrativas de ficção científica ambientadas no futuro",
+    answer_c: "Escrita que aborda questões da identidade negra e feminina",
+    answer_d: "Poemas concretistas com experimentações visuais",
+    answer_e: "Crônicas humorísticas sobre a vida urbana",
+    correct_answer: "c",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2021,
+    explanation: "A obra de Conceição Evaristo é marcada pela abordagem de questões relacionadas à identidade negra, à condição feminina e às desigualdades sociais, em um conceito que a própria autora denomina 'escrevivência'."
+  },
+  {
+    content: "(ENEM 2021) O que é o plurilinguismo, conceito presente nos estudos de Mikhail Bakhtin?",
+    answer_a: "Capacidade de uma pessoa falar vários idiomas",
+    answer_b: "Presença de diferentes vozes sociais em um mesmo texto",
+    answer_c: "Sistema de tradução automática entre línguas",
+    answer_d: "Estudo comparativo entre famílias linguísticas",
+    answer_e: "Método de ensino de línguas estrangeiras",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2021,
+    explanation: "O plurilinguismo, segundo Bakhtin, refere-se à presença de diferentes vozes sociais e discursos em um mesmo texto, refletindo a diversidade linguística e ideológica da sociedade."
+  },
+  {
+    content: "(ENEM 2020) O que caracteriza o gênero textual 'meme' na internet?",
+    answer_a: "Longos textos argumentativos com referências científicas",
+    answer_b: "Conteúdo multimídia que se espalha rapidamente, geralmente com humor",
+    answer_c: "Documentos formais com assinatura digital certificada",
+    answer_d: "Poemas visuais com métrica e rima definidas",
+    answer_e: "Relatos jornalísticos verificados por agências de notícias",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "O meme é um gênero textual digital caracterizado por combinar elementos verbais e não verbais (imagens, vídeos), geralmente com conteúdo humorístico, crítico ou irônico, que se espalha rapidamente pela internet."
+  },
+  {
+    content: "(ENEM 2020) Na obra 'Vidas Secas', de Graciliano Ramos, qual aspecto é predominante?",
+    answer_a: "Narrativa fantástica com elementos sobrenaturais",
+    answer_b: "Descrição romântica e idealizada da natureza",
+    answer_c: "Linguagem rebuscada com vocabulário erudito",
+    answer_d: "Representação realista das condições sociais do sertão nordestino",
+    answer_e: "Crítica bem-humorada aos costumes urbanos",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2020,
+    explanation: "'Vidas Secas' é uma obra da segunda fase do Modernismo brasileiro (Geração de 30) que retrata de forma realista e crítica as condições de vida no sertão nordestino, abordando temas como a seca, a miséria e a opressão social."
+  },
+  {
+    content: "(ENEM 2020) O que é intertextualidade?",
+    answer_a: "Método de formatação de textos em editores digitais",
+    answer_b: "Capacidade de um texto fazer referência a outros textos",
+    answer_c: "Técnica para aumentar o número de palavras em redações",
+    answer_d: "Sistema de tradução entre diferentes idiomas",
+    answer_e: "Organização de textos em ordem alfabética",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "A intertextualidade é a relação que se estabelece entre textos, quando um texto faz referência a outro(s) texto(s) preexistente(s), por meio de citações, alusões, paródias, pastiches, entre outros recursos."
+  },
+  {
+    content: "(ENEM 2020) No estudo da semântica, o que é polissemia?",
+    answer_a: "Palavras com grafia igual e significados diferentes",
+    answer_b: "Palavras com sons iguais e significados diferentes",
+    answer_c: "Palavras com significados opostos",
+    answer_d: "Uma palavra com vários significados relacionados entre si",
+    answer_e: "Expressões que não podem ser interpretadas literalmente",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "A polissemia é o fenômeno linguístico em que uma mesma palavra possui vários significados relacionados entre si, dependendo do contexto em que é utilizada."
+  },
+  {
+    content: "(ENEM 2020) O que caracteriza o movimento literário do Arcadismo no Brasil?",
+    answer_a: "Valorização do cotidiano urbano e linguagem coloquial",
+    answer_b: "Exaltação do índio como herói nacional",
+    answer_c: "Influência da estética gótica e pessimismo existencial",
+    answer_d: "Culto à natureza e simplicidade pastoral",
+    answer_e: "Experimentação linguística radical e versos livres",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2020,
+    explanation: "O Arcadismo no Brasil caracterizou-se pelo culto à natureza, simplicidade na linguagem, busca do equilíbrio e da harmonia, inspirados nos ideais clássicos e no lema 'Inutilia truncat' (cortar o inútil)."
+  },
+  {
+    content: "(ENEM 2020) Na análise de estratégias argumentativas, o que é um argumento de autoridade?",
+    answer_a: "Uso de dados estatísticos para comprovar uma tese",
+    answer_b: "Ameaça velada para convencer o interlocutor",
+    answer_c: "Citação de especialista ou fonte reconhecida para validar uma ideia",
+    answer_d: "Apelo às emoções do público para convencimento",
+    answer_e: "Uso de exemplos históricos como prova",
+    correct_answer: "c",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "O argumento de autoridade consiste em citar uma pessoa, instituição ou fonte reconhecida como especialista em determinado assunto para dar credibilidade à tese defendida."
+  },
+  {
+    content: "(ENEM 2020) O que é coesão referencial em um texto?",
+    answer_a: "Uso de verbos no mesmo tempo ao longo do texto",
+    answer_b: "Mecanismo que estabelece conexões entre parágrafos usando conjunções",
+    answer_c: "Utilização de elementos que retomam informações já apresentadas",
+    answer_d: "Organização lógica de ideias em ordem cronológica",
+    answer_e: "Emprego de vocabulário técnico específico da área",
+    correct_answer: "c",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "A coesão referencial é um mecanismo linguístico que estabelece relações de referência entre elementos do texto, como o uso de pronomes, sinônimos, hiperônimos ou expressões que retomam informações já apresentadas."
+  },
+  {
+    content: "(ENEM 2020) Na linguística textual, o que é um texto injuntivo?",
+    answer_a: "Texto que narra uma sequência de acontecimentos",
+    answer_b: "Texto que descreve lugares, pessoas ou objetos",
+    answer_c: "Texto que explica conceitos e fenômenos",
+    answer_d: "Texto que orienta e instrui sobre como realizar ações",
+    answer_e: "Texto que defende uma opinião com argumentos",
+    correct_answer: "d",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "O texto injuntivo (ou instrucional) tem como função orientar e instruir o leitor sobre como realizar procedimentos ou ações, como receitas culinárias, manuais de instruções e regras de jogos."
+  },
+  {
+    content: "(ENEM 2020) Qual é a principal característica da literatura produzida por Carolina Maria de Jesus?",
+    answer_a: "Experimentação formal vanguardista com poemas visuais",
+    answer_b: "Relatos autobiográficos sobre a vida na favela e a exclusão social",
+    answer_c: "Ficção científica ambientada em futuros distópicos",
+    answer_d: "Poesia concreta com disposição geométrica das palavras",
+    answer_e: "Crônicas sobre a alta sociedade brasileira",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Literatura",
+    year: 2020,
+    explanation: "Carolina Maria de Jesus ficou conhecida por sua obra mais famosa, 'Quarto de Despejo', um diário que relata sua vida como catadora de papel na favela do Canindé em São Paulo, trazendo um testemunho autêntico sobre exclusão social, pobreza e resistência."
+  },
+  {
+    content: "(ENEM 2020) O que são variantes linguísticas?",
+    answer_a: "Erros gramaticais cometidos por falantes sem escolaridade",
+    answer_b: "Diferentes formas de expressão de uma mesma língua conforme contextos socioculturais",
+    answer_c: "Idiomas estrangeiros que influenciam o português brasileiro",
+    answer_d: "Gírias temporárias usadas apenas por adolescentes",
+    answer_e: "Neologismos criados pela mídia e publicidade",
+    correct_answer: "b",
+    category: "linguagens",
+    subject: "Língua Portuguesa",
+    year: 2020,
+    explanation: "As variantes linguísticas são diferentes formas de expressão de uma mesma língua, que variam de acordo com fatores como região geográfica, classe social, idade, contexto e situação comunicativa, sendo todas legítimas do ponto de vista linguístico."
+  }
+]
+
+questoes_matematica.each do |questao|
+  Question.create!(questao.merge(user_id: User.first.id))
+end
+
+questoes_ciencias_da_natureza.each do |questao|
+  Question.create!(questao.merge(user_id: User.first.id))
+end
+
 questoes_ciencias_humanas.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
 
-# Questões de Linguagens e suas Tecnologias
-questoes_linguagens = [
-{
-  content: "(ENEM 2024) O que é uma crônica?",
-  answer_a: "Texto curto que narra um fato cotidiano com uma visão crítica ou humorística.",
-  answer_b: "Texto científico que apresenta dados e pesquisas.",
-  answer_c: "Texto literário longo com enredo complexo.",
-  answer_d: "Texto jornalístico que informa sobre eventos atuais.",
-  answer_e: "Texto publicitário que visa vender um produto.",
-  correct_answer: "a",
-  category: "linguagens",
-  subject: "Língua Portuguesa",
-  year: 2024,
-  explanation: "A crônica é um gênero textual que aborda temas do cotidiano, geralmente com uma linguagem leve e crítica."
-},
-{
-  content: "(ENEM 2023) O que é uma metáfora?",
-  answer_a: "Comparação implícita entre dois elementos diferentes.",
-  answer_b: "Repetição de sons consonantais.",
-  answer_c: "Exagero para efeito dramático.",
-  answer_d: "Uso de palavras com som semelhante.",
-  answer_e: "Apenas descrição literal.",
-  correct_answer: "a",
-  category: "linguagens",
-  subject: "Língua Portuguesa",
-  year: 2023,
-  explanation: "A metáfora é uma figura de linguagem que estabelece uma relação de semelhança entre dois elementos."
-}
-]
 questoes_linguagens.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
