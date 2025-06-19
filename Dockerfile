@@ -28,14 +28,17 @@ RUN apt-get update -qq && \
 RUN apt-get update && apt-get install -y \
     postgresql-client \
     libpq-dev \
+    build-essential \
     && rm -rf /var/lib/apt/lists/*
 
 # OU para Alpine Linux (se você estiver usando uma imagem Alpine)
 # RUN apk add --no-cache postgresql-dev
 
-# Install application gems
-COPY Gemfile Gemfile.lock ./
-RUN bundle install && \
+# Instala a gem pg especificamente
+RUN gem install pg -v 1.5.3
+
+# E depois o resto das gems
+RUN bundle install --without production && \
     rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git && \
     bundle exec bootsnap precompile --gemfile
 
