@@ -13,14 +13,12 @@ class Exam < ApplicationRecord
   }
 
   def generate_questions
-    # Pega todas as questões que ainda não foram usadas neste usuário
     available_questions = Question.where(category: self.category)
                                 .where.not(id: user.exam_questions.pluck(:question_id))
                                 .distinct
                                 .order("RANDOM()")
                                 .limit(45)
     
-    # Se não houver questões suficientes, reinicia usando todas as questões
     if available_questions.count < 45
       available_questions = Question.where(category: self.category)
                                   .distinct
