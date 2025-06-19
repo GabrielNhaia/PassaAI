@@ -9,25 +9,24 @@ class Exam < ApplicationRecord
     natureza: 1,
     linguagens: 2,
     humanas: 3,
-    redacao: 4
+    linguasestrangeiras: 4,
+    redacao: 5
   }
 
   def generate_questions
-    available_questions = Question.where(category: self.category)
-                                .where.not(id: user.exam_questions.pluck(:question_id))
-                                .distinct
-                                .order("RANDOM()")
-                                .limit(45)
-    
-    if available_questions.count < 45
-      available_questions = Question.where(category: self.category)
-                                  .distinct
-                                  .order("RANDOM()")
-                                  .limit(45)
+    question_count = 45
+
+    case category
+    when "linguagens"
+      portuguese_questions = Question.where(category: "linguagens").sample(40)
+      foreign_language_questions = Question.where(category: "linguasestrangeiras").sample(5)
+      
+      questions_to_add = portuguese_questions + foreign_language_questions
+    else
+      questions_to_add = Question.where(category: category).sample(question_count)
     end
-    
-    available_questions.each do |question|
-      exam_questions.create(question: question)
+    questions_to_add.each do |question|
+      self.exam_questions.create(question: question)
     end
   end
 end
