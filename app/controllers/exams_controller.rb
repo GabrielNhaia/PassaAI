@@ -88,11 +88,21 @@ class ExamsController < ApplicationController
   def writing
     @exam = current_user.exams.find(params[:id])
     @themes = [
-      "Novas Tecnologias",
-      "Racismo e Discriminação Social",
-      "Desigualdade Social no Brasil",
-      "Preconceito Linguístico",
-      "Violência Escolar"
+      "Os desafios da inteligência artificial na sociedade contemporânea",
+      "O impacto das mudanças climáticas e a urgência de ações sustentáveis no Brasil",
+      "Saúde mental na era digital: O adoecimento da juventude e os caminhos para o bem-estar",
+      "A educação financeira como ferramenta para a autonomia e o combate à desigualdade social",
+      "A desinformação e as 'fake news' como ameaças à democracia e à cidadania no Brasil",
+      "O crescimento do trabalho informal e a precarização das relações trabalhistas no país",
+      "A inclusão de pessoas com deficiência no mercado de trabalho e na sociedade",
+      "A segurança alimentar e o combate à fome no Brasil: Estratégias para garantir o acesso a alimentos de qualidade",
+      "O papel das redes sociais na formação da identidade e no comportamento dos jovens",
+      "A importância da valorização da cultura popular brasileira e do patrimônio imaterial",
+      "Os desafios da mobilidade urbana nas grandes cidades brasileiras: Soluções sustentáveis para o transporte público e privado",
+      "A importância da representatividade e do combate ao preconceito nas diversas esferas sociais",
+      "O uso consciente da tecnologia na educação e os novos modelos de ensino-aprendizagem",
+      "O desmatamento na Amazônia e a urgência da conservação ambiental no contexto brasileiro",
+      "A invisibilidade de populações marginalizadas e o acesso a direitos básicos no Brasil"
     ]
   end
 

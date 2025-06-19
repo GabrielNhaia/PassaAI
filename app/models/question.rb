@@ -11,6 +11,7 @@ class Question < ApplicationRecord
     natureza: 'natureza',
     linguagens: 'linguagens',
     humanas: 'humanas',
+    linguasestrangeiras: 'linguasestrangeiras',
     redacao: 'redacao'
   }
 end
