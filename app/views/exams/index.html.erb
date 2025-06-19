@@ -55,7 +55,11 @@
                 <% end %>
                 <%= button_to exams_path, 
                     params: { exam: { category: category[:name].include?("Redação") ? "redacao" : 
-                                              category[:name].downcase.gsub(' e suas tecnologias', '').parameterize } },
+                                              category[:name].downcase
+                                                          .gsub(' e suas tecnologias', '')
+                                                          .gsub('ciências da ', '')
+                                                          .gsub('ciências ', '')
+                                                          .parameterize } },
                     class: "btn btn-primary mt-3" do %>
                   Iniciar Simulado
                   <i class="bi bi-arrow-right ms-2"></i>
