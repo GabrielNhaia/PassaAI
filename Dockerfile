@@ -25,7 +25,7 @@ RUN bundle install && \
 COPY . .
 
 RUN bundle exec bootsnap precompile app/ lib/
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 DISABLE_DATABASE_ENVIRONMENT_CHECK=1 RAILS_ENV=production bundle exec rake assets:precompile
 
 # --- Final stage ---
 FROM base
