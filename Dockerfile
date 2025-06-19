@@ -25,7 +25,8 @@ RUN bundle install && \
 COPY . .
 
 RUN bundle exec bootsnap precompile app/ lib/
-RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rake assets:precompile --trace && \
+    SECRET_KEY_BASE_DUMMY=1 RAILS_ENV=production bundle exec rake db:migrate --trace
 
 # --- Final stage ---
 FROM base
