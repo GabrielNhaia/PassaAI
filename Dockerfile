@@ -24,6 +24,15 @@ RUN apt-get update -qq && \
     apt-get install -y nodejs && \
     npm install -g yarn
 
+# Para distribuições baseadas em Debian/Ubuntu
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# OU para Alpine Linux (se você estiver usando uma imagem Alpine)
+# RUN apk add --no-cache postgresql-dev
+
 # Install application gems
 COPY Gemfile Gemfile.lock ./
 RUN bundle install && \
