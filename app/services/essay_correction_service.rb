@@ -19,99 +19,101 @@ class EssayCorrectionService
 
   def correction_prompt
     <<~PROMPT
-      Você é um corretor especializado em redações do ENEM. Analise a redação fornecida com base nas 5 competências lembrando que cada competência vale até 200 
-      pontos e os corretores retiram 20 pontos para cada erro grave identificado. Considere os seguintes critérios:
+      Você é um corretor automatizado de redações alinhado à matriz de referência do ENEM (Inep). Avalie uma redação dissertativa-argumentativa em língua portuguesa e entregue:
 
-      COMPETÊNCIA 1 - Domínio da escrita formal da língua portuguesa (0-200 pontos):
-      - Identifique ESPECIFICAMENTE os erros: ortografia, acentuação, concordância, regência, pontuação
-      - Cite trechos exatos onde ocorrem os problemas
-      - Sugira correções pontuais
-      - Avalie registro de linguagem e adequação à norma culta
+      • Notas separadas para cada Competência (1 a 5), cada uma entre 0 e 200
+      • Nota final = soma das 5 competências (0–1000)
+      • Feedback curto e acionável: 2–4 pontos fortes, 2–4 pontos a melhorar e 2–3 sugestões práticas
+      • Justificativa breve (1–2 frases) para cada competência
 
-      COMPETÊNCIA 2 - Compreensão do tema e desenvolvimento do texto dissertativo-argumentativo (0-200 pontos):
-      - Verifique se abordou o tema proposto completamente
-      - Analise se manteve o tipo textual dissertativo-argumentativo
+      CRITÉRIOS DE AVALIAÇÃO:
+
+      COMPETÊNCIA 1: Domínio da norma padrão (ortografia, morfossintaxe, pontuação)
+      - Identifique erros específicos de ortografia, concordância, regência e pontuação
+      - Cite trechos exatos com problemas
+      - Use incrementos de 10 pontos (ex.: 120, 130, 140...)
+
+      COMPETÊNCIA 2: Compreensão do tema e seleção de informações relevantes
+      - Verifique se abordou completamente o tema: #{@theme}
       - Identifique tangenciamentos ou fugas do tema
-      - Comente sobre a progressão temática
+      - Se houver fuga total ao tema, aplique nota 0 conforme regra do ENEM
 
-      COMPETÊNCIA 3 - Capacidade de interpretação e organização de argumentos (0-200 pontos):
-      - Avalie a estrutura: introdução, desenvolvimento, conclusão
-      - Analise a consistência e relevância dos argumentos
-      - Verifique o uso de repertório sociocultural
-      - Comente sobre a articulação entre as ideias
+      COMPETÊNCIA 3: Organização, coesão e progressão temática
+      - Avalie estrutura (introdução, desenvolvimento, conclusão)
+      - Analise articulação entre parágrafos e ideias
+      - Verifique progressão lógica dos argumentos
 
-      COMPETÊNCIA 4 - Domínio dos mecanismos linguísticos de argumentação (0-200 pontos):
-      - Identifique ESPECIFICAMENTE quais conectivos foram mal utilizados ou ausentes
-      - Cite trechos onde falta coesão entre períodos ou parágrafos
-      - Aponte problemas de coerência textual
-      - Sugira conectivos adequados para melhorar a fluidez
+      COMPETÊNCIA 4: Argumentação (uso de argumentos, repertório)
+      - Avalie qualidade e consistência dos argumentos
+      - Verifique uso adequado de repertório sociocultural
+      - Analise mecanismos linguísticos de argumentação
 
-      COMPETÊNCIA 5 - Proposta de intervenção respeitando os direitos humanos (0-200 pontos):
-      - Verifique se apresentou proposta clara e viável
-      - Analise se contempla: agente, ação, meio, finalidade, detalhamento
-      - Confirme se respeita os direitos humanos
-      - Avalie a articulação com o restante do texto
+      COMPETÊNCIA 5: Proposta de intervenção compatível com direitos humanos
+      - Deve conter: agente, ação, meio/modo, finalidade e detalhamento
+      - Verificar respeito aos direitos humanos
+      - Avaliar articulação com o desenvolvimento do texto
 
-      INSTRUÇÕES PARA FEEDBACK ESPECÍFICO:
-      - Para cada competência, seja ESPECÍFICO: cite trechos, palavras ou frases problemáticas
-      - Em vez de "há deslizes que comprometem a fluidez", diga QUAIS deslizes e ONDE estão
-      - Para problemas de coesão, indique EXATAMENTE onde faltam conectivos e quais usar
-      - Para erros gramaticais, cite o erro e a correção
-      - Use exemplos do próprio texto do candidato
-
-      O tema da redação é: #{@theme}
+      REGRAS IMPORTANTES:
+      - Use incrementos coerentes (múltiplos de 10) ao atribuir pontos
+      - Se detectar indícios de plágio ou fraude, marque e explique
+      - Seja específico: evite frases como "há deslizes" - diga QUAIS deslizes e ONDE
+      - Cite trechos problemáticos do texto original
 
       Retorne um JSON com o seguinte formato:
       {
-        "comp1": { "score": 0-200, "feedback": "feedback detalhado com citações específicas do texto" },
-        "comp2": { "score": 0-200, "feedback": "feedback detalhado com citações específicas do texto" },
-        "comp3": { "score": 0-200, "feedback": "feedback detalhado com citações específicas do texto" },
-        "comp4": { "score": 0-200, "feedback": "feedback detalhado com citações específicas do texto" },
-        "comp5": { "score": 0-200, "feedback": "feedback detalhado com citações específicas do texto" },
-        "total_score": "soma das notas",
-        "general_feedback": "feedback geral da redação com sugestões de melhoria específicas"
+        "comp1": { 
+          "score": 0-200, 
+          "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
+          "justification": "Justificativa breve em 1-2 frases"
+        },
+        "comp2": { 
+          "score": 0-200, 
+          "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
+          "justification": "Justificativa breve em 1-2 frases"
+        },
+        "comp3": { 
+          "score": 0-200, 
+          "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
+          "justification": "Justificativa breve em 1-2 frases"
+        },
+        "comp4": { 
+          "score": 0-200, 
+          "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
+          "justification": "Justificativa breve em 1-2 frases"
+        },
+        "comp5": { 
+          "score": 0-200, 
+          "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
+          "justification": "Justificativa breve em 1-2 frases"
+        },
+        "total_score": "soma das 5 competências",
+        "general_feedback": "Resumo geral da redação com as principais conquistas e desafios identificados"
       }
     PROMPT
   end
 
   def parse_response(response)
     parsed_response = JSON.parse(response)
-    validate_and_enhance_feedback(parsed_response)
+    validate_response_structure(parsed_response)
   rescue JSON::ParserError
     { error: "Erro ao processar a correção da redação" }
   end
 
-  def validate_and_enhance_feedback(response)
+  def validate_response_structure(response)
+    # Validar se todos os campos obrigatórios estão presentes
     required_competencies = %w[comp1 comp2 comp3 comp4 comp5]
     
     required_competencies.each do |comp|
-      unless response[comp]&.dig("feedback")&.length&.> 50
-        response[comp]["feedback"] = enhance_generic_feedback(response[comp]["feedback"], comp)
+      comp_data = response[comp]
+      unless comp_data.is_a?(Hash) && 
+             comp_data["score"].is_a?(Integer) && 
+             comp_data["feedback"].is_a?(String) &&
+             comp_data["justification"].is_a?(String)
+        
+        return { error: "Formato de resposta inválido para #{comp}" }
       end
     end
 
     response
-  end
-
-  def enhance_generic_feedback(feedback, competency)
-    return feedback if feedback.nil? || feedback.empty?
-
-    generic_phrases = [
-      "há deslizes", "alguns problemas", "precisa melhorar",
-      "comprometem a fluidez", "apresenta dificuldades"
-    ]
-
-    if generic_phrases.any? { |phrase| feedback.downcase.include?(phrase) }
-      case competency
-      when "comp1"
-        feedback + " Sugestão: Revise especificamente concordância verbal e nominal, uso de vírgulas em orações subordinadas e acentuação de palavras proparoxítonas."
-      when "comp4"
-        feedback + " Sugestão: Use conectivos como 'ademais', 'por conseguinte', 'dessa forma' para melhorar a articulação entre ideias. Evite repetir 'e' e 'mas' em excesso."
-      else
-        feedback + " Revise os critérios específicos desta competência para identificar pontos de melhoria."
-      end
-    else
-      feedback
-    end
   end
 end
