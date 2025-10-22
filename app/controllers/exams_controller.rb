@@ -89,6 +89,7 @@ class ExamsController < ApplicationController
     @exam = current_user.exams.find(params[:id])
     @themes = [
       "Os desafios da inteligência artificial na sociedade contemporânea",
+      "Manipulação do comportamento do usuário pelo controle de dados na internet",
       "O impacto das mudanças climáticas e a urgência de ações sustentáveis no Brasil",
       "Saúde mental na era digital: O adoecimento da juventude e os caminhos para o bem-estar",
       "A educação financeira como ferramenta para a autonomia e o combate à desigualdade social",
