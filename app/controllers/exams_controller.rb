@@ -36,7 +36,7 @@ class ExamsController < ApplicationController
 
   def create
     @exam = current_user.exams.build(exam_params)
-    
+
     if @exam.save
       if @exam.redacao?
         redirect_to writing_exam_path(@exam)
@@ -58,11 +58,11 @@ class ExamsController < ApplicationController
   def answer
     @exam = current_user.exams.find(params[:id])
     @exam_question = @exam.exam_questions.find(params[:exam_question_id])
-    
+
     if @exam_question.update(answer_params)
       @exam_question.check_answer
       @next_question = @exam.exam_questions.where(selected_answer: nil).first
-      
+
       if @next_question
         redirect_to start_exam_path(@exam)
       else
@@ -89,6 +89,7 @@ class ExamsController < ApplicationController
     @exam = current_user.exams.find(params[:id])
     @themes = [
       "Os desafios da inteligência artificial na sociedade contemporânea",
+      "Manipulação do comportamento do usuário pelo controle de dados na internet",
       "O impacto das mudanças climáticas e a urgência de ações sustentáveis no Brasil",
       "Saúde mental na era digital: O adoecimento da juventude e os caminhos para o bem-estar",
       "A educação financeira como ferramenta para a autonomia e o combate à desigualdade social",
@@ -108,7 +109,7 @@ class ExamsController < ApplicationController
 
   def submit_writing
     @exam = current_user.exams.find(params[:id])
-    
+
     if @exam.update(writing_params)
       correction_service = EssayCorrectionService.new(@exam.essay_text, @exam.selected_theme)
       correction_result = correction_service.correct
@@ -129,6 +130,11 @@ class ExamsController < ApplicationController
         comp3_feedback: correction_result["comp3"]["feedback"],
         comp4_feedback: correction_result["comp4"]["feedback"],
         comp5_feedback: correction_result["comp5"]["feedback"],
+        comp1_justification: correction_result["comp1"]["justification"],
+        comp2_justification: correction_result["comp2"]["justification"],
+        comp3_justification: correction_result["comp3"]["justification"],
+        comp4_justification: correction_result["comp4"]["justification"],
+        comp5_justification: correction_result["comp5"]["justification"],
         essay_total_score: correction_result["total_score"],
         essay_general_feedback: correction_result["general_feedback"],
         status: :completed,

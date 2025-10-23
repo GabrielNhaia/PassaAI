@@ -12,7 +12,7 @@ module OpenAiApi
       begin
         response = client.chat(
           parameters: {
-            model: "gpt-3.5-turbo",
+            model: "gpt-4-turbo",
             messages: [
               { role: "system", content: @prompt },
               { role: "user", content: @user_input }
@@ -20,7 +20,7 @@ module OpenAiApi
             temperature: @temperature
           }
         )
-        
+
         response.dig("choices", 0, "message", "content")
       rescue OpenAI::Error => e
         save_api_log("essay_correction", e, { prompt: @prompt, user_input: @user_input })
