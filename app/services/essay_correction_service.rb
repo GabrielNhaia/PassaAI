@@ -61,28 +61,28 @@ class EssayCorrectionService
 
       Retorne um JSON com o seguinte formato:
       {
-        "comp1": { 
-          "score": 0-200, 
+        "comp1": {
+          "score": 0-200,
           "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
           "justification": "Justificativa breve em 1-2 frases"
         },
-        "comp2": { 
-          "score": 0-200, 
+        "comp2": {
+          "score": 0-200,
           "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
           "justification": "Justificativa breve em 1-2 frases"
         },
-        "comp3": { 
-          "score": 0-200, 
+        "comp3": {
+          "score": 0-200,
           "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
           "justification": "Justificativa breve em 1-2 frases"
         },
-        "comp4": { 
-          "score": 0-200, 
+        "comp4": {
+          "score": 0-200,
           "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
           "justification": "Justificativa breve em 1-2 frases"
         },
-        "comp5": { 
-          "score": 0-200, 
+        "comp5": {
+          "score": 0-200,
           "feedback": "Pontos fortes: [2-3 pontos]. Pontos a melhorar: [2-3 pontos específicos com citações]. Sugestão: [1 dica prática].",
           "justification": "Justificativa breve em 1-2 frases"
         },
@@ -100,16 +100,15 @@ class EssayCorrectionService
   end
 
   def validate_response_structure(response)
-    # Validar se todos os campos obrigatórios estão presentes
     required_competencies = %w[comp1 comp2 comp3 comp4 comp5]
-    
+
     required_competencies.each do |comp|
       comp_data = response[comp]
       unless comp_data.is_a?(Hash) && 
              comp_data["score"].is_a?(Integer) && 
              comp_data["feedback"].is_a?(String) &&
              comp_data["justification"].is_a?(String)
-        
+
         return { error: "Formato de resposta inválido para #{comp}" }
       end
     end

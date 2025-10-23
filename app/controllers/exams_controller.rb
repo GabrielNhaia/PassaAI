@@ -36,7 +36,7 @@ class ExamsController < ApplicationController
 
   def create
     @exam = current_user.exams.build(exam_params)
-    
+
     if @exam.save
       if @exam.redacao?
         redirect_to writing_exam_path(@exam)
@@ -58,11 +58,11 @@ class ExamsController < ApplicationController
   def answer
     @exam = current_user.exams.find(params[:id])
     @exam_question = @exam.exam_questions.find(params[:exam_question_id])
-    
+
     if @exam_question.update(answer_params)
       @exam_question.check_answer
       @next_question = @exam.exam_questions.where(selected_answer: nil).first
-      
+
       if @next_question
         redirect_to start_exam_path(@exam)
       else
@@ -109,7 +109,7 @@ class ExamsController < ApplicationController
 
   def submit_writing
     @exam = current_user.exams.find(params[:id])
-    
+
     if @exam.update(writing_params)
       correction_service = EssayCorrectionService.new(@exam.essay_text, @exam.selected_theme)
       correction_result = correction_service.correct

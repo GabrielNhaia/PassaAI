@@ -15,23 +15,20 @@ class EssayCorrectionServiceTest < Minitest::Test
 
   def test_should_provide_specific_feedback_for_grammatical_errors
     service = EssayCorrectionService.new(@sample_essay, @theme)
-    
-    # Mock da resposta da OpenAI para testar o enhancement
+
     mock_response = {
-      "comp1" => { 
-        "score" => 120, 
-        "feedback" => "há alguns deslizes que comprometem a fluidez do texto." 
+      "comp1" => {
+        "score" => 120,
+        "feedback" => "há alguns deslizes que comprometem a fluidez do texto."
       },
-      "comp4" => { 
-        "score" => 100, 
-        "feedback" => "apresenta dificuldades na articulação das ideias." 
+      "comp4" => {
+        "score" => 100,
+        "feedback" => "apresenta dificuldades na articulação das ideias."
       }
     }
 
-    # Simular o método de enhancement
     enhanced = service.send(:validate_and_enhance_feedback, mock_response)
-    
-    # Verificar se o feedback foi melhorado
+
     assert_includes enhanced["comp1"]["feedback"], "concordância verbal"
     assert_includes enhanced["comp1"]["feedback"], "acentuação"
     assert_includes enhanced["comp4"]["feedback"], "conectivos como"
@@ -40,20 +37,19 @@ class EssayCorrectionServiceTest < Minitest::Test
 
   test "should not modify already detailed feedback" do
     service = EssayCorrectionService.new(@sample_essay, @theme)
-    
+
     detailed_feedback = "Na linha 3, há erro de concordância em 'não tem' que deveria ser 'não têm'. " \
                        "Também observe a falta de vírgula antes de 'que' na oração subordinada."
-    
+
     mock_response = {
-      "comp1" => { 
-        "score" => 160, 
+      "comp1" => {
+        "score" => 160,
         "feedback" => detailed_feedback
       }
     }
 
     enhanced = service.send(:validate_and_enhance_feedback, mock_response)
-    
-    # Feedback detalhado não deve ser modificado
+
     assert_equal detailed_feedback, enhanced["comp1"]["feedback"]
   end
 end
