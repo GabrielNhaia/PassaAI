@@ -90,7 +90,7 @@ class SettingsController < ApplicationController
 
   def validate_current_password
     return true if @user.valid_password?(password_params[:current_password])
-    
+
     @user.errors.add(:current_password, 'é inválida')
     false
   end
@@ -122,9 +122,9 @@ class SettingsController < ApplicationController
 
   def settings_params
     params.require(:user).permit(
-      :email_notifications, 
-      :sms_notifications, 
-      :dark_mode, 
+      :email_notifications,
+      :sms_notifications,
+      :dark_mode,
       :language,
       :nickname
     )

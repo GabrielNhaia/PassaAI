@@ -3,7 +3,9 @@
     <%= render 'shared/sidebar' %>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">
+          <i class="bi bi-graph-up-arrow me-2 text-primary"></i>Dashboard
+        </h1>
         <div class="dropdown">
           <button class="btn btn-link text-dark dropdown-toggle d-flex align-items-center text-decoration-none" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
             <% if current_user.avatar.attached? %>
@@ -15,8 +17,13 @@
           </button>
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
             <li>
-              <%= link_to edit_user_registration_path, class: "dropdown-item" do %>
-                <i class="bi bi-gear me-2"></i>Editar Conta
+              <%= link_to settings_path, class: "dropdown-item" do %>
+                <i class="bi bi-gear me-2"></i>Configurações
+              <% end %>
+            </li>
+            <li>
+              <%= link_to profile_path, class: "dropdown-item" do %>
+                <i class="bi bi-person me-2"></i>Perfil
               <% end %>
             </li>
             <li><hr class="dropdown-divider"></li>
@@ -28,33 +35,217 @@
           </ul>
         </div>
       </div>
-      <h2>Média de Notas</h2>
-      <div class="row">
-        <!--<div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Matemática</h5>
-              <p class="card-text">Média: 85</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Linguagens</h5>
-              <p class="card-text">Média: 90</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Ciências Humanas</h5>
-              <p class="card-text">Média: 88</p>
-            </div>
-          </div>
-        </div> -->
+
+            <!-- Saudação -->
+      <div class="mb-4 p-3 rounded" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h3 class="mb-1">
+          <%= time_based_greeting %>, <strong><%= current_user.nickname %></strong>! 
+          <%= motivational_emoji(@dashboard_data[:average_score]) %>
+        </h3>
+        <p class="mb-0 opacity-75">
+          <% if @dashboard_data[:current_streak] > 0 %>
+            Você está numa sequência de <%= @dashboard_data[:current_streak] %> dias! Continue assim! 🔥
+          <% else %>
+            Que tal começar uma nova sequência de estudos hoje? 🚀
+          <% end %>
+        </p>
+        <%= streak_badge(@dashboard_data[:current_streak]) %>
       </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="d-flex align-items-center justify-content-center mb-2">
+                <i class="bi bi-clipboard-check fs-2 text-primary me-2"></i>
+                <div>
+                  <h3 class="mb-0 fw-bold text-primary"><%= @dashboard_data[:total_exams] %></h3>
+                  <small class="text-muted">Total de Simulados</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="d-flex align-items-center justify-content-center mb-2">
+                <i class="bi bi-graph-up fs-2 text-success me-2"></i>
+                <div>
+                  <h3 class="mb-0 fw-bold"><%= format_score_with_color(@dashboard_data[:average_score]) %></h3>
+                  <small class="text-muted">Média Geral</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="d-flex align-items-center justify-content-center mb-2">
+                <i class="bi bi-trophy fs-2 text-warning me-2"></i>
+                <div>
+                  <h3 class="mb-0 fw-bold text-warning"><%= @dashboard_data[:best_score] %>%</h3>
+                  <small class="text-muted">Melhor Nota</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="d-flex align-items-center justify-content-center mb-2">
+                <i class="bi bi-fire fs-2 text-danger me-2"></i>
+                <div>
+                  <h3 class="mb-0 fw-bold text-danger"><%= @dashboard_data[:current_streak] %></h3>
+                  <small class="text-muted">Dias Consecutivos</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-8">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 d-flex align-items-center">
+              <i class="bi bi-clock-history text-primary me-2"></i>
+              <h5 class="mb-0">Atividade Recente</h5>
+            </div>
+            <div class="card-body">
+              <% if @recent_activity.any? %>
+                <div class="list-group list-group-flush">
+                  <% @recent_activity.each do |activity| %>
+                    <div class="list-group-item border-0 px-0 py-2">
+                      <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0">
+                          <i class="bi bi-<%= activity[:icon] %> fs-5 text-primary"></i>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h6 class="mb-1"><%= activity[:title] %></h6>
+                          <% if activity[:score] %>
+                            <small class="fw-bold">
+                              <i class="bi bi-star-fill me-1"></i>
+                              Pontuação: <%= format_score_with_color(activity[:score]) %>
+                            </small>
+                          <% elsif activity[:duration] %>
+                            <small class="text-info fw-bold">
+                              <i class="bi bi-stopwatch me-1"></i>
+                              Duração: <%= activity[:duration] %>
+                            </small>
+                          <% end %>
+                        </div>
+                        <div class="flex-shrink-0">
+                          <small class="text-muted">
+                            <%= time_ago_in_words(activity[:date]) %> atrás
+                          </small>
+                        </div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="text-center py-4">
+                  <i class="bi bi-inbox fs-1 text-muted"></i>
+                  <p class="text-muted mt-2">Nenhuma atividade recente</p>
+                  <%= link_to simulados_path, class: "btn btn-primary" do %>
+                    <i class="bi bi-plus-circle me-1"></i>Fazer Primeiro Simulado
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm h-100">
+            <div class="card-header bg-white border-0 d-flex align-items-center">
+              <i class="bi bi-trophy text-warning me-2"></i>
+              <h5 class="mb-0">Conquistas</h5>
+            </div>
+            <div class="card-body">
+              <% if @achievements.any? %>
+                <% @achievements.take(4).each do |achievement| %>
+                  <div class="d-flex align-items-center mb-3 p-2 rounded" style="background-color: #f8f9fa;">
+                    <div class="flex-shrink-0">
+                      <i class="bi bi-<%= achievement[:icon] %> fs-4 text-warning"></i>
+                    </div>
+                    <div class="flex-grow-1 ms-3">
+                      <h6 class="mb-1 fw-bold"><%= achievement[:title] %></h6>
+                      <small class="text-muted"><%= achievement[:description] %></small>
+                    </div>
+                  </div>
+                <% end %>
+                <% if @achievements.count > 4 %>
+                  <div class="text-center mt-3">
+                    <%= link_to profile_path, class: "btn btn-sm btn-outline-warning" do %>
+                      Ver todas (<%= @achievements.count %>)
+                    <% end %>
+                  </div>
+                <% end %>
+              <% else %>
+                <div class="text-center py-4">
+                  <i class="bi bi-trophy fs-1 text-muted"></i>
+                  <p class="text-muted mt-2">Suas conquistas aparecerão aqui</p>
+                  <small class="text-muted">Complete simulados para desbloquear!</small>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-4">
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white border-0">
+              <h5 class="mb-0">
+                <i class="bi bi-graph-up text-info me-2"></i>
+                Estatísticas de Estudo
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="row text-center">
+                <div class="col-6 border-end">
+                  <h4 class="text-info"><%= @dashboard_data[:completed_exams] %></h4>
+                  <small class="text-muted">Simulados Completos</small>
+                </div>
+                <div class="col-6">
+                  <h4 class="text-info"><%= number_with_precision(@dashboard_data[:study_hours], precision: 1) %>h</h4>
+                  <small class="text-muted">Horas de Estudo</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white border-0">
+              <h5 class="mb-0">
+                <i class="bi bi-lightning text-primary me-2"></i>
+                Ações Rápidas
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="d-grid gap-2">
+                <%= link_to simulados_path, class: "btn btn-primary" do %>
+                  <i class="bi bi-play-circle me-2"></i>Novo Simulado
+                <% end %>
+                <%= link_to progress_tracking_path, class: "btn btn-outline-info" do %>
+                  <i class="bi bi-graph-up me-2"></i>Ver Progresso
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </main>
   </div>
 </div>
