@@ -34,7 +34,6 @@
           </div>
         </div>
       </div>
-      <!-- Gráfico de médias por matéria -->
       <div class="row mb-4">
         <div class="col-md-6">
           <div class="card">
@@ -52,14 +51,23 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <% @media_por_materia.each do |materia| %>
+                    <% if @media_por_materia&.any? %>
+                      <% @media_por_materia.each do |materia| %>
+                        <tr>
+                          <td><%= materia[:materia] %></td>
+                          <td><%= materia[:media] %>%</td>
+                          <td>
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: <%= materia[:media] %>%"></div>
+                            </div>
+                          </td>
+                        </tr>
+                      <% end %>
+                    <% else %>
                       <tr>
-                        <td><%= materia[:materia] %></td>
-                        <td><%= materia[:media] %></td>
-                        <td>
-                          <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: <%= materia[:media] %>%"></div>
-                          </div>
+                        <td colspan="3" class="text-center text-muted py-4">
+                          <i class="bi bi-inbox fs-4 d-block mb-2"></i>
+                          Nenhum dado disponível. Complete alguns simulados para ver suas médias por matéria.
                         </td>
                       </tr>
                     <% end %>
@@ -75,13 +83,11 @@
               <h5 class="card-title mb-0">Evolução das Notas</h5>
             </div>
             <div class="card-body">
-              <!-- Aqui você pode adicionar um gráfico de linha mostrando a evolução -->
               <canvas id="evolutionChart" width="400" height="250"></canvas>
             </div>
           </div>
         </div>
       </div>
-      <!-- Tabela de Simulados Realizados -->
       <div class="card mb-4">
         <div class="card-header">
           <h5 class="card-title mb-0">Histórico de Simulados</h5>
@@ -99,16 +105,26 @@
                 </tr>
               </thead>
               <tbody>
-                <% @historico_simulados.each do |exam| %>
-                  <tr>
-                    <td><%= exam.created_at.strftime("%d/%m/%Y") %></td>
-                    <td>Simulado #<%= exam.id %></td>
-                    <td><%= categoria_formatada(exam.category) %></td>
-                    <td><%= exam.score %></td>
-                    <td>
-                      <%= link_to "Ver Detalhes", 
-                          result_exam_path(exam), 
+                <% if @historico_simulados&.any? %>
+                  <% @historico_simulados.each do |exam| %>
+                    <tr>
+                      <td><%= exam[:completed_at]&.strftime("%d/%m/%Y") || 'N/A' %></td>
+                      <td>Simulado #<%= exam[:id] %></td>
+                      <td><%= exam[:category] %></td>
+                      <td><%= exam[:score] %>%</td>
+                      <td>
+                        <%= link_to "Ver Detalhes", 
+                            exam_path(exam[:id]), 
                           class: "btn btn-sm btn-outline-primary" %>
+                    </td>
+                  </tr>
+                  <% end %>
+                <% else %>
+                  <tr>
+                    <td colspan="5" class="text-center text-muted py-4">
+                      <i class="bi bi-inbox fs-4 d-block mb-2"></i>
+                      Nenhum simulado realizado ainda.
+                      <%= link_to "Fazer Primeiro Simulado", simulados_path, class: "btn btn-primary btn-sm mt-2" %>
                     </td>
                   </tr>
                 <% end %>
@@ -117,15 +133,24 @@
           </div>
         </div>
       </div>
+      <% @study_goals.each do |goal_type, goal| %>
+        <div class="goal-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: <%= goal[:percentage] %>%"></div>
+          </div>
+          <span><%= goal[:current] %>/<%= goal[:target] %></span>
+        </div>
+      <% end %>
     </main>
   </div>
 </div>
-<!-- Script para o gráfico de evolução -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   document.addEventListener('turbo:load', function() {
-    const ctx = document.getElementById('evolutionChart').getContext('2d');
-    const evolucaoData = <%= raw @evolucao_notas.to_json %>;
+    const ctx = document.getElementById('evolutionChart');
+    if (!ctx) return;
+    
+    const evolucaoData = <%= raw (@evolucao_notas || []).to_json %>;
 
     new Chart(ctx, {
       type: 'line',
