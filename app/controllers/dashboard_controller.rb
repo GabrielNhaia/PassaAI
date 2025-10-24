@@ -167,7 +167,7 @@ class DashboardController < ApplicationController
         duration: calculate_exam_duration(exam),
         completed_at: exam.finished_at,
         status: exam.status,
-        created_at: exam.created_at # Adicionar para compatibilidade
+        created_at: exam.created_at
       }
     end
   end

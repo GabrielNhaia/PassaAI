@@ -10,7 +10,7 @@ module DashboardHelper
                   when 90..100 then "text-success"
                   else "text-muted"
                   end
-    
+
     content_tag(:span, "#{number_with_precision(score, precision: 1)}%", class: "#{color_class} fw-bold")
   end
 
@@ -59,7 +59,7 @@ module DashboardHelper
   def progress_bar(current, target, options = {})
     percentage = target > 0 ? [(current.to_f / target * 100).round, 100].min : 0
     color = options[:color] || progress_color(percentage)
-    
+
     content_tag(:div, class: "progress", style: "height: 8px;") do
       content_tag(:div, "", 
         class: "progress-bar bg-#{color}",
@@ -86,7 +86,7 @@ module DashboardHelper
   # Formatação de tempo relativo
   def format_time_ago(date)
     return "Nunca" unless date
-    
+
     if date > 1.day.ago
       time_ago_in_words(date) + " atrás"
     else
@@ -97,7 +97,7 @@ module DashboardHelper
   # Saudação baseada no horário
   def time_based_greeting
     hour = Time.current.hour
-    
+
     case hour
     when 5..11
       "Bom dia"
@@ -122,7 +122,7 @@ module DashboardHelper
   # Status de meta (atingida, próxima, longe)
   def goal_status(current, target)
     percentage = target > 0 ? (current.to_f / target * 100).round : 0
-    
+
     case percentage
     when 0..24
       { status: 'danger', text: 'Precisa se esforçar mais', icon: 'exclamation-triangle' }
@@ -140,7 +140,7 @@ module DashboardHelper
   # Formatação de duração em texto amigável
   def format_study_duration(hours)
     return "0h" if hours.zero?
-    
+
     if hours < 1
       minutes = (hours * 60).round
       "#{minutes}min"
