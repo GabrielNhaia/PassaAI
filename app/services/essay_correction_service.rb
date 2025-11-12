@@ -54,7 +54,7 @@ class EssayCorrectionService
       - Avaliar articulação com o desenvolvimento do texto
 
       REGRAS IMPORTANTES:
-      - Use incrementos coerentes (múltiplos de 10) ao atribuir pontos
+      - Use incrementos coerentes (múltiplos de 20) ao atribuir pontos
       - Se detectar indícios de plágio ou fraude, marque e explique
       - Seja específico: evite frases como "há deslizes" - diga QUAIS deslizes e ONDE
       - Cite trechos problemáticos do texto original

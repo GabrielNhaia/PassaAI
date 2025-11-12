@@ -42,7 +42,7 @@
           <%= f.file_field :avatar, class: "form-control" %>
           <% if resource.avatar.attached? %>
             <div class="mt-2">
-              <%= image_tag resource.avatar_thumbnail if resource.avatar_thumbnail.present? %>
+              <%= user_avatar_tag(resource, size: 100, class: 'rounded') %>
             </div>
           <% end %>
         </div>
