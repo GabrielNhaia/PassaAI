@@ -16,11 +16,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-3 text-center">
-                  <% if current_user.avatar.attached? %>
-                    <%= image_tag current_user.avatar_thumbnail, class: "rounded-circle img-thumbnail", style: "width: 150px; height: 150px; object-fit: cover;" %>
-                  <% else %>
-                    <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
-                  <% end %>
+                  <%= user_avatar_tag(current_user, size: 150, class: 'rounded-circle img-thumbnail') %>
                 </div>
                 <div class="col-md-9">
                   <h3 class="mb-3"><%= current_user.nickname %></h3>
@@ -83,7 +79,16 @@
               <h5 class="card-title mb-0">Evolução das Notas</h5>
             </div>
             <div class="card-body">
-              <canvas id="evolutionChart" width="400" height="250"></canvas>
+              <% if @evolucao_notas&.any? %>
+                <div style="height: 250px; position: relative;">
+                  <canvas id="evolutionChart"></canvas>
+                </div>
+              <% else %>
+                <div class="text-center text-muted py-5">
+                  <i class="bi bi-graph-up fs-4 d-block mb-2"></i>
+                  Complete mais simulados para ver a evolução das suas notas ao longo do tempo.
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -144,29 +149,68 @@
     </main>
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
 <script>
-  document.addEventListener('turbo:load', function() {
+  function initChart() {
     const ctx = document.getElementById('evolutionChart');
+    
     if (!ctx) return;
     
     const evolucaoData = <%= raw (@evolucao_notas || []).to_json %>;
+    
+    if (!evolucaoData || evolucaoData.length === 0) return;
 
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: evolucaoData.map(d => d.mes),
-        datasets: [{
-          label: 'Média Geral',
-          data: evolucaoData.map(d => d.media),
-          borderColor: '#4A90E2',
-          tension: 0.1
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false
-      }
-    });
-  });
+    try {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: evolucaoData.map(d => d.mes),
+          datasets: [{
+            label: 'Média Geral',
+            data: evolucaoData.map(d => d.media),
+            borderColor: '#4A90E2',
+            backgroundColor: 'rgba(74, 144, 226, 0.1)',
+            tension: 0.4,
+            fill: true,
+            borderWidth: 2,
+            pointRadius: 4,
+            pointBackgroundColor: '#4A90E2'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: 'top'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              ticks: {
+                callback: function(value) {
+                  return value + '%';
+                }
+              }
+            }
+          }
+        }
+      });
+    } catch (error) {
+      console.error('Erro ao criar gráfico:', error);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initChart);
+  } else {
+    initChart();
+  }
+  
+  document.addEventListener('turbo:load', initChart);
+  document.addEventListener('turbo:render', initChart);
 </script>

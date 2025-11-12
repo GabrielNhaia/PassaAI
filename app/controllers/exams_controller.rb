@@ -1,10 +1,14 @@
 class ExamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_exam, only: [:start, :answer, :result, :writing, :submit_writing]
+  before_action :set_exam, only: [:show, :start, :answer, :result, :writing, :submit_writing]
   before_action :set_exam_question, only: [:answer]
 
   def index
     @exam_categories = build_exam_categories
+  end
+
+  def show
+    @exam_statistics = calculate_exam_statistics
   end
 
   def create
@@ -131,9 +135,11 @@ class ExamsController < ApplicationController
   end
 
   def complete_exam
+    stats = calculate_exam_statistics
     @exam.update(
-      status: :completed, 
-      finished_at: Time.current
+      status: :completed,
+      finished_at: Time.current,
+      score: stats[:score]
     )
   end
 
@@ -164,6 +170,7 @@ class ExamsController < ApplicationController
 
   def essay_themes
     [
+      "A persistência do feminicídio no Brasil e os desafios para sua erradicação",
       "Os desafios da inteligência artificial na sociedade contemporânea",
       "Manipulação do comportamento do usuário pelo controle de dados na internet",
       "O impacto das mudanças climáticas e a urgência de ações sustentáveis no Brasil",

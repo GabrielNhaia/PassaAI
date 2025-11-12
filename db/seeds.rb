@@ -1,14 +1,4 @@
-admin_user = User.create!(
-  email: 'admin@example.com',
-  password: 'senha123456',
-  password_confirmation: 'senha123456',
-  nickname: 'admin' # Adicione o nickname aqui
-)
-
-# Questões de Matemática
-
 questoes_matematica = [
-  # Operações Básicas
   {
     content: "(ENEM 2021) Em uma loja de roupas, uma cliente pagou R$ 384,00 por duas blusas e uma calça. Sabendo que uma blusa custou R$ 93,00 a mais que a outra e que a calça custou o dobro da blusa mais cara, qual foi o valor pago pela blusa mais barata?",
     answer_a: "R$ 56,00",
@@ -269,7 +259,6 @@ questoes_matematica = [
     year: 2001,
     explanation: "6 cadernos × R$ 12,00 + 5 canetas × R$ 2,00 = R$ 82,00"
   },
-  # Potenciação e Radiciação
   {
     content: "(ENEM 2020) Qual é o valor de 2^3 + 3^2?",
     answer_a: "17",
@@ -530,7 +519,6 @@ questoes_matematica = [
     year: 2001,
     explanation: "19^2 = 19 × 19 = 361"
   },
-  # Conversões de Unidades
   {
     content: "(ENEM 2020) Quantos metros há em 5 quilômetros?",
     answer_a: "500",
@@ -797,10 +785,8 @@ questoes_matematica.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
 
-# Questões de Ciências da Natureza
 
 questoes_ciencias_da_natureza = [
-  # Questões de Ciências da Natureza
   {
     content: "(ENEM 2020) Qual é a fórmula química da água?",
     answer_a: "H2O",
@@ -1320,14 +1306,376 @@ questoes_ciencias_da_natureza = [
     subject: "Física",
     year: 2011,
     explanation: "Energia cinética é a energia associada ao movimento de um corpo."
+  },
+  {
+    content: "(ENEM 2024) Qual processo biológico foi mais diretamente afetado pela redução dramática de polinizadores em certas regiões agrícolas?",
+    answer_a: "A fotossíntese nas plantas cultivadas.",
+    answer_b: "A reprodução sexuada de plantas dependentes de polinização animal.",
+    answer_c: "A fixação biológica de nitrogênio pelas leguminosas.",
+    answer_d: "A respiração celular das sementes.",
+    answer_e: "A transpiração nas plantas de clima árido.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Muitos cultivos dependem de polinizadores animais; sua redução afeta diretamente a reprodução sexuada e a produção de frutos/sementes."
+  },
+  {
+    content: "(ENEM 2023) Em química, qual é a principal consequência do aumento da concentração de CO2 na atmosfera sobre o pH dos oceanos?",
+    answer_a: "Aumenta o pH, deixando a água mais básica.",
+    answer_b: "Não altera o pH, pois o CO2 não reage com água.",
+    answer_c: "Diminui o pH, acidificando as águas superficiais.",
+    answer_d: "Diminui a salinidade dos oceanos.",
+    answer_e: "Aumenta a temperatura local sem afetar o pH.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "O CO2 dissolvido forma ácido carbônico, reduzindo o pH e causando acidificação dos oceanos."
+  },
+  {
+    content: "(ENEM 2022) Qual alternativa descreve melhor a transmissão de doenças respiratórias virais por gotículas?",
+    answer_a: "Transmissão exclusivamente por alimentos contaminados.",
+    answer_b: "Transmissão por gotículas expelidas ao tossir ou falar, que podem infectar pessoas próximas.",
+    answer_c: "Transmissão apenas por vetores como mosquitos.",
+    answer_d: "Transmissão por contato com solo contaminado.",
+    answer_e: "Transmissão apenas por água potável.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Doenças respiratórias virais podem ser transmitidas por gotículas expelidas durante tosse, fala ou espirro, infectando pessoas próximas."
+  },
+  {
+    content: "(ENEM 2021) Em física, ao aumentar a frequência de uma onda eletromagnética visível, o que acontece com sua energia por fóton?",
+    answer_a: "A energia por fóton diminui.",
+    answer_b: "A energia por fóton aumenta.",
+    answer_c: "A energia por fóton permanece constante.",
+    answer_d: "A energia por fóton depende apenas da amplitude.",
+    answer_e: "A energia por fóton passa a ser negativa.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Física",
+    year: 2021,
+    explanation: "A energia de um fóton é dada por E = h·f; se a frequência (f) aumenta, a energia por fóton aumenta."
+  },
+  {
+    content: "(ENEM 2020) Em ecologia, qual é a consequência mais direta do desmatamento sobre o ciclo da água local?",
+    answer_a: "Aumento da capacidade de retenção de água no solo.",
+    answer_b: "Redução da transpiração e, consequentemente, menor formação de chuvas locais.",
+    answer_c: "Diminuição da erosão do solo.",
+    answer_d: "Aumento da biodiversidade local.",
+    answer_e: "Melhora imediata na qualidade do ar.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2020,
+    explanation: "As árvores realizam transpiração que contribui para a umidade atmosférica; o desmatamento reduz essa contribuição e pode diminuir precipitação local."
+  },
+  {
+    content: "(ENEM 2019) Qual processo químico explica a formação de um sal a partir de um ácido e uma base?",
+    answer_a: "Oxidação.",
+    answer_b: "Redução.",
+    answer_c: "Neutralização.",
+    answer_d: "Esterificação.",
+    answer_e: "Polimerização.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Química",
+    year: 2019,
+    explanation: "A reação entre ácido e base resulta em neutralização, formando sal e água na maioria dos casos."
+  },
+  {
+    content: "(ENEM 2018) Em genética, o que é uma mutação silenciosa?",
+    answer_a: "Mutação que altera o quadro de leitura do gene.",
+    answer_b: "Mutação que causa morte imediata do organismo.",
+    answer_c: "Mutação que não altera a sequência de aminoácidos devido à redundância do código genético.",
+    answer_d: "Mutação que sempre aumenta a produção de proteínas.",
+    answer_e: "Mutação que altera o número de cromossomos.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2018,
+    explanation: "Mutação silenciosa altera o DNA sem mudar o aminoácido codificado por causa da degeneração do código genético."
+  },
+  {
+    content: "(ENEM 2024) Em química ambiental, qual é o principal risco associado ao acúmulo de metais pesados em sedimentos fluviais?",
+    answer_a: "Aumento imediato da produtividade primária.",
+    answer_b: "Bioacumulação em organismos aquáticos e transferência na cadeia alimentar.",
+    answer_c: "Redução do pH da água de forma instantânea.",
+    answer_d: "Eliminação total de bactérias decompositoras.",
+    answer_e: "Aumento da oxigenação do sedimento.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Metais pesados tendem a se bioacumular em organismos aquáticos, podendo subir na cadeia alimentar e causar efeitos tóxicos."
+  },
+  {
+    content: "(ENEM 2022) Qual fenômeno físico explica a formação do arco-íris após chuva quando há sol?",
+    answer_a: "Interferência construtiva entre ondas sonoras.",
+    answer_b: "Refração e reflexão interna da luz em gotas de água.",
+    answer_c: "Condução térmica na atmosfera.",
+    answer_d: "Radiação ionizante emitida pelas nuvens.",
+    answer_e: "Efeito doppler da luz visível.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Física",
+    year: 2022,
+    explanation: "O arco-íris é formado pela refração, reflexão interna e dispersão da luz branca nas gotas de chuva, separando as cores."
+  },
+  {
+    content: "(ENEM 2021) Em biologia, qual é a importância ecológica dos fungos decompositores em um ecossistema?",
+    answer_a: "Eles produzem oxigênio por fotossíntese.",
+    answer_b: "Eles convertem matéria orgânica morta em nutrientes disponíveis para outros organismos.",
+    answer_c: "Eles impedem completamente a ciclagem de nutrientes.",
+    answer_d: "Eles atuam como principais produtores primários.",
+    answer_e: "Eles reduzem a diversidade de espécies.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "Fungos decompositores quebram matéria orgânica morta, liberando nutrientes que retornam ao solo e sustentam outros organismos."
+  },
+  {
+    content: "(ENEM 2024) Em biologia, qual é o papel principal da osmose nas células vegetais?",
+    answer_a: "Transporte ativo de solutos contra o gradiente.",
+    answer_b: "Movimento de água através da membrana para equilibrar concentrações.",
+    answer_c: "Síntese de proteínas ribossomais.",
+    answer_d: "Fusão de vacúolos.",
+    answer_e: "Produção de ATP por fotossíntese.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Osmose é o movimento de água através da membrana semipermeável para equilibrar concentrações de solutos entre meios."
+  },
+  {
+    content: "(ENEM 2023) Em biologia celular, qual é a função principal do retículo endoplasmático rugoso?",
+    answer_a: "Armazenamento de lipídios.",
+    answer_b: "Síntese e processamento de proteínas destinadas à secreção ou membrana.",
+    answer_c: "Produção de ATP.",
+    answer_d: "Degradação de material celular.",
+    answer_e: "Replicação do DNA.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2023,
+    explanation: "O retículo endoplasmático rugoso possui ribossomos e participa da síntese e do processamento de proteínas."
+  },
+  {
+    content: "(ENEM 2022) Em ecologia, o que caracteriza uma espécie invasora?",
+    answer_a: "Espécie nativa que aumenta lentamente sua população.",
+    answer_b: "Espécie introduzida que se estabelece e causa danos ao ecossistema local.",
+    answer_c: "Espécie que vive apenas em ambientes altamente preservados.",
+    answer_d: "Espécie que depende exclusivamente de humanos para reprodução.",
+    answer_e: "Espécie que tem apenas reprodução assexuada.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Espécies invasoras são introduzidas em novos ambientes onde podem se proliferar e causar prejuízos à biodiversidade e às atividades humanas."
+  },
+  {
+    content: "(ENEM 2021) Em genética, qual é a diferença principal entre mitose e meiose?",
+    answer_a: "Mitose gera células-filhas geneticamente distintas; meiose gera idênticas.",
+    answer_b: "Mitose produz gametas; meiose produz células somáticas.",
+    answer_c: "Mitose resulta em duas células-filhas diploides; meiose resulta em quatro células haploides.",
+    answer_d: "Mitose só ocorre em plantas; meiose só em animais.",
+    answer_e: "Mitose envolve recombinação genética; meiose não envolve.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "Mitose produz duas células diploides idênticas; meiose produz quatro células haploides com variabilidade genética."
+  },
+  {
+    content: "(ENEM 2019) Em biologia, qual componente do sistema imune é responsável por memória imunológica duradoura?",
+    answer_a: "Macrófagos apenas.",
+    answer_b: "Linfócitos B e T de memória.",
+    answer_c: "Células endoteliais.",
+    answer_d: "Plaquetas.",
+    answer_e: "Eritrócitos.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2019,
+    explanation: "Linfócitos B e T de memória persistem após a infecção e respondem mais rapidamente em reexposições."
+  },
+  {
+    content: "(ENEM 2024) Em química, o que acontece com o ponto de ebulição de um líquido quando aumenta a pressão externa?",
+    answer_a: "O ponto de ebulição diminui.",
+    answer_b: "O ponto de ebulição aumenta.",
+    answer_c: "O ponto de ebulição permanece igual.",
+    answer_d: "O líquido se transforma em sólido.",
+    answer_e: "A pressão não afeta o ponto de ebulição.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Aumentando a pressão externa, torna-se mais difícil para moléculas escaparem, elevando o ponto de ebulição."
+  },
+  {
+    content: "(ENEM 2023) Em química, qual propriedade explica por que solventes polares dissolvem solutos polares?",
+    answer_a: "Semelhança de cor.",
+    answer_b: "Princípio 'semelhante dissolve semelhante' devido a interações dipolo-dipolo e ligações de hidrogênio.",
+    answer_c: "Forças gravitacionais.",
+    answer_d: "Apenas a diferença de massa molecular.",
+    answer_e: "Pressão atmosférica local.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "Solventes polares interagem favoravelmente com solutos polares por dipolos e ligações de hidrogênio, facilitando a dissolução."
+  },
+  {
+    content: "(ENEM 2022) Em química orgânica, qual grupo funcional está presente em álcoois?",
+    answer_a: "Carboxila (-COOH).",
+    answer_b: "Hidroxila (-OH).",
+    answer_c: "Amino (-NH2).",
+    answer_d: "Carbonila (C=O).",
+    answer_e: "Ester (-COO-).",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2022,
+    explanation: "Álcoois possuem o grupo hidroxila (-OH) ligado a um carbono saturado."
+  },
+  {
+    content: "(ENEM 2021) Em química, qual é a definição de mol?",
+    answer_a: "Quantidade de substância que contém 6,022 × 10^23 entidades fundamentais.",
+    answer_b: "Massa de 1 grama de qualquer substância.",
+    answer_c: "Volume ocupado por 1 litro de água.",
+    answer_d: "Concentração de soluto em uma solução.",
+    answer_e: "Número de elétrons em um átomo neutro.",
+    correct_answer: "a",
+    category: "natureza",
+    subject: "Química",
+    year: 2021,
+    explanation: "O mol é a quantidade de substância que contém o número de Avogadro de entidades."
+  },
+  {
+    content: "(ENEM 2024) Qual é a principal função dos estômatos nas folhas das plantas?",
+    answer_a: "Realizar fotossíntese diretamente.",
+    answer_b: "Controlar trocas gasosas e transpiração.",
+    answer_c: "Armazenar glicose.",
+    answer_d: "Produzir sementes.",
+    answer_e: "Fixar nitrogênio atmosférico.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Os estômatos regulam as trocas gasosas (CO2 e O2) e a perda de água por transpiração nas plantas."
+  },
+  {
+    content: "(ENEM 2023) Em biologia celular, qual organela é o local principal da fotossíntese em células vegetais?",
+    answer_a: "Mitocôndria.",
+    answer_b: "Cloroplasto.",
+    answer_c: "Complexo golgiense.",
+    answer_d: "Lisossomo.",
+    answer_e: "Retículo endoplasmático liso.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2023,
+    explanation: "Os cloroplastos contêm clorofila e são as organelas onde ocorre a fotossíntese."
+  },
+  {
+    content: "(ENEM 2022) O que caracteriza uma relação mutualística entre duas espécies?",
+    answer_a: "A relação é sempre parasitária para uma das espécies.",
+    answer_b: "Ambas as espécies obtêm benefício da interação.",
+    answer_c: "As espécies competem pelos mesmos recursos.",
+    answer_d: "Uma espécie é predadora da outra.",
+    answer_e: "Uma espécie ignora a presença da outra.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Mutualismo é uma interação em que ambas as espécies se beneficiam."
+  },
+  {
+    content: "(ENEM 2021) Na reprodução celular, qual processo gera variabilidade genética através de recombinação e segregação cromossômica?",
+    answer_a: "Mitose.",
+    answer_b: "Meiose.",
+    answer_c: "Fissão binária.",
+    answer_d: "Difusão.",
+    answer_e: "Transcrição.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "A meiose envolve crossing-over e segregação independente que aumentam a variabilidade genética."
+  },
+  {
+    content: "(ENEM 2018) Qual estrutura do sistema imunológico é responsável pela produção de anticorpos?",
+    answer_a: "Plaquetas.",
+    answer_b: "Linfócitos B.",
+    answer_c: "Eritrócitos.",
+    answer_d: "Neurônios.",
+    answer_e: "Células adiposas.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2018,
+    explanation: "Os linfócitos B se diferenciam em plasmócitos que produzem anticorpos específicos."
+  },
+  {
+    content: "(ENEM 2024) Em química, o que ocorre em uma reação exotérmica?",
+    answer_a: "O sistema absorve calor do ambiente.",
+    answer_b: "O sistema libera calor para o ambiente.",
+    answer_c: "Não há troca de energia térmica.",
+    answer_d: "A entropia do sistema diminui sempre.",
+    answer_e: "A pressão do sistema aumenta sem variação de temperatura.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Reações exotérmicas liberam energia térmica para o ambiente."
+  },
+  {
+    content: "(ENEM 2023) Qual é a unidade SI da concentração molar (molaridade)?",
+    answer_a: "mol/L (mol por litro).",
+    answer_b: "g/L (gramas por litro).",
+    answer_c: "mol·L (mol multiplicado por litro).",
+    answer_d: "kg/m³.",
+    answer_e: "mol·m (mol por metro).",
+    correct_answer: "a",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "Molaridade é expressa em mol·L⁻¹ (mol por litro), comumente escrito mol/L."
+  },
+  {
+    content: "(ENEM 2022) Em química, qual é o papel de um catalisador em uma reação química?",
+    answer_a: "Aumentar a energia de ativação necessária.",
+    answer_b: "Diminuir a energia de ativação e acelerar a velocidade da reação sem ser consumido.",
+    answer_c: "Ser consumido como reagente principal.",
+    answer_d: "Impedir que a reação ocorra.",
+    answer_e: "Alterar permanentemente os produtos formados.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2022,
+    explanation: "Catalisadores diminuem a energia de ativação e aumentam a taxa de reação sem se consumirem permanentemente."
+  },
+  {
+    content: "(ENEM 2020) Qual propriedade distingue substâncias iônicas de covalentes sob condições ambientes?",
+    answer_a: "Sólidos iônicos conduzem eletricidade no estado sólido.",
+    answer_b: "Sólidos iônicos tendem a ter altos pontos de fusão e conduzem eletricidade quando fundidos ou em solução, diferentemente de muitos sólidos covalentes.",
+    answer_c: "Substâncias covalentes sempre são iônicas em solução.",
+    answer_d: "Substâncias iônicas nunca se dissolvem em água.",
+    answer_e: "Substâncias covalentes têm maior massa atômica que iônicas.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2020,
+    explanation: "Comportamentos típicos: compostos iônicos têm pontos de fusão mais altos e conduzem corrente quando dissolvidos ou fundidos."
   }
 ]
 
 questoes_ciencias_da_natureza.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
-
-# Questões de Ciências Humanas
 
 questoes_ciencias_humanas = [
   {
@@ -2635,8 +2983,6 @@ questoes_ciencias_humanas = [
 questoes_ciencias_humanas.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
-
-# Questões de Linguagens e suas Tecnologias
 
 questoes_linguagens = [
     {
