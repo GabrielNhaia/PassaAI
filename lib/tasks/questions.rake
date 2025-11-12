@@ -1,11 +1,17 @@
 namespace :questions do
   desc "Remove todas as questões duplicadas e faz seed limpo"
   task reset: :environment do
+    puts "Removendo todas as questões e registros relacionados..."
+
+    puts "Removendo exam_questions relacionados..."
+    ExamQuestion.destroy_all
+
     puts "Removendo todas as questões..."
     Question.destroy_all
 
     puts "Resetando contador de IDs..."
     ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='questions'")
+    ActiveRecord::Base.connection.execute("DELETE FROM sqlite_sequence WHERE name='exam_questions'")
 
     puts "Carregando seeds de questões..."
     load Rails.root.join('db', 'seeds.rb')
