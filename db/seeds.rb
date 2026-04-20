@@ -1,14 +1,4 @@
-admin_user = User.create!(
-  email: 'admin@example.com',
-  password: 'senha123456',
-  password_confirmation: 'senha123456',
-  nickname: 'admin' # Adicione o nickname aqui
-)
-
-# Questões de Matemática
-
 questoes_matematica = [
-  # Operações Básicas
   {
     content: "(ENEM 2021) Em uma loja de roupas, uma cliente pagou R$ 384,00 por duas blusas e uma calça. Sabendo que uma blusa custou R$ 93,00 a mais que a outra e que a calça custou o dobro da blusa mais cara, qual foi o valor pago pela blusa mais barata?",
     answer_a: "R$ 56,00",
@@ -269,9 +259,8 @@ questoes_matematica = [
     year: 2001,
     explanation: "6 cadernos × R$ 12,00 + 5 canetas × R$ 2,00 = R$ 82,00"
   },
-  # Potenciação e Radiciação
   {
-    content: "(ENEM 2020) Qual é o valor de 2^3 + 3^2?",
+    content: "(ENEM 2020) Em um projeto de construção sustentável, um arquiteto precisa calcular a potência necessária para um sistema de iluminação. Sabendo que a potência é dada por P = V²/R, onde V é a tensão e R é a resistência, e considerando que 2³ representa a tensão elevada ao cubo em um contexto elétrico, qual é o valor de 2^3 + 3^2?",
     answer_a: "17",
     answer_b: "18",
     answer_c: "19",
@@ -281,10 +270,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2020,
-    explanation: "2^3 = 8 e 3^2 = 9. Então, 8 + 9 = 17"
+    explanation: "2^3 = 8 e 3^2 = 9. Então, 8 + 9 = 17. Em projetos de engenharia elétrica, cálculos de potência envolvem exponenciação, sendo fundamental para dimensionar sistemas de iluminação eficientes."
   },
   {
-    content: "(ENEM 2019) Qual é a raiz quadrada de 144?",
+    content: "(ENEM 2019) Em um estudo sobre biodiversidade em uma reserva ambiental, pesquisadores analisaram amostras de solo e encontraram que a área de um quadrado perfeito mede 144 m². Qual é a raiz quadrada de 144?",
     answer_a: "10",
     answer_b: "11",
     answer_c: "12",
@@ -294,10 +283,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2019,
-    explanation: "A raiz quadrada de 144 é 12"
+    explanation: "A raiz quadrada de 144 é 12, pois 12 × 12 = 144. Em estudos ambientais, calcular raízes quadradas é essencial para determinar dimensões de áreas de conservação e estimar densidades populacionais de espécies."
   },
   {
-    content: "(ENEM 2018) Qual é o valor de 5^2 - 4^2?",
+    content: "(ENEM 2018) Em um projeto de jardinagem urbana, um agricultor precisa calcular a área de canteiros retangulares. Sabendo que a diferença entre os quadrados de dois números consecutivos pode representar áreas em projetos paisagísticos, qual é o valor de 5^2 - 4^2?",
     answer_a: "7",
     answer_b: "9",
     answer_c: "11",
@@ -307,10 +296,49 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2018,
-    explanation: "5^2 = 25 e 4^2 = 16. Então, 25 - 16 = 9"
+    explanation: "5^2 = 25 e 4^2 = 16. Então, 25 - 16 = 9. Em projetos de jardinagem, cálculos de diferenças de quadrados ajudam a determinar áreas de plantio e otimizar espaços verdes urbanos."
   },
   {
-    content: "(ENEM 2017) Qual é o valor de 3^3?",
+    content: "(ENEM 2020) Em um projeto de construção sustentável, um arquiteto precisa calcular a potência necessária para um sistema de iluminação. Sabendo que a potência é dada por P = V²/R, onde V é a tensão e R é a resistência, e considerando que 2³ representa a tensão elevada ao cubo em um contexto elétrico, qual é o valor de 2^3 + 3^2?",
+    answer_a: "17",
+    answer_b: "18",
+    answer_c: "19",
+    answer_d: "20",
+    answer_e: "21",
+    correct_answer: "a",
+    category: "matematica",
+    subject: "Potenciação e Radiciação",
+    year: 2020,
+    explanation: "2^3 = 8 e 3^2 = 9. Então, 8 + 9 = 17. Em projetos de engenharia elétrica, cálculos de potência envolvem exponenciação, sendo fundamental para dimensionar sistemas de iluminação eficientes."
+  },
+  {
+    content: "(ENEM 2019) Em um estudo sobre biodiversidade em uma reserva ambiental, pesquisadores analisaram amostras de solo e encontraram que a área de um quadrado perfeito mede 144 m². Qual é a raiz quadrada de 144?",
+    answer_a: "10",
+    answer_b: "11",
+    answer_c: "12",
+    answer_d: "13",
+    answer_e: "14",
+    correct_answer: "c",
+    category: "matematica",
+    subject: "Potenciação e Radiciação",
+    year: 2019,
+    explanation: "A raiz quadrada de 144 é 12, pois 12 × 12 = 144. Em estudos ambientais, calcular raízes quadradas é essencial para determinar dimensões de áreas de conservação e estimar densidades populacionais de espécies."
+  },
+  {
+    content: "(ENEM 2018) Em um projeto de jardinagem urbana, um agricultor precisa calcular a área de canteiros retangulares. Sabendo que a diferença entre os quadrados de dois números consecutivos pode representar áreas em projetos paisagísticos, qual é o valor de 5^2 - 4^2?",
+    answer_a: "7",
+    answer_b: "9",
+    answer_c: "11",
+    answer_d: "13",
+    answer_e: "15",
+    correct_answer: "b",
+    category: "matematica",
+    subject: "Potenciação e Radiciação",
+    year: 2018,
+    explanation: "5^2 = 25 e 4^2 = 16. Então, 25 - 16 = 9. Em projetos de jardinagem, cálculos de diferenças de quadrados ajudam a determinar áreas de plantio e otimizar espaços verdes urbanos."
+  },
+  {
+    content: "(ENEM 2017) Em um laboratório escolar de física, estudantes estão estudando o comportamento de objetos em queda livre. Sabendo que a energia cinética é proporcional ao quadrado da velocidade, e considerando que 3^3 representa o cubo de um número em cálculos físicos, qual é o valor de 3^3?",
     answer_a: "9",
     answer_b: "18",
     answer_c: "27",
@@ -320,10 +348,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2017,
-    explanation: "3^3 = 3 × 3 × 3 = 27"
+    explanation: "3^3 = 3 × 3 × 3 = 27. Em experimentos de física, a potenciação é fundamental para calcular energias e forças em sistemas mecânicos."
   },
   {
-    content: "(ENEM 2016) Qual é o valor de 2^4?",
+    content: "(ENEM 2016) Em um projeto de astronomia escolar, estudantes calculam distâncias entre planetas. Sabendo que 2^4 representa o quadrado do quadrado de 2 em cálculos astronômicos, qual é o valor de 2^4?",
     answer_a: "8",
     answer_b: "12",
     answer_c: "14",
@@ -333,10 +361,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2016,
-    explanation: "2^4 = 2 × 2 × 2 × 2 = 16"
+    explanation: "2^4 = 2 × 2 × 2 × 2 = 16. Em astronomia, cálculos exponenciais são essenciais para determinar distâncias e tamanhos de corpos celestes."
   },
   {
-    content: "(ENEM 2015) Qual é o valor de 6^2?",
+    content: "(ENEM 2015) Em um estudo sobre crescimento populacional, pesquisadores analisam taxas de crescimento. Sabendo que 6^2 representa a área de um quadrado em modelos demográficos, qual é o valor de 6^2?",
     answer_a: "30",
     answer_b: "32",
     answer_c: "34",
@@ -346,10 +374,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2015,
-    explanation: "6^2 = 6 × 6 = 36"
+    explanation: "6^2 = 6 × 6 = 36. Em estudos demográficos, cálculos quadráticos ajudam a modelar crescimento populacional e distribuição espacial."
   },
   {
-    content: "(ENEM 2014) Qual é o valor de 4^3?",
+    content: "(ENEM 2014) Em um projeto de arquitetura, estudantes dimensionam estruturas cúbicas. Sabendo que 4^3 representa o volume de um cubo em cálculos estruturais, qual é o valor de 4^3?",
     answer_a: "48",
     answer_b: "52",
     answer_c: "56",
@@ -359,10 +387,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2014,
-    explanation: "4^3 = 4 × 4 × 4 = 64"
+    explanation: "4^3 = 4 × 4 × 4 = 64. Em projetos arquitetônicos, a potenciação é crucial para calcular volumes e capacidades estruturais."
   },
   {
-    content: "(ENEM 2013) Qual é o valor de 7^2?",
+    content: "(ENEM 2013) Em um laboratório de química, estudantes analisam concentrações de soluções. Sabendo que 7^2 representa uma concentração quadrática em cálculos químicos, qual é o valor de 7^2?",
     answer_a: "45",
     answer_b: "47",
     answer_c: "49",
@@ -372,10 +400,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2013,
-    explanation: "7^2 = 7 × 7 = 49"
+    explanation: "7^2 = 7 × 7 = 49. Em química, cálculos exponenciais são fundamentais para determinar concentrações e reações químicas."
   },
   {
-    content: "(ENEM 2012) Qual é o valor de 9^2?",
+    content: "(ENEM 2012) Em um estudo sobre genética, pesquisadores analisam combinações de genes. Sabendo que 9^2 representa combinações quadráticas em modelos genéticos, qual é o valor de 9^2?",
     answer_a: "70",
     answer_b: "75",
     answer_c: "80",
@@ -385,10 +413,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2012,
-    explanation: "9^2 = 9 × 9 = 81"
+    explanation: "9^2 = 9 × 9 = 81. Em genética, cálculos exponenciais ajudam a determinar combinações gênicas e probabilidades hereditárias."
   },
   {
-    content: "(ENEM 2011) Qual é o valor de 8^2?",
+    content: "(ENEM 2011) Em um projeto de música, estudantes analisam frequências sonoras. Sabendo que 8^2 representa uma frequência quadrática em cálculos acústicos, qual é o valor de 8^2?",
     answer_a: "60",
     answer_b: "62",
     answer_c: "64",
@@ -398,10 +426,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2011,
-    explanation: "8^2 = 8 × 8 = 64"
+    explanation: "8^2 = 8 × 8 = 64. Em acústica, cálculos exponenciais são essenciais para analisar frequências e ondas sonoras."
   },
   {
-    content: "(ENEM 2010) Qual é o valor de 10^2?",
+    content: "(ENEM 2010) Em um estudo sobre economia, analistas calculam juros compostos. Sabendo que 10^2 representa um cálculo quadrático em finanças, qual é o valor de 10^2?",
     answer_a: "90",
     answer_b: "95",
     answer_c: "100",
@@ -411,10 +439,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2010,
-    explanation: "10^2 = 10 × 10 = 100"
+    explanation: "10^2 = 10 × 10 = 100. Em economia, a potenciação é fundamental para calcular juros compostos e crescimento financeiro."
   },
   {
-    content: "(ENEM 2009) Qual é o valor de 11^2?",
+    content: "(ENEM 2009) Em um projeto de estatística, estudantes analisam distribuições. Sabendo que 11^2 representa uma variância quadrática em cálculos estatísticos, qual é o valor de 11^2?",
     answer_a: "110",
     answer_b: "115",
     answer_c: "120",
@@ -424,10 +452,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2009,
-    explanation: "11^2 = 11 × 11 = 121"
+    explanation: "11^2 = 11 × 11 = 121. Em estatística, cálculos quadráticos são essenciais para analisar variâncias e distribuições de dados."
   },
   {
-    content: "(ENEM 2008) Qual é o valor de 12^2?",
+    content: "(ENEM 2008) Em um estudo sobre geometria, estudantes calculam áreas de quadrados. Sabendo que 12^2 representa uma área quadrática em cálculos geométricos, qual é o valor de 12^2?",
     answer_a: "130",
     answer_b: "135",
     answer_c: "140",
@@ -437,10 +465,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2008,
-    explanation: "12^2 = 12 × 12 = 144"
+    explanation: "12^2 = 12 × 12 = 144. Em geometria, a potenciação é fundamental para calcular áreas e volumes de figuras."
   },
   {
-    content: "(ENEM 2007) Qual é o valor de 13^2?",
+    content: "(ENEM 2007) Em um projeto de física, estudantes analisam ondas. Sabendo que 13^2 representa uma amplitude quadrática em cálculos ondulatórios, qual é o valor de 13^2?",
     answer_a: "160",
     answer_b: "165",
     answer_c: "169",
@@ -450,10 +478,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2007,
-    explanation: "13^2 = 13 × 13 = 169"
+    explanation: "13^2 = 13 × 13 = 169. Em física, cálculos exponenciais são essenciais para analisar ondas e amplitudes."
   },
   {
-    content: "(ENEM 2006) Qual é o valor de 14^2?",
+    content: "(ENEM 2006) Em um estudo sobre biologia, pesquisadores analisam populações. Sabendo que 14^2 representa um crescimento quadrático em modelos biológicos, qual é o valor de 14^2?",
     answer_a: "180",
     answer_b: "185",
     answer_c: "190",
@@ -463,10 +491,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2006,
-    explanation: "14^2 = 14 × 14 = 196"
+    explanation: "14^2 = 14 × 14 = 196. Em biologia, cálculos exponenciais ajudam a modelar crescimento populacional e interações ecológicas."
   },
   {
-    content: "(ENEM 2005) Qual é o valor de 15^2?",
+    content: "(ENEM 2005) Em um projeto de computação, estudantes analisam algoritmos. Sabendo que 15^2 representa uma complexidade quadrática em cálculos computacionais, qual é o valor de 15^2?",
     answer_a: "210",
     answer_b: "215",
     answer_c: "220",
@@ -476,10 +504,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2005,
-    explanation: "15^2 = 15 × 15 = 225"
+    explanation: "15^2 = 15 × 15 = 225. Em computação, cálculos exponenciais são fundamentais para analisar complexidade de algoritmos."
   },
   {
-    content: "(ENEM 2004) Qual é o valor de 16^2?",
+    content: "(ENEM 2004) Em um estudo sobre astronomia, estudantes calculam órbitas. Sabendo que 16^2 representa uma distância quadrática em cálculos astronômicos, qual é o valor de 16^2?",
     answer_a: "230",
     answer_b: "235",
     answer_c: "240",
@@ -489,10 +517,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2004,
-    explanation: "16^2 = 16 × 16 = 256"
+    explanation: "16^2 = 16 × 16 = 256. Em astronomia, a potenciação é essencial para calcular distâncias e órbitas planetárias."
   },
   {
-    content: "(ENEM 2003) Qual é o valor de 17^2?",
+    content: "(ENEM 2003) Em um projeto de engenharia, estudantes dimensionam estruturas. Sabendo que 17^2 representa uma resistência quadrática em cálculos estruturais, qual é o valor de 17^2?",
     answer_a: "270",
     answer_b: "275",
     answer_c: "280",
@@ -502,10 +530,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2003,
-    explanation: "17^2 = 17 × 17 = 289"
+    explanation: "17^2 = 17 × 17 = 289. Em engenharia, cálculos exponenciais são fundamentais para analisar resistência de materiais."
   },
   {
-    content: "(ENEM 2002) Qual é o valor de 18^2?",
+    content: "(ENEM 2002) Em um estudo sobre física quântica, pesquisadores analisam probabilidades. Sabendo que 18^2 representa uma probabilidade quadrática em cálculos quânticos, qual é o valor de 18^2?",
     answer_a: "300",
     answer_b: "305",
     answer_c: "310",
@@ -515,10 +543,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2002,
-    explanation: "18^2 = 18 × 18 = 324"
+    explanation: "18^2 = 18 × 18 = 324. Em física quântica, cálculos exponenciais são essenciais para analisar probabilidades e estados quânticos."
   },
   {
-    content: "(ENEM 2001) Qual é o valor de 19^2?",
+    content: "(ENEM 2001) Em um projeto de matemática aplicada, estudantes analisam funções. Sabendo que 19^2 representa uma função quadrática em cálculos matemáticos, qual é o valor de 19^2?",
     answer_a: "340",
     answer_b: "345",
     answer_c: "350",
@@ -528,11 +556,10 @@ questoes_matematica = [
     category: "matematica",
     subject: "Potenciação e Radiciação",
     year: 2001,
-    explanation: "19^2 = 19 × 19 = 361"
+    explanation: "19^2 = 19 × 19 = 361. Em matemática aplicada, funções quadráticas são fundamentais para modelar diversos fenômenos."
   },
-  # Conversões de Unidades
   {
-    content: "(ENEM 2020) Quantos metros há em 5 quilômetros?",
+    content: "(ENEM 2020) Em um projeto de infraestrutura urbana, engenheiros civis precisam converter unidades de medida para dimensionar vias públicas. Quantos metros há em 5 quilômetros?",
     answer_a: "500",
     answer_b: "5000",
     answer_c: "50000",
@@ -542,7 +569,7 @@ questoes_matematica = [
     category: "matematica",
     subject: "Conversões de Unidades",
     year: 2020,
-    explanation: "1 quilômetro = 1000 metros. Então, 5 quilômetros = 5 × 1000 = 5000 metros"
+    explanation: "1 quilômetro = 1000 metros. Então, 5 quilômetros = 5 × 1000 = 5000 metros. Conversões de unidades são fundamentais em projetos de engenharia para garantir precisão em cálculos de distâncias e áreas."
   },
   {
     content: "(ENEM 2019) Quantos centímetros há em 2,5 metros?",
@@ -797,10 +824,8 @@ questoes_matematica.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
 
-# Questões de Ciências da Natureza
 
 questoes_ciencias_da_natureza = [
-  # Questões de Ciências da Natureza
   {
     content: "(ENEM 2020) Qual é a fórmula química da água?",
     answer_a: "H2O",
@@ -815,7 +840,7 @@ questoes_ciencias_da_natureza = [
     explanation: "A água é composta por dois átomos de hidrogênio e um átomo de oxigênio, representada pela fórmula H2O."
   },
   {
-    content: "(ENEM 2019) O que é fotossíntese?",
+    content: "(ENEM 2019) Em um projeto de educação ambiental, estudantes analisam como plantas em um jardim escolar convertem luz solar em energia, aprendendo sobre o processo de fotossíntese. O que é fotossíntese?",
     answer_a: "Processo de obtenção de energia a partir da quebra de glicose na ausência de oxigênio.",
     answer_b: "Processo de produção de energia a partir da luz solar, água e gás carbônico.",
     answer_c: "Processo de digestão de alimentos em animais.",
@@ -825,7 +850,7 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2019,
-    explanation: "A fotossíntese é o processo pelo qual plantas, algas e algumas bactérias produzem glicose e oxigênio a partir de gás carbônico, água e luz solar."
+    explanation: "A fotossíntese é o processo pelo qual plantas, algas e algumas bactérias produzem glicose e oxigênio a partir de gás carbônico, água e luz solar, sendo fundamental para a produção de oxigênio atmosférico e a base da cadeia alimentar."
   },
   {
     content: "(ENEM 2018) Qual é a principal função dos ribossomos em uma célula?",
@@ -841,7 +866,7 @@ questoes_ciencias_da_natureza = [
     explanation: "Os ribossomos são responsáveis pela síntese de proteínas nas células."
   },
   {
-    content: "(ENEM 2017) O que é uma reação de neutralização?",
+    content: "(ENEM 2017) Em um laboratório escolar, estudantes misturam soluções de ácido clorídrico e hidróxido de sódio, observando a formação de um sal e água. O que é uma reação de neutralização?",
     answer_a: "Reação entre ácido e base formando sal e água.",
     answer_b: "Reação entre dois ácidos formando água.",
     answer_c: "Reação entre base e sal formando ácido.",
@@ -851,7 +876,7 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2017,
-    explanation: "Reação de neutralização ocorre entre um ácido e uma base, formando sal e água."
+    explanation: "Reação de neutralização ocorre entre um ácido e uma base, formando sal e água. No exemplo, HCl + NaOH → NaCl + H₂O, onde o sal formado é cloreto de sódio e a água é liberada, neutralizando as propriedades ácidas e básicas das soluções iniciais."
   },
   {
     content: "(ENEM 2016) O que acontece com a energia cinética de um corpo quando sua velocidade dobra?",
@@ -880,7 +905,7 @@ questoes_ciencias_da_natureza = [
     explanation: "A mitocôndria é responsável pela produção de energia (ATP) através da respiração celular."
   },
   {
-    content: "(ENEM 2014) O que é uma ligação covalente?",
+    content: "(ENEM 2014) Em um laboratório de química orgânica, estudantes analisam a estrutura da molécula de metano (CH₄) e observam como os átomos de carbono e hidrogênio estão ligados. O que é uma ligação covalente?",
     answer_a: "Ligação entre íons positivos e negativos.",
     answer_b: "Compartilhamento de pares de elétrons entre átomos.",
     answer_c: "Transferência de elétrons entre átomos.",
@@ -890,10 +915,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2014,
-    explanation: "Ligação covalente ocorre quando dois átomos compartilham pares de elétrons."
+    explanation: "Ligação covalente ocorre quando dois átomos compartilham pares de elétrons, formando uma ligação forte. No metano, o carbono compartilha elétrons com quatro átomos de hidrogênio, criando uma molécula estável que é fundamental para compostos orgânicos e explica propriedades como solubilidade e reatividade química."
   },
   {
-    content: "(ENEM 2013) O que é corrente elétrica?",
+    content: "(ENEM 2013) Em um circuito elétrico residencial, elétrons se movem através de fios condutores quando uma lâmpada é ligada. O que é corrente elétrica?",
     answer_a: "Movimento ordenado de elétrons em um condutor.",
     answer_b: "Movimento de prótons em um fio.",
     answer_c: "Movimento de nêutrons em um campo magnético.",
@@ -903,7 +928,7 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2013,
-    explanation: "Corrente elétrica é o movimento ordenado de elétrons em um condutor."
+    explanation: "Corrente elétrica é o movimento ordenado de elétrons em um condutor, criando um fluxo de carga elétrica. Esse movimento gera energia útil, como iluminação em lâmpadas, aquecimento em resistências e funcionamento de motores, sendo fundamental para o funcionamento de dispositivos elétricos no cotidiano."
   },
   {
     content: "(ENEM 2012) Qual é a principal função da clorofila nas plantas?",
@@ -919,7 +944,7 @@ questoes_ciencias_da_natureza = [
     explanation: "A clorofila é responsável por absorver luz solar, fundamental para a fotossíntese."
   },
   {
-    content: "(ENEM 2011) O que é velocidade média?",
+    content: "(ENEM 2011) Um ciclista percorre 30 km em 2 horas durante um passeio recreativo. O que é velocidade média?",
     answer_a: "Distância total dividida pelo tempo total.",
     answer_b: "Velocidade máxima atingida.",
     answer_c: "Velocidade mínima atingida.",
@@ -929,10 +954,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2011,
-    explanation: "Velocidade média é a razão entre a distância total percorrida e o tempo gasto."
+    explanation: "Velocidade média é a razão entre a distância total percorrida e o tempo gasto, representada por v = Δs/Δt. No exemplo, 30 km em 2 horas resulta em 15 km/h, sendo útil para calcular deslocamentos em trajetos com velocidades variáveis, como em viagens de carro ou corridas esportivas."
   },
   {
-    content: "(ENEM 2020) O DNA é uma molécula fundamental para os seres vivos. Qual é a principal função do DNA nas células?",
+    content: "(ENEM 2020) Em um laboratório de biologia molecular, pesquisadores analisam o DNA extraído de células humanas. Qual é a principal função do DNA nessas células?",
     answer_a: "Produzir energia para a célula.",
     answer_b: "Armazenar informações genéticas.",
     answer_c: "Atuar como enzima na digestão.",
@@ -942,10 +967,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2020,
-    explanation: "O DNA armazena as informações genéticas necessárias para o funcionamento e reprodução das células."
+    explanation: "O DNA armazena as informações genéticas necessárias para o funcionamento e reprodução das células, sendo fundamental para processos como síntese de proteínas e transmissão hereditária."
   },
   {
-    content: "(ENEM 2019) O que é mutação genética?",
+    content: "(ENEM 2019) Em um experimento sobre genética de plantas, cientistas observam que algumas sementes produzem plantas com características diferentes das esperadas. O que é mutação genética?",
     answer_a: "Alteração na sequência de nucleotídeos do DNA.",
     answer_b: "Processo de divisão celular.",
     answer_c: "Síntese de proteínas.",
@@ -955,10 +980,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2019,
-    explanation: "Mutação genética é uma alteração na sequência de nucleotídeos do DNA, podendo causar variações genéticas."
+    explanation: "Mutação genética é uma alteração na sequência de nucleotídeos do DNA, podendo causar variações genéticas que são transmitidas às gerações seguintes ou afetam o funcionamento celular."
   },
   {
-    content: "(ENEM 2018) Qual é a principal função da hemoglobina no sangue?",
+    content: "(ENEM 2018) Em um estudo sobre fisiologia humana, pesquisadores analisam o transporte de oxigênio no sangue de atletas de alta performance. Qual é a principal função da hemoglobina no sangue?",
     answer_a: "Transportar oxigênio.",
     answer_b: "Produzir hormônios.",
     answer_c: "Atuar na defesa do organismo.",
@@ -968,10 +993,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2018,
-    explanation: "A hemoglobina é responsável pelo transporte de oxigênio no sangue."
+    explanation: "A hemoglobina é uma proteína presente nos glóbulos vermelhos que se liga ao oxigênio nos pulmões e o transporta para os tecidos, sendo essencial para a respiração celular."
   },
   {
-    content: "(ENEM 2017) O que é seleção natural?",
+    content: "(ENEM 2017) Em um estudo sobre evolução, pesquisadores analisam populações de animais em ambientes com pressões seletivas diferentes. O que é seleção natural?",
     answer_a: "Processo em que organismos mais adaptados ao ambiente têm maior chance de sobreviver e se reproduzir.",
     answer_b: "Processo de reprodução assexuada.",
     answer_c: "Processo de mutação genética.",
@@ -981,10 +1006,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2017,
-    explanation: "Seleção natural é o processo pelo qual organismos mais adaptados ao ambiente sobrevivem e transmitem seus genes."
+    explanation: "Seleção natural é o mecanismo proposto por Darwin pelo qual organismos com características vantajosas para determinado ambiente têm maior probabilidade de sobreviver e transmitir seus genes."
   },
   {
-    content: "(ENEM 2016) O que é biodiversidade?",
+    content: "(ENEM 2016) Em um projeto de conservação ambiental, biólogos avaliam a diversidade de espécies em diferentes ecossistemas brasileiros. O que é biodiversidade?",
     answer_a: "Variedade de espécies de seres vivos em um ambiente.",
     answer_b: "Quantidade de água em um ecossistema.",
     answer_c: "Número de plantas em uma floresta.",
@@ -994,10 +1019,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2016,
-    explanation: "Biodiversidade é a variedade de espécies de seres vivos em um determinado ambiente."
+    explanation: "Biodiversidade refere-se à variedade de seres vivos em um ecossistema, incluindo a diversidade genética, de espécies e de ecossistemas, sendo fundamental para a estabilidade ambiental."
   },
   {
-    content: "(ENEM 2015) O que é um gene?",
+    content: "(ENEM 2015) Em um laboratório de biotecnologia, pesquisadores identificam um segmento específico do DNA responsável pela produção de insulina. O que é um gene?",
     answer_a: "Segmento de DNA que codifica uma proteína.",
     answer_b: "Molécula de RNA responsável pela síntese de proteínas.",
     answer_c: "Organelo celular responsável pela respiração.",
@@ -1007,10 +1032,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2015,
-    explanation: "Gene é um segmento de DNA que contém a informação para a síntese de uma proteína."
+    explanation: "Gene é um segmento de DNA que contém a informação genética para a síntese de uma proteína específica, sendo a unidade básica da hereditariedade."
   },
   {
-    content: "(ENEM 2014) O que é fotossíntese?",
+    content: "(ENEM 2014) Em um experimento sobre fotossíntese, estudantes colocam plantas em ambientes com diferentes intensidades de luz e observam a produção de oxigênio. O que é fotossíntese?",
     answer_a: "Processo de produção de energia a partir da luz solar, água e gás carbônico.",
     answer_b: "Processo de digestão de alimentos.",
     answer_c: "Processo de respiração celular.",
@@ -1020,10 +1045,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2014,
-    explanation: "Fotossíntese é o processo pelo qual plantas produzem glicose e oxigênio a partir de gás carbônico, água e luz solar."
+    explanation: "Fotossíntese é o processo realizado pelas plantas e algas onde, utilizando luz solar, água e gás carbônico, produzem glicose e oxigênio, convertendo energia luminosa em energia química."
   },
   {
-    content: "(ENEM 2013) O que é mitose?",
+    content: "(ENEM 2013) Em um laboratório de citologia, estudantes observam ao microscópio células se dividindo e formando duas células idênticas. O que é mitose?",
     answer_a: "Divisão celular que resulta em duas células-filhas idênticas.",
     answer_b: "Divisão celular que resulta em quatro células-filhas diferentes.",
     answer_c: "Processo de síntese de proteínas.",
@@ -1033,10 +1058,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2013,
-    explanation: "Mitose é o processo de divisão celular que origina duas células-filhas geneticamente idênticas à célula-mãe."
+    explanation: "Mitose é o processo de divisão celular que origina duas células-filhas geneticamente idênticas à célula-mãe, sendo fundamental para o crescimento e reparo de tecidos."
   },
   {
-    content: "(ENEM 2012) O que é homeostase?",
+    content: "(ENEM 2012) Em um estudo sobre fisiologia, pesquisadores analisam como o corpo humano mantém a temperatura constante mesmo em ambientes quentes. O que é homeostase?",
     answer_a: "Capacidade do organismo de manter o equilíbrio interno.",
     answer_b: "Processo de digestão de alimentos.",
     answer_c: "Processo de respiração celular.",
@@ -1046,10 +1071,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2012,
-    explanation: "Homeostase é a capacidade do organismo de manter o equilíbrio interno mesmo diante de mudanças externas."
+    explanation: "Homeostase é a capacidade do organismo de manter o equilíbrio interno (temperatura, pH, concentração de substâncias) mesmo diante de mudanças no ambiente externo."
   },
   {
-    content: "(ENEM 2011) O que é ecossistema?",
+    content: "(ENEM 2011) Em um projeto de educação ambiental, estudantes analisam as interações entre organismos em uma lagoa, incluindo plantas, peixes e bactérias. O que é ecossistema?",
     answer_a: "Conjunto de seres vivos e o ambiente em que vivem, interagindo entre si.",
     answer_b: "Apenas o conjunto de plantas de uma região.",
     answer_c: "Apenas o conjunto de animais de uma região.",
@@ -1059,10 +1084,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Biologia",
     year: 2011,
-    explanation: "Ecossistema é o conjunto de seres vivos e o ambiente em que vivem, interagindo entre si."
+    explanation: "Ecossistema é o conjunto de seres vivos e o ambiente físico em que vivem, interagindo entre si através de fluxos de energia e matéria, formando uma unidade funcional."
   },
   {
-    content: "(ENEM 2020) O que é uma reação de oxirredução?",
+    content: "(ENEM 2020) Em uma bateria de carro, ocorre uma reação química que gera eletricidade através da oxidação do zinco e redução do dióxido de manganês. O que é uma reação de oxirredução?",
     answer_a: "Reação em que ocorre transferência de elétrons entre reagentes.",
     answer_b: "Reação de neutralização.",
     answer_c: "Reação de decomposição.",
@@ -1072,10 +1097,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2020,
-    explanation: "Reação de oxirredução envolve transferência de elétrons entre espécies químicas."
+    explanation: "Reação de oxirredução envolve transferência de elétrons entre espécies químicas, onde uma substância perde elétrons (oxidação) e outra ganha (redução). Nas baterias, essa reação gera corrente elétrica, sendo fundamental para o funcionamento de pilhas, baterias e processos industriais como a produção de alumínio."
   },
   {
-    content: "(ENEM 2019) O que é pH?",
+    content: "(ENEM 2019) Em um laboratório de química, estudantes medem o pH de diferentes soluções: vinagre (ácido), água pura e soda cáustica (básica), obtendo valores de 2, 7 e 13, respectivamente. O que é pH?",
     answer_a: "Medida da acidez ou basicidade de uma solução.",
     answer_b: "Quantidade de soluto dissolvido.",
     answer_c: "Volume de uma solução.",
@@ -1085,10 +1110,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2019,
-    explanation: "pH é a medida da acidez ou basicidade de uma solução aquosa."
+    explanation: "pH é a medida da acidez ou basicidade de uma solução aquosa, variando de 0 a 14, onde valores abaixo de 7 indicam acidez, 7 neutralidade e acima de 7 basicidade. Essa medida é crucial em processos biológicos, industriais e ambientais, afetando desde o crescimento de plantas até a qualidade da água potável."
   },
   {
-    content: "(ENEM 2018) O que é ligação iônica?",
+    content: "(ENEM 2018) Em um laboratório, estudantes observam que o cloreto de sódio (NaCl) se dissolve facilmente em água, formando íons sódio e cloreto. O que é ligação iônica?",
     answer_a: "Ligação entre íons de cargas opostas.",
     answer_b: "Compartilhamento de elétrons.",
     answer_c: "Ligação entre moléculas de água.",
@@ -1098,10 +1123,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2018,
-    explanation: "Ligação iônica ocorre entre íons de cargas opostas, geralmente entre metais e ametais."
+    explanation: "Ligação iônica ocorre entre íons de cargas opostas, geralmente entre metais e ametais, formando compostos cristalinos. No NaCl, o sódio perde um elétron para o cloro, criando atração eletrostática que resulta em alta solubilidade em água e condutividade elétrica quando fundido ou dissolvido."
   },
   {
-    content: "(ENEM 2017) O que é catalisador?",
+    content: "(ENEM 2017) Em uma indústria química, a produção de amônia utiliza ferro como catalisador para acelerar a reação entre nitrogênio e hidrogênio, reduzindo custos e tempo de produção. O que é catalisador?",
     answer_a: "Substância que aumenta a velocidade de uma reação química sem ser consumida.",
     answer_b: "Substância que diminui a velocidade de uma reação.",
     answer_c: "Produto de uma reação química.",
@@ -1111,10 +1136,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2017,
-    explanation: "Catalisador é uma substância que aumenta a velocidade de uma reação química sem ser consumida."
+    explanation: "Catalisador é uma substância que aumenta a velocidade de uma reação química sem ser consumida, diminuindo a energia de ativação. Na produção industrial de amônia, catalisadores como ferro permitem reações mais eficientes, sendo essenciais em processos químicos, biológicos e ambientais."
   },
   {
-    content: "(ENEM 2016) O que é eletrólise?",
+    content: "(ENEM 2016) Em um laboratório de química, estudantes decompõem água em hidrogênio e oxigênio usando corrente elétrica, observando bolhas gasosas se formando nos eletrodos. O que é eletrólise?",
     answer_a: "Processo de decomposição de uma substância por corrente elétrica.",
     answer_b: "Processo de combustão.",
     answer_c: "Processo de neutralização.",
@@ -1124,10 +1149,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2016,
-    explanation: "Eletrólise é a decomposição de uma substância por meio de corrente elétrica."
+    explanation: "Eletrólise é a decomposição de uma substância por meio de corrente elétrica, onde íons se movem para os eletrodos. Na decomposição da água, H₂O → H₂ + O₂, sendo fundamental em processos industriais como a produção de alumínio e hidrogênio, além de aplicações em galvanoplastia e purificação de metais."
   },
   {
-    content: "(ENEM 2015) O que é reação endotérmica?",
+    content: "(ENEM 2015) Em um laboratório escolar, estudantes observam que ao misturar cloreto de amônio com água, o béquer fica frio ao toque, indicando absorção de calor do ambiente. O que é reação endotérmica?",
     answer_a: "Reação que absorve calor do meio.",
     answer_b: "Reação que libera calor.",
     answer_c: "Reação que não envolve calor.",
@@ -1137,10 +1162,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2015,
-    explanation: "Reação endotérmica é aquela que absorve calor do meio."
+    explanation: "Reação endotérmica é aquela que absorve calor do meio ambiente, resultando em diminuição de temperatura. Dissolução de cloreto de amônio em água é um exemplo prático, sendo importante em processos como digestão, fotossíntese e reações industriais que requerem energia térmica externa."
   },
   {
-    content: "(ENEM 2014) O que é solução saturada?",
+    content: "(ENEM 2014) Em um laboratório de química, estudantes adicionam açúcar a água até que não haja mais dissolução, observando cristais não dissolvidos no fundo do recipiente. O que é solução saturada?",
     answer_a: "Solução que contém a máxima quantidade de soluto dissolvido.",
     answer_b: "Solução que não contém soluto.",
     answer_c: "Solução que contém apenas solvente.",
@@ -1150,10 +1175,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2014,
-    explanation: "Solução saturada é aquela que contém a máxima quantidade de soluto dissolvido em determinada temperatura."
+    explanation: "Solução saturada é aquela que contém a máxima quantidade de soluto dissolvido em determinada temperatura, estabelecendo equilíbrio dinâmico. No exemplo com açúcar, cristais não dissolvidos indicam saturação, conceito fundamental em cristalização, extração e processos industriais como fabricação de refrigerantes."
   },
   {
-    content: "(ENEM 2013) O que é destilação simples?",
+    content: "(ENEM 2013) Em um laboratório escolar, estudantes separam álcool e água de uma mistura aquosa, coletando o vapor que condensa em um recipiente separado. O que é destilação simples?",
     answer_a: "Processo de separação de misturas baseado na diferença de pontos de ebulição.",
     answer_b: "Processo de separação de sólidos.",
     answer_c: "Processo de filtração.",
@@ -1163,10 +1188,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2013,
-    explanation: "Destilação simples separa misturas com base na diferença de pontos de ebulição dos componentes."
+    explanation: "Destilação simples separa misturas com base na diferença de pontos de ebulição dos componentes, evaporando e condensando substâncias. No exemplo, o álcool (ponto de ebulição 78°C) evapora antes da água (100°C), sendo essencial em purificação de água, produção de bebidas destiladas e isolamento de compostos orgânicos."
   },
   {
-    content: "(ENEM 2012) O que é átomo?",
+    content: "(ENEM 2012) Em um laboratório de física atômica, cientistas estudam a estrutura da matéria, identificando que o hidrogênio é formado por um próton e um elétron orbitando ao redor. O que é átomo?",
     answer_a: "Menor partícula que forma a matéria.",
     answer_b: "Molécula de água.",
     answer_c: "Partícula de luz.",
@@ -1176,10 +1201,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2012,
-    explanation: "Átomo é a menor partícula que forma a matéria."
+    explanation: "Átomo é a menor partícula que forma a matéria, composta por prótons, nêutrons e elétrons. No hidrogênio, um próton no núcleo e um elétron em órbita formam o átomo mais simples, sendo a base de toda matéria e fundamental para entender reações químicas, ligações e propriedades dos elementos."
   },
   {
-    content: "(ENEM 2011) O que é tabela periódica?",
+    content: "(ENEM 2011) Em uma aula de química, estudantes organizam elementos químicos em uma tabela baseada em suas propriedades, observando que o sódio e o potássio estão na mesma coluna devido a comportamentos similares. O que é tabela periódica?",
     answer_a: "Tabela que organiza os elementos químicos de acordo com suas propriedades.",
     answer_b: "Tabela de horários escolares.",
     answer_c: "Tabela de alimentos.",
@@ -1189,10 +1214,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Química",
     year: 2011,
-    explanation: "Tabela periódica organiza os elementos químicos conforme suas propriedades."
+    explanation: "Tabela periódica organiza os elementos químicos conforme suas propriedades, agrupando elementos com características similares em colunas (grupos) e períodos. O sódio e potássio, ambos metais alcalinos, compartilham propriedades como reatividade com água, sendo fundamental para prever comportamentos químicos e aplicações tecnológicas."
   },
   {
-    content: "(ENEM 2020) O que é energia potencial gravitacional?",
+    content: "(ENEM 2020) Em uma montanha-russa, um carrinho no topo da primeira descida possui energia armazenada devido à sua altura em relação ao solo. O que é energia potencial gravitacional?",
     answer_a: "Energia armazenada devido à posição de um corpo em relação ao solo.",
     answer_b: "Energia devido ao movimento de um corpo.",
     answer_c: "Energia térmica.",
@@ -1202,10 +1227,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2020,
-    explanation: "Energia potencial gravitacional é a energia armazenada devido à posição de um corpo em relação ao solo."
+    explanation: "Energia potencial gravitacional é a energia armazenada devido à posição de um corpo em relação ao solo, dada por E_p = mgh. No carrinho da montanha-russa, essa energia se converte em cinética durante a descida, sendo fundamental em sistemas mecânicos, geração hidrelétrica e compreensão de movimento de projéteis."
   },
   {
-    content: "(ENEM 2019) O que é força resultante?",
+    content: "(ENEM 2019) Em um jogo de futebol, um jogador chuta a bola aplicando força com o pé, enquanto o atrito e a resistência do ar atuam em direções opostas. O que é força resultante?",
     answer_a: "Soma vetorial de todas as forças que atuam sobre um corpo.",
     answer_b: "Força de atrito.",
     answer_c: "Força de reação.",
@@ -1215,10 +1240,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2019,
-    explanation: "Força resultante é a soma vetorial de todas as forças que atuam sobre um corpo."
+    explanation: "Força resultante é a soma vetorial de todas as forças que atuam sobre um corpo, determinando sua aceleração. No chute da bola, a força do pé menos as forças de atrito e resistência do ar resulta no movimento observado, sendo fundamental para analisar equilíbrio, movimento e aplicações em engenharia e esportes."
   },
   {
-    content: "(ENEM 2018) O que é trabalho de uma força?",
+    content: "(ENEM 2018) Um trabalhador empurra um carrinho de supermercado por uma distância de 10 metros aplicando uma força constante de 50 N na mesma direção do movimento. O que é trabalho de uma força?",
     answer_a: "Produto da força pela distância percorrida na direção da força.",
     answer_b: "Soma das energias cinética e potencial.",
     answer_c: "Quantidade de movimento.",
@@ -1228,10 +1253,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2018,
-    explanation: "Trabalho de uma força é o produto da força pela distância percorrida na direção da força."
+    explanation: "Trabalho de uma força é o produto da força pela distância percorrida na direção da força, dado por τ = F·d·cosθ. No exemplo, 50 N × 10 m = 500 J, sendo fundamental para calcular energia transferida em máquinas, organismos e processos industriais, relacionando-se com potência e eficiência."
   },
   {
-    content: "(ENEM 2017) O que é refração da luz?",
+    content: "(ENEM 2017) Ao mergulhar um lápis em um copo de água, observamos que ele parece quebrado na superfície devido à mudança de direção da luz. O que é refração da luz?",
     answer_a: "Mudança de direção da luz ao passar de um meio para outro.",
     answer_b: "Reflexão da luz em um espelho.",
     answer_c: "Absorção da luz por um corpo.",
@@ -1241,10 +1266,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2017,
-    explanation: "Refração é a mudança de direção da luz ao passar de um meio para outro."
+    explanation: "Refração é a mudança de direção da luz ao passar de um meio para outro com diferentes índices de refração, seguindo a lei de Snell. O efeito do lápis na água demonstra como a luz se curva, sendo essencial em lentes, prismas, miragens e funcionamento de olhos e instrumentos ópticos."
   },
   {
-    content: "(ENEM 2016) O que é corrente alternada?",
+    content: "(ENEM 2016) Em uma residência, a energia elétrica fornecida pela rede alterna a direção do fluxo de elétrons 60 vezes por segundo. O que é corrente alternada?",
     answer_a: "Corrente elétrica cujo sentido varia periodicamente.",
     answer_b: "Corrente elétrica constante.",
     answer_c: "Corrente elétrica de baixa intensidade.",
@@ -1254,10 +1279,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2016,
-    explanation: "Corrente alternada é aquela cujo sentido varia periodicamente."
+    explanation: "Corrente alternada é aquela cujo sentido varia periodicamente, geralmente em forma senoidal. No Brasil, opera a 60 Hz, permitindo transmissão eficiente de energia a longas distâncias através de transformadores, sendo fundamental para iluminação residencial, motores elétricos e sistemas de distribuição de energia."
   },
   {
-    content: "(ENEM 2015) O que é calor específico?",
+    content: "(ENEM 2015) Em uma cozinha, um litro de água leva mais tempo para ferver do que a mesma quantidade de óleo, demonstrando diferentes capacidades de absorção de calor. O que é calor específico?",
     answer_a: "Quantidade de calor necessária para elevar a temperatura de 1g de substância em 1°C.",
     answer_b: "Quantidade de calor liberada na combustão.",
     answer_c: "Quantidade de calor absorvida na fusão.",
@@ -1267,10 +1292,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2015,
-    explanation: "Calor específico é a quantidade de calor necessária para elevar a temperatura de 1g de substância em 1°C."
+    explanation: "Calor específico é a quantidade de calor necessária para elevar a temperatura de 1g de substância em 1°C, medido em J/g·°C. A água tem alto calor específico (4,18 J/g·°C), explicando sua capacidade de regular temperatura em oceanos e organismos, sendo crucial em aquecimento, refrigeração e processos industriais."
   },
   {
-    content: "(ENEM 2014) O que é efeito estufa?",
+    content: "(ENEM 2014) Em um debate sobre mudanças climáticas, estudantes discutem como o efeito estufa contribui para o aquecimento global. O que é efeito estufa?",
     answer_a: "Aquecimento da Terra devido à retenção de calor por gases na atmosfera.",
     answer_b: "Resfriamento da Terra devido à perda de calor.",
     answer_c: "Aquecimento da Terra devido à radiação solar.",
@@ -1280,10 +1305,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2014,
-    explanation: "O efeito estufa é o aquecimento da Terra devido à retenção de calor por gases na atmosfera."
+    explanation: "O efeito estufa é o fenômeno natural pelo qual gases na atmosfera retêm o calor irradiado pela Terra, mantendo temperaturas adequadas para a vida, mas que pode ser intensificado por emissões humanas, contribuindo para o aquecimento global."
   },
   {
-    content: "(ENEM 2013) O que é energia renovável?",
+    content: "(ENEM 2013) Em um projeto de energia sustentável, uma comunidade instala painéis solares e turbinas eólicas para gerar eletricidade limpa e renovável. O que é energia renovável?",
     answer_a: "Energia obtida de fontes que se renovam naturalmente.",
     answer_b: "Energia obtida de combustíveis fósseis.",
     answer_c: "Energia obtida de reações nucleares.",
@@ -1293,10 +1318,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2013,
-    explanation: "Energia renovável é obtida de fontes que se renovam naturalmente, como sol, vento e água."
+    explanation: "Energia renovável é obtida de fontes que se renovam naturalmente, como sol, vento, água e biomassa. Painéis solares convertem luz em eletricidade, turbinas eólicas capturam energia do vento, sendo sustentáveis pois não se esgotam e não emitem poluentes, contribuindo para redução de emissões de gases de efeito estufa."
   },
   {
-    content: "(ENEM 2012) O que é pressão atmosférica?",
+    content: "(ENEM 2012) Em uma montanha, alpinistas sentem dificuldade para respirar devido à menor pressão do ar em altitudes elevadas. O que é pressão atmosférica?",
     answer_a: "Força exercida pelo ar sobre a superfície da Terra.",
     answer_b: "Força exercida pela água sobre o solo.",
     answer_c: "Força exercida pelo vento.",
@@ -1306,10 +1331,10 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2012,
-    explanation: "Pressão atmosférica é a força exercida pelo ar sobre a superfície da Terra."
+    explanation: "Pressão atmosférica é a força exercida pelo ar sobre a superfície da Terra devido ao peso da coluna de ar acima. Em altitudes elevadas, diminui pois há menos ar acima, causando dificuldade respiratória. Equivale a cerca de 1 atm no nível do mar, sendo fundamental em meteorologia, aviação e compreensão de fenômenos como ventos e ciclones."
   },
   {
-    content: "(ENEM 2011) O que é energia cinética?",
+    content: "(ENEM 2011) Em uma aula de física sobre movimento, estudantes analisam como um carro em movimento possui energia devido à sua velocidade. O que é energia cinética?",
     answer_a: "Energia associada ao movimento de um corpo.",
     answer_b: "Energia armazenada em um corpo parado.",
     answer_c: "Energia térmica.",
@@ -1319,7 +1344,371 @@ questoes_ciencias_da_natureza = [
     category: "natureza",
     subject: "Física",
     year: 2011,
-    explanation: "Energia cinética é a energia associada ao movimento de um corpo."
+    explanation: "Energia cinética é a energia que um corpo possui devido ao seu movimento, calculada pela fórmula E_c = (1/2)mv², sendo fundamental para entender fenômenos como colisões, frenagem e conversão de energia em máquinas."
+  },
+  {
+    content: "(ENEM 2024) Qual processo biológico foi mais diretamente afetado pela redução dramática de polinizadores em certas regiões agrícolas?",
+    answer_a: "A fotossíntese nas plantas cultivadas.",
+    answer_b: "A reprodução sexuada de plantas dependentes de polinização animal.",
+    answer_c: "A fixação biológica de nitrogênio pelas leguminosas.",
+    answer_d: "A respiração celular das sementes.",
+    answer_e: "A transpiração nas plantas de clima árido.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Muitos cultivos dependem de polinizadores animais; sua redução afeta diretamente a reprodução sexuada e a produção de frutos/sementes."
+  },
+  {
+    content: "(ENEM 2023) Em química, qual é a principal consequência do aumento da concentração de CO2 na atmosfera sobre o pH dos oceanos?",
+    answer_a: "Aumenta o pH, deixando a água mais básica.",
+    answer_b: "Não altera o pH, pois o CO2 não reage com água.",
+    answer_c: "Diminui o pH, acidificando as águas superficiais.",
+    answer_d: "Diminui a salinidade dos oceanos.",
+    answer_e: "Aumenta a temperatura local sem afetar o pH.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "O CO2 dissolvido forma ácido carbônico, reduzindo o pH e causando acidificação dos oceanos."
+  },
+  {
+    content: "(ENEM 2022) Qual alternativa descreve melhor a transmissão de doenças respiratórias virais por gotículas?",
+    answer_a: "Transmissão exclusivamente por alimentos contaminados.",
+    answer_b: "Transmissão por gotículas expelidas ao tossir ou falar, que podem infectar pessoas próximas.",
+    answer_c: "Transmissão apenas por vetores como mosquitos.",
+    answer_d: "Transmissão por contato com solo contaminado.",
+    answer_e: "Transmissão apenas por água potável.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Doenças respiratórias virais podem ser transmitidas por gotículas expelidas durante tosse, fala ou espirro, infectando pessoas próximas."
+  },
+  {
+    content: "(ENEM 2021) Em física, ao aumentar a frequência de uma onda eletromagnética visível, o que acontece com sua energia por fóton?",
+    answer_a: "A energia por fóton diminui.",
+    answer_b: "A energia por fóton aumenta.",
+    answer_c: "A energia por fóton permanece constante.",
+    answer_d: "A energia por fóton depende apenas da amplitude.",
+    answer_e: "A energia por fóton passa a ser negativa.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Física",
+    year: 2021,
+    explanation: "A energia de um fóton é dada por E = h·f; se a frequência (f) aumenta, a energia por fóton aumenta."
+  },
+  {
+    content: "(ENEM 2020) Em ecologia, qual é a consequência mais direta do desmatamento sobre o ciclo da água local?",
+    answer_a: "Aumento da capacidade de retenção de água no solo.",
+    answer_b: "Redução da transpiração e, consequentemente, menor formação de chuvas locais.",
+    answer_c: "Diminuição da erosão do solo.",
+    answer_d: "Aumento da biodiversidade local.",
+    answer_e: "Melhora imediata na qualidade do ar.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2020,
+    explanation: "As árvores realizam transpiração que contribui para a umidade atmosférica; o desmatamento reduz essa contribuição e pode diminuir precipitação local."
+  },
+  {
+    content: "(ENEM 2019) Qual processo químico explica a formação de um sal a partir de um ácido e uma base?",
+    answer_a: "Oxidação.",
+    answer_b: "Redução.",
+    answer_c: "Neutralização.",
+    answer_d: "Esterificação.",
+    answer_e: "Polimerização.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Química",
+    year: 2019,
+    explanation: "A reação entre ácido e base resulta em neutralização, formando sal e água na maioria dos casos."
+  },
+  {
+    content: "(ENEM 2018) Em genética, o que é uma mutação silenciosa?",
+    answer_a: "Mutação que altera o quadro de leitura do gene.",
+    answer_b: "Mutação que causa morte imediata do organismo.",
+    answer_c: "Mutação que não altera a sequência de aminoácidos devido à redundância do código genético.",
+    answer_d: "Mutação que sempre aumenta a produção de proteínas.",
+    answer_e: "Mutação que altera o número de cromossomos.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2018,
+    explanation: "Mutação silenciosa altera o DNA sem mudar o aminoácido codificado por causa da degeneração do código genético."
+  },
+  {
+    content: "(ENEM 2024) Em química ambiental, qual é o principal risco associado ao acúmulo de metais pesados em sedimentos fluviais?",
+    answer_a: "Aumento imediato da produtividade primária.",
+    answer_b: "Bioacumulação em organismos aquáticos e transferência na cadeia alimentar.",
+    answer_c: "Redução do pH da água de forma instantânea.",
+    answer_d: "Eliminação total de bactérias decompositoras.",
+    answer_e: "Aumento da oxigenação do sedimento.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Metais pesados tendem a se bioacumular em organismos aquáticos, podendo subir na cadeia alimentar e causar efeitos tóxicos."
+  },
+  {
+    content: "(ENEM 2022) Qual fenômeno físico explica a formação do arco-íris após chuva quando há sol?",
+    answer_a: "Interferência construtiva entre ondas sonoras.",
+    answer_b: "Refração e reflexão interna da luz em gotas de água.",
+    answer_c: "Condução térmica na atmosfera.",
+    answer_d: "Radiação ionizante emitida pelas nuvens.",
+    answer_e: "Efeito doppler da luz visível.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Física",
+    year: 2022,
+    explanation: "O arco-íris é formado pela refração, reflexão interna e dispersão da luz branca nas gotas de chuva, separando as cores."
+  },
+  {
+    content: "(ENEM 2021) Em biologia, qual é a importância ecológica dos fungos decompositores em um ecossistema?",
+    answer_a: "Eles produzem oxigênio por fotossíntese.",
+    answer_b: "Eles convertem matéria orgânica morta em nutrientes disponíveis para outros organismos.",
+    answer_c: "Eles impedem completamente a ciclagem de nutrientes.",
+    answer_d: "Eles atuam como principais produtores primários.",
+    answer_e: "Eles reduzem a diversidade de espécies.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "Fungos decompositores quebram matéria orgânica morta, liberando nutrientes que retornam ao solo e sustentam outros organismos."
+  },
+  {
+    content: "(ENEM 2024) Em biologia, qual é o papel principal da osmose nas células vegetais?",
+    answer_a: "Transporte ativo de solutos contra o gradiente.",
+    answer_b: "Movimento de água através da membrana para equilibrar concentrações.",
+    answer_c: "Síntese de proteínas ribossomais.",
+    answer_d: "Fusão de vacúolos.",
+    answer_e: "Produção de ATP por fotossíntese.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Osmose é o movimento de água através da membrana semipermeável para equilibrar concentrações de solutos entre meios."
+  },
+  {
+    content: "(ENEM 2023) Em biologia celular, qual é a função principal do retículo endoplasmático rugoso?",
+    answer_a: "Armazenamento de lipídios.",
+    answer_b: "Síntese e processamento de proteínas destinadas à secreção ou membrana.",
+    answer_c: "Produção de ATP.",
+    answer_d: "Degradação de material celular.",
+    answer_e: "Replicação do DNA.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2023,
+    explanation: "O retículo endoplasmático rugoso possui ribossomos e participa da síntese e do processamento de proteínas."
+  },
+  {
+    content: "(ENEM 2022) Em um lago onde peixes exóticos foram introduzidos, observa-se que esses peixes estão causando desequilíbrio no ecossistema local, competindo com espécies nativas e alterando a cadeia alimentar. O que caracteriza uma espécie invasora?",
+    answer_a: "Espécie nativa que aumenta lentamente sua população.",
+    answer_b: "Espécie introduzida que se estabelece e causa danos ao ecossistema local.",
+    answer_c: "Espécie que vive apenas em ambientes altamente preservados.",
+    answer_d: "Espécie que depende exclusivamente de humanos para reprodução.",
+    answer_e: "Espécie que tem apenas reprodução assexuada.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Uma espécie invasora é aquela introduzida em um novo ambiente, geralmente por ação humana, onde consegue se estabelecer, proliferar rapidamente e causar prejuízos significativos ao ecossistema local. Isso inclui competição com espécies nativas, alteração da cadeia alimentar, redução da biodiversidade e impactos econômicos, como no caso de peixes exóticos em lagos que afetam a pesca e o equilíbrio ecológico."
+  },
+  {
+    content: "(ENEM 2021) Em genética, qual é a diferença principal entre mitose e meiose?",
+    answer_a: "Mitose gera células-filhas geneticamente distintas; meiose gera idênticas.",
+    answer_b: "Mitose produz gametas; meiose produz células somáticas.",
+    answer_c: "Mitose resulta em duas células-filhas diploides; meiose resulta em quatro células haploides.",
+    answer_d: "Mitose só ocorre em plantas; meiose só em animais.",
+    answer_e: "Mitose envolve recombinação genética; meiose não envolve.",
+    correct_answer: "c",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "Mitose produz duas células diploides idênticas; meiose produz quatro células haploides com variabilidade genética."
+  },
+  {
+    content: "(ENEM 2019) Após uma infecção viral, o corpo desenvolve uma resposta imune que permite uma reação mais rápida e eficaz em exposições futuras ao mesmo patógeno. Em biologia, qual componente do sistema imune é responsável por essa memória imunológica duradoura?",
+    answer_a: "Macrófagos apenas.",
+    answer_b: "Linfócitos B e T de memória.",
+    answer_c: "Células endoteliais.",
+    answer_d: "Plaquetas.",
+    answer_e: "Eritrócitos.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2019,
+    explanation: "Os linfócitos B e T de memória são células especializadas que persistem após a infecção inicial, mantendo a 'memória' do patógeno. Em uma reexposição, essas células se ativam rapidamente, produzindo anticorpos (no caso dos B) ou coordenando a resposta imune (no caso dos T), proporcionando uma defesa mais eficiente e duradoura contra infecções recorrentes."
+  },
+  {
+    content: "(ENEM 2024) Em química, o que acontece com o ponto de ebulição de um líquido quando aumenta a pressão externa?",
+    answer_a: "O ponto de ebulição diminui.",
+    answer_b: "O ponto de ebulição aumenta.",
+    answer_c: "O ponto de ebulição permanece igual.",
+    answer_d: "O líquido se transforma em sólido.",
+    answer_e: "A pressão não afeta o ponto de ebulição.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Aumentando a pressão externa, torna-se mais difícil para moléculas escaparem, elevando o ponto de ebulição."
+  },
+  {
+    content: "(ENEM 2023) Em química, qual propriedade explica por que solventes polares dissolvem solutos polares?",
+    answer_a: "Semelhança de cor.",
+    answer_b: "Princípio 'semelhante dissolve semelhante' devido a interações dipolo-dipolo e ligações de hidrogênio.",
+    answer_c: "Forças gravitacionais.",
+    answer_d: "Apenas a diferença de massa molecular.",
+    answer_e: "Pressão atmosférica local.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "Solventes polares interagem favoravelmente com solutos polares por dipolos e ligações de hidrogênio, facilitando a dissolução."
+  },
+  {
+    content: "(ENEM 2022) Em um laboratório de química, estudantes analisam compostos orgânicos e identificam que certos compostos contêm um grupo que os torna solúveis em água e reativos, permitindo reações como esterificação. Em química orgânica, qual grupo funcional está presente em álcoois?",
+    answer_a: "Carboxila (-COOH).",
+    answer_b: "Hidroxila (-OH).",
+    answer_c: "Amino (-NH2).",
+    answer_d: "Carbonila (C=O).",
+    answer_e: "Ester (-COO-).",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2022,
+    explanation: "Os álcoois possuem o grupo hidroxila (-OH) ligado a um carbono saturado, o que confere propriedades como polaridade, solubilidade em água devido às ligações de hidrogênio, e reatividade em reações como esterificação (formação de ésteres) e oxidação (formação de aldeídos ou cetonas)."
+  },
+  {
+    content: "(ENEM 2021) Em uma reação química, químicos precisam medir quantidades precisas de substâncias para garantir a estequiometria correta e evitar desperdícios ou reações incompletas. Em química, qual é a definição de mol?",
+    answer_a: "Quantidade de substância que contém 6,022 × 10^23 entidades fundamentais.",
+    answer_b: "Massa de 1 grama de qualquer substância.",
+    answer_c: "Volume ocupado por 1 litro de água.",
+    answer_d: "Concentração de soluto em uma solução.",
+    answer_e: "Número de elétrons em um átomo neutro.",
+    correct_answer: "a",
+    category: "natureza",
+    subject: "Química",
+    year: 2021,
+    explanation: "O mol é a unidade de quantidade de substância que contém o número de Avogadro (6,022 × 10^23) de entidades fundamentais, como átomos, moléculas ou íons. Essa definição permite cálculos quantitativos precisos em química, facilitando a medição de reagentes em reações estequiométricas."
+  },
+  {
+    content: "(ENEM 2024) Qual é a principal função dos estômatos nas folhas das plantas?",
+    answer_a: "Realizar fotossíntese diretamente.",
+    answer_b: "Controlar trocas gasosas e transpiração.",
+    answer_c: "Armazenar glicose.",
+    answer_d: "Produzir sementes.",
+    answer_e: "Fixar nitrogênio atmosférico.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2024,
+    explanation: "Os estômatos regulam as trocas gasosas (CO2 e O2) e a perda de água por transpiração nas plantas."
+  },
+  {
+    content: "(ENEM 2023) Em biologia celular, qual organela é o local principal da fotossíntese em células vegetais?",
+    answer_a: "Mitocôndria.",
+    answer_b: "Cloroplasto.",
+    answer_c: "Complexo golgiense.",
+    answer_d: "Lisossomo.",
+    answer_e: "Retículo endoplasmático liso.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2023,
+    explanation: "Os cloroplastos contêm clorofila e são as organelas onde ocorre a fotossíntese."
+  },
+  {
+    content: "(ENEM 2022) Em um ecossistema florestal, formigas e árvores formam uma relação onde as formigas protegem as árvores de insetos herbívoros em troca de abrigo e alimento. O que caracteriza essa relação mutualística entre duas espécies?",
+    answer_a: "A relação é sempre parasitária para uma das espécies.",
+    answer_b: "Ambas as espécies obtêm benefício da interação.",
+    answer_c: "As espécies competem pelos mesmos recursos.",
+    answer_d: "Uma espécie é predadora da outra.",
+    answer_e: "Uma espécie ignora a presença da outra.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2022,
+    explanation: "Uma relação mutualística é aquela em que ambas as espécies se beneficiam da interação. No exemplo das formigas e árvores, as formigas obtêm abrigo e alimento das estruturas das árvores, enquanto as árvores são protegidas contra insetos herbívoros pelas formigas, ilustrando um mutualismo clássico onde a cooperação resulta em vantagens para todos os envolvidos."
+  },
+  {
+    content: "(ENEM 2021) Na reprodução celular, qual processo gera variabilidade genética através de recombinação e segregação cromossômica?",
+    answer_a: "Mitose.",
+    answer_b: "Meiose.",
+    answer_c: "Fissão binária.",
+    answer_d: "Difusão.",
+    answer_e: "Transcrição.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2021,
+    explanation: "A meiose envolve crossing-over e segregação independente que aumentam a variabilidade genética."
+  },
+  {
+    content: "(ENEM 2018) Quando um vírus invade o corpo humano, o sistema imunológico responde produzindo anticorpos específicos para combater a infecção. Qual estrutura do sistema imunológico é responsável pela produção desses anticorpos?",
+    answer_a: "Plaquetas.",
+    answer_b: "Linfócitos B.",
+    answer_c: "Eritrócitos.",
+    answer_d: "Neurônios.",
+    answer_e: "Células adiposas.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Biologia",
+    year: 2018,
+    explanation: "Os linfócitos B são células especializadas do sistema imunológico que, ao serem ativados por antígenos (como proteínas virais), se diferenciam em plasmócitos. Estes plasmócitos produzem anticorpos específicos que se ligam aos antígenos invasores, neutralizando-os e facilitando sua eliminação pelo sistema imune, proporcionando defesa adaptativa contra infecções."
+  },
+  {
+    content: "(ENEM 2024) Em química, o que ocorre em uma reação exotérmica?",
+    answer_a: "O sistema absorve calor do ambiente.",
+    answer_b: "O sistema libera calor para o ambiente.",
+    answer_c: "Não há troca de energia térmica.",
+    answer_d: "A entropia do sistema diminui sempre.",
+    answer_e: "A pressão do sistema aumenta sem variação de temperatura.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2024,
+    explanation: "Reações exotérmicas liberam energia térmica para o ambiente."
+  },
+  {
+    content: "(ENEM 2023) Em um laboratório de química, um estudante prepara uma solução dissolvendo 1 mol de sal em 1 litro de água. Qual é a unidade SI da concentração molar (molaridade) dessa solução?",
+    answer_a: "mol/L (mol por litro).",
+    answer_b: "g/L (gramas por litro).",
+    answer_c: "mol·L (mol multiplicado por litro).",
+    answer_d: "kg/m³.",
+    answer_e: "mol·m (mol por metro).",
+    correct_answer: "a",
+    category: "natureza",
+    subject: "Química",
+    year: 2023,
+    explanation: "A molaridade é expressa em mol/L (mol por litro), que é a unidade SI para concentração molar, indicando a quantidade de substância dissolvida por unidade de volume da solução. No exemplo, dissolver 1 mol em 1 L resulta em uma solução 1 M (1 molar)."
+  },
+  {
+    content: "(ENEM 2022) Em química, qual é o papel de um catalisador em uma reação química?",
+    answer_a: "Aumentar a energia de ativação necessária.",
+    answer_b: "Diminuir a energia de ativação e acelerar a velocidade da reação sem ser consumido.",
+    answer_c: "Ser consumido como reagente principal.",
+    answer_d: "Impedir que a reação ocorra.",
+    answer_e: "Alterar permanentemente os produtos formados.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2022,
+    explanation: "Catalisadores diminuem a energia de ativação e aumentam a taxa de reação sem se consumirem permanentemente."
+  },
+  {
+    content: "(ENEM 2020) Qual propriedade distingue substâncias iônicas de covalentes sob condições ambientes?",
+    answer_a: "Sólidos iônicos conduzem eletricidade no estado sólido.",
+    answer_b: "Sólidos iônicos tendem a ter altos pontos de fusão e conduzem eletricidade quando fundidos ou em solução, diferentemente de muitos sólidos covalentes.",
+    answer_c: "Substâncias covalentes sempre são iônicas em solução.",
+    answer_d: "Substâncias iônicas nunca se dissolvem em água.",
+    answer_e: "Substâncias covalentes têm maior massa atômica que iônicas.",
+    correct_answer: "b",
+    category: "natureza",
+    subject: "Química",
+    year: 2020,
+    explanation: "Comportamentos típicos: compostos iônicos têm pontos de fusão mais altos e conduzem corrente quando dissolvidos ou fundidos."
   }
 ]
 
@@ -1327,11 +1716,9 @@ questoes_ciencias_da_natureza.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
 
-# Questões de Ciências Humanas
-
 questoes_ciencias_humanas = [
   {
-    content: "(ENEM 2020) Qual foi o principal objetivo da Lei Áurea, assinada em 1888 no Brasil?",
+    content: "(ENEM 2020) Em um debate sobre direitos humanos e cidadania, estudantes discutem marcos históricos da abolição da escravidão no Brasil. Qual foi o principal objetivo da Lei Áurea, assinada em 1888 no Brasil?",
     answer_a: "Abolir a escravidão no Brasil.",
     answer_b: "Proclamar a República.",
     answer_c: "Instituir o voto feminino.",
@@ -1341,7 +1728,7 @@ questoes_ciencias_humanas = [
     category: "humanas",
     subject: "História",
     year: 2020,
-    explanation: "A Lei Áurea aboliu oficialmente a escravidão no Brasil em 1888."
+    explanation: "A Lei Áurea, assinada pela Princesa Isabel em 1888, aboliu oficialmente a escravidão no Brasil, representando um marco fundamental na história dos direitos humanos e na transição para o trabalho livre no país."
   },
   {
     content: "(ENEM 2019) Quem foi o líder da Inconfidência Mineira?",
@@ -1591,7 +1978,7 @@ questoes_ciencias_humanas = [
     explanation: "O Renascimento foi um movimento cultural iniciado na Itália, marcando a transição para a Idade Moderna."
   },
   {
-    content: "(ENEM 2020) O que é o Aquífero Guarani?",
+    content: "(ENEM 2020) Em um estudo sobre recursos hídricos brasileiros, pesquisadores analisam a importância do Aquífero Guarani para o abastecimento de água doce na América do Sul. O que é o Aquífero Guarani?",
     answer_a: "Uma grande reserva subterrânea de água doce na América do Sul.",
     answer_b: "Um rio da região Norte do Brasil.",
     answer_c: "Uma floresta tropical.",
@@ -1601,7 +1988,7 @@ questoes_ciencias_humanas = [
     category: "humanas",
     subject: "Geografia",
     year: 2020,
-    explanation: "O Aquífero Guarani é uma das maiores reservas subterrâneas de água doce do mundo, localizada na América do Sul."
+    explanation: "O Aquífero Guarani é uma das maiores reservas subterrâneas de água doce do mundo, localizada na América do Sul, abrangendo países como Brasil, Argentina, Uruguai e Paraguai, sendo fundamental para o abastecimento de água potável e irrigação agrícola."
   },
   {
     content: "(ENEM 2019) Qual é o maior bioma brasileiro em extensão territorial?",
@@ -1643,7 +2030,7 @@ questoes_ciencias_humanas = [
     explanation: "A expansão agropecuária é a principal responsável pelo desmatamento da Amazônia."
   },
   {
-    content: "(ENEM 2016) O que é urbanização?",
+    content: "(ENEM 2016) Em um debate sobre desenvolvimento urbano sustentável, estudantes analisam como o crescimento das cidades brasileiras impacta o meio ambiente e a qualidade de vida da população. O que é urbanização?",
     answer_a: "Processo de crescimento das cidades.",
     answer_b: "Processo de industrialização.",
     answer_c: "Processo de desmatamento.",
@@ -1656,7 +2043,7 @@ questoes_ciencias_humanas = [
     explanation: "Urbanização é o crescimento das cidades e aumento da população urbana."
   },
   {
-    content: "(ENEM 2015) O que é migração pendular?",
+    content: "(ENEM 2015) Em um estudo sobre mobilidade urbana na região metropolitana de São Paulo, pesquisadores observam como trabalhadores se deslocam diariamente entre cidades próximas, gerando desafios para o transporte público. O que é migração pendular?",
     answer_a: "Deslocamento diário de pessoas entre cidades vizinhas.",
     answer_b: "Migração internacional.",
     answer_c: "Migração rural-urbana.",
@@ -1669,7 +2056,7 @@ questoes_ciencias_humanas = [
     explanation: "Migração pendular é o deslocamento diário, geralmente para trabalho ou estudo, entre cidades próximas."
   },
   {
-    content: "(ENEM 2014) O que é efeito estufa?",
+    content: "(ENEM 2014) Durante uma discussão sobre as causas das mudanças climáticas globais, estudantes debatem como gases atmosféricos retêm calor na Terra, contribuindo para o aquecimento planetário. O que é efeito estufa?",
     answer_a: "Aquecimento da Terra devido à retenção de calor por gases na atmosfera.",
     answer_b: "Resfriamento da Terra.",
     answer_c: "Aumento da camada de ozônio.",
@@ -1682,7 +2069,7 @@ questoes_ciencias_humanas = [
     explanation: "O efeito estufa é o aquecimento da Terra causado pela retenção de calor por gases atmosféricos."
   },
   {
-    content: "(ENEM 2013) O que é agricultura familiar?",
+    content: "(ENEM 2013) Em um projeto de extensão universitária sobre segurança alimentar, estudantes visitam propriedades rurais onde famílias produzem alimentos para consumo próprio e comercialização local. O que é agricultura familiar?",
     answer_a: "Produção agrícola realizada por pequenos produtores e suas famílias.",
     answer_b: "Produção em grandes latifúndios.",
     answer_c: "Produção mecanizada em larga escala.",
@@ -1695,7 +2082,7 @@ questoes_ciencias_humanas = [
     explanation: "Agricultura familiar é realizada por pequenos produtores, com mão de obra predominantemente familiar."
   },
   {
-    content: "(ENEM 2012) O que é zona de convergência do Atlântico Sul?",
+    content: "(ENEM 2012) Em uma aula de geografia sobre o clima brasileiro, professores explicam como uma faixa de nebulosidade influencia as chuvas no território nacional, afetando a agricultura e o abastecimento de água. O que é zona de convergência do Atlântico Sul?",
     answer_a: "Faixa de nebulosidade que influencia o clima do Brasil.",
     answer_b: "Corrente marítima fria.",
     answer_c: "Área de desertificação.",
@@ -1708,7 +2095,7 @@ questoes_ciencias_humanas = [
     explanation: "A zona de convergência do Atlântico Sul é uma faixa de nebulosidade que influencia o clima brasileiro."
   },
   {
-    content: "(ENEM 2011) O que é aquífero?",
+    content: "(ENEM 2011) Em um debate sobre crise hídrica em regiões semiáridas, especialistas discutem a importância de reservatórios subterrâneos para o abastecimento de água potável e irrigação agrícola. O que é aquífero?",
     answer_a: "Reserva subterrânea de água.",
     answer_b: "Tipo de solo.",
     answer_c: "Formação rochosa.",
@@ -1721,7 +2108,7 @@ questoes_ciencias_humanas = [
     explanation: "Aquífero é uma reserva subterrânea de água."
   },
   {
-    content: "(ENEM 2010) O que é globalização?",
+    content: "(ENEM 2010) Em uma palestra sobre economia internacional, um professor analisa como avanços tecnológicos e acordos comerciais conectam países em uma rede de intercâmbios econômicos e culturais. O que é globalização?",
     answer_a: "Integração econômica, social e cultural entre países.",
     answer_b: "Processo de urbanização.",
     answer_c: "Processo de industrialização.",
@@ -1734,7 +2121,7 @@ questoes_ciencias_humanas = [
     explanation: "Globalização é a integração entre países, facilitada por avanços tecnológicos e econômicos."
   },
   {
-    content: "(ENEM 2009) O que é latitude?",
+    content: "(ENEM 2009) Durante uma atividade prática de orientação com GPS, estudantes aprendem como coordenadas geográficas ajudam a localizar qualquer ponto na superfície terrestre para navegação e estudos ambientais. O que é latitude?",
     answer_a: "Distância em graus da linha do Equador.",
     answer_b: "Distância em graus do meridiano de Greenwich.",
     answer_c: "Altitude de um local.",
@@ -1747,7 +2134,7 @@ questoes_ciencias_humanas = [
     explanation: "Latitude é a distância, em graus, da linha do Equador."
   },
   {
-    content: "(ENEM 2008) O que é erosão?",
+    content: "(ENEM 2008) Em um projeto de recuperação de áreas degradadas, engenheiros ambientais estudam como processos naturais e atividades humanas desgastam o solo, comprometendo a agricultura e causando assoreamento de rios. O que é erosão?",
     answer_a: "Desgaste do solo causado por água, vento ou ação humana.",
     answer_b: "Formação de montanhas.",
     answer_c: "Aumento da fertilidade do solo.",
@@ -1760,7 +2147,7 @@ questoes_ciencias_humanas = [
     explanation: "Erosão é o desgaste do solo por agentes naturais ou humanos."
   },
   {
-    content: "(ENEM 2007) O que é bacia hidrográfica?",
+    content: "(ENEM 2007) Em um plano de gestão integrada de recursos hídricos, técnicos delimitam áreas de captação de água para implementar políticas de conservação e uso sustentável dos rios brasileiros. O que é bacia hidrográfica?",
     answer_a: "Área drenada por um rio principal e seus afluentes.",
     answer_b: "Área de floresta tropical.",
     answer_c: "Área de mineração.",
@@ -1773,7 +2160,7 @@ questoes_ciencias_humanas = [
     explanation: "Bacia hidrográfica é a área drenada por um rio e seus afluentes."
   },
   {
-    content: "(ENEM 2006) O que é industrialização tardia?",
+    content: "(ENEM 2006) Em um estudo comparativo sobre desenvolvimento industrial, historiadores analisam como países da América Latina e Ásia se industrializaram décadas após as nações europeias e norte-americanas. O que é industrialização tardia?",
     answer_a: "Processo de industrialização ocorrido após os países centrais.",
     answer_b: "Industrialização do século XIX.",
     answer_c: "Industrialização da Europa.",
@@ -1786,7 +2173,7 @@ questoes_ciencias_humanas = [
     explanation: "Industrialização tardia ocorre em países que se industrializaram após os países centrais."
   },
   {
-    content: "(ENEM 2005) O que é urbanização acelerada?",
+    content: "(ENEM 2005) Em uma análise sobre os desafios das grandes metrópoles brasileiras, urbanistas discutem como o rápido crescimento populacional urbano gera problemas de infraestrutura e desigualdade social. O que é urbanização acelerada?",
     answer_a: "Crescimento rápido das cidades em pouco tempo.",
     answer_b: "Crescimento lento das cidades.",
     answer_c: "Redução da população urbana.",
@@ -1799,7 +2186,7 @@ questoes_ciencias_humanas = [
     explanation: "Urbanização acelerada é o crescimento rápido das cidades, comum em países em desenvolvimento."
   },
   {
-    content: "(ENEM 2004) O que é agricultura extensiva?",
+    content: "(ENEM 2004) Em um debate sobre sustentabilidade agrícola, produtores rurais comparam diferentes métodos de cultivo, destacando como grandes extensões de terra podem ser exploradas com baixo investimento tecnológico. O que é agricultura extensiva?",
     answer_a: "Sistema agrícola com baixa utilização de tecnologia e grandes áreas.",
     answer_b: "Produção intensiva em pequenas áreas.",
     answer_c: "Produção hidropônica.",
@@ -1812,7 +2199,7 @@ questoes_ciencias_humanas = [
     explanation: "Agricultura extensiva utiliza grandes áreas e pouca tecnologia."
   },
   {
-    content: "(ENEM 2003) O que é zona urbana?",
+    content: "(ENEM 2003) Em um projeto de lei municipal sobre zoneamento urbano, vereadores definem áreas destinadas a construções residenciais, comerciais e industriais para organizar o crescimento das cidades. O que é zona urbana?",
     answer_a: "Área das cidades, com maior concentração de construções e população.",
     answer_b: "Área rural.",
     answer_c: "Área de floresta.",
@@ -1825,7 +2212,7 @@ questoes_ciencias_humanas = [
     explanation: "Zona urbana é a área das cidades, com maior densidade populacional e construções."
   },
   {
-    content: "(ENEM 2002) O que é desertificação?",
+    content: "(ENEM 2002) Em um relatório sobre o semiárido brasileiro, pesquisadores alertam para o avanço do processo que transforma terras produtivas em desertos, afetando comunidades rurais e gerando migração forçada. O que é desertificação?",
     answer_a: "Processo de degradação do solo em regiões áridas.",
     answer_b: "Aumento da fertilidade do solo.",
     answer_c: "Formação de lagos.",
@@ -1838,7 +2225,7 @@ questoes_ciencias_humanas = [
     explanation: "Desertificação é a degradação do solo em regiões áridas, tornando-as improdutivas."
   },
   {
-    content: "(ENEM 2001) O que é latitude e longitude?",
+    content: "(ENEM 2001) Em uma aula prática de cartografia digital, estudantes usam coordenadas geográficas para localizar pontos exatos no mapa, facilitando navegação, estudos ambientais e planejamento urbano. O que é latitude e longitude?",
     answer_a: "Coordenadas geográficas que localizam pontos na superfície terrestre.",
     answer_b: "Tipos de relevo.",
     answer_c: "Tipos de vegetação.",
@@ -1851,7 +2238,7 @@ questoes_ciencias_humanas = [
     explanation: "Latitude e longitude são coordenadas que permitem localizar qualquer ponto na Terra."
   },
   {
-    content: "(ENEM 2024) O que é o mito da caverna, segundo Platão?",
+    content: "(ENEM 2024) Em um debate filosófico sobre conhecimento e realidade, estudantes discutem a alegoria de Platão sobre a condição humana e a busca pela verdade. O que é o mito da caverna, segundo Platão?",
     answer_a: "Uma alegoria sobre a busca do conhecimento e a diferença entre aparência e realidade.",
     answer_b: "Uma explicação sobre a origem do universo.",
     answer_c: "Um conto sobre a criação dos deuses.",
@@ -1861,7 +2248,7 @@ questoes_ciencias_humanas = [
     category: "humanas",
     subject: "Filosofia",
     year: 2024,
-    explanation: "O mito da caverna representa a passagem do mundo sensível ao mundo das ideias, mostrando a importância do conhecimento verdadeiro."
+    explanation: "O mito da caverna, em 'A República' de Platão, representa a jornada filosófica do prisioneiro que deixa as sombras da caverna (aparências sensíveis) para alcançar a luz do sol (mundo das ideias verdadeiras), simbolizando a busca pelo conhecimento verdadeiro e a distinção entre realidade aparente e realidade essencial."
   },
   {
     content: "(ENEM 2023) Para Aristóteles, o que é a virtude?",
@@ -1903,7 +2290,7 @@ questoes_ciencias_humanas = [
     explanation: "Kant defende o dever moral baseado em princípios racionais universais."
   },
   {
-    content: "(ENEM 2020) O que é o contrato social para Rousseau?",
+    content: "(ENEM 2020) Em um debate sobre fundamentos da democracia moderna, estudantes discutem como pensadores iluministas propuseram acordos entre cidadãos para formar sociedades justas e organizadas. O que é o contrato social para Rousseau?",
     answer_a: "Acordo pelo qual os indivíduos formam uma sociedade baseada na vontade geral.",
     answer_b: "A submissão do povo ao rei.",
     answer_c: "A defesa da propriedade privada.",
@@ -1929,7 +2316,7 @@ questoes_ciencias_humanas = [
     explanation: "Sócrates defendia o autoconhecimento por meio do diálogo e da maiêutica."
   },
   {
-    content: "(ENEM 2018) O que é alienação, segundo Karl Marx?",
+    content: "(ENEM 2018) Em uma análise crítica do trabalho assalariado na sociedade capitalista, sociólogos examinam como o sistema econômico afasta o trabalhador de sua essência humana e do produto de seu labor. O que é alienação, segundo Karl Marx?",
     answer_a: "A separação do trabalhador do produto de seu trabalho e de sua essência humana.",
     answer_b: "A busca pelo prazer imediato.",
     answer_c: "A negação da existência de Deus.",
@@ -1942,7 +2329,7 @@ questoes_ciencias_humanas = [
     explanation: "Marx entende alienação como a perda do sentido do trabalho e da humanidade pelo trabalhador."
   },
   {
-    content: "(ENEM 2017) O que é empirismo?",
+    content: "(ENEM 2017) Em um seminário sobre história da filosofia, estudantes comparam correntes que valorizam a razão pura com aquelas que priorizam a experiência sensível como fonte do conhecimento humano. O que é empirismo?",
     answer_a: "Doutrina que afirma que o conhecimento vem da experiência sensível.",
     answer_b: "Crença na razão como fonte única do saber.",
     answer_c: "Defesa da fé acima da razão.",
@@ -1955,7 +2342,7 @@ questoes_ciencias_humanas = [
     explanation: "Empirismo valoriza a experiência como origem do conhecimento, em oposição ao racionalismo."
   },
   {
-    content: "(ENEM 2016) O que é existencialismo?",
+    content: "(ENEM 2016) Em uma discussão sobre a condição humana no século XX, filósofos contemporâneos exploram temas como liberdade, angústia e responsabilidade individual diante de um mundo sem sentido pré-determinado. O que é existencialismo?",
     answer_a: "Corrente filosófica que valoriza a liberdade e a responsabilidade do indivíduo.",
     answer_b: "Doutrina que nega a existência do mundo.",
     answer_c: "Teoria que defende o determinismo biológico.",
@@ -1968,7 +2355,7 @@ questoes_ciencias_humanas = [
     explanation: "O existencialismo destaca a liberdade, a escolha e a responsabilidade do ser humano."
   },
   {
-    content: "(ENEM 2015) O que é a 'maiêutica' socrática?",
+    content: "(ENEM 2015) Em uma oficina de pensamento crítico, educadores utilizam diálogos questionadores para estimular alunos a descobrirem conhecimentos por si mesmos, seguindo o método do filósofo grego Sócrates. O que é a 'maiêutica' socrática?",
     answer_a: "Método de perguntas e respostas para estimular o pensamento crítico.",
     answer_b: "Doutrina da imortalidade da alma.",
     answer_c: "Teoria da justiça.",
@@ -1981,7 +2368,7 @@ questoes_ciencias_humanas = [
     explanation: "A maiêutica é o método socrático de diálogo para levar o interlocutor ao conhecimento."
   },
   {
-    content: "(ENEM 2014) O que é o niilismo, segundo Nietzsche?",
+    content: "(ENEM 2014) Em uma reflexão sobre a crise de valores na sociedade moderna, filósofos contemporâneos discutem como a perda de sentido absoluto da existência afeta a condição humana e a criação de novos valores. O que é o niilismo, segundo Nietzsche?",
     answer_a: "A negação de valores absolutos e do sentido objetivo da vida.",
     answer_b: "A crença em Deus.",
     answer_c: "A defesa da moral tradicional.",
@@ -1994,7 +2381,7 @@ questoes_ciencias_humanas = [
     explanation: "Nietzsche define niilismo como a ausência de valores e sentido objetivo para a existência."
   },
   {
-    content: "(ENEM 2013) O que é o utilitarismo?",
+    content: "(ENEM 2013) Em um debate sobre políticas públicas de saúde, governantes avaliam ações governamentais que buscam maximizar o bem-estar da maioria da população, seguindo princípios éticos utilitários. O que é o utilitarismo?",
     answer_a: "Doutrina ética que busca o maior bem para o maior número de pessoas.",
     answer_b: "Teoria que valoriza apenas o interesse individual.",
     answer_c: "Defesa da tradição.",
@@ -2007,7 +2394,7 @@ questoes_ciencias_humanas = [
     explanation: "O utilitarismo, de Bentham e Mill, busca maximizar a felicidade coletiva."
   },
   {
-    content: "(ENEM 2012) O que é a dúvida metódica de Descartes?",
+    content: "(ENEM 2012) Em uma aula sobre história da ciência moderna, estudantes aprendem como René Descartes propôs questionar todas as crenças para estabelecer bases sólidas para o conhecimento científico. O que é a dúvida metódica de Descartes?",
     answer_a: "Processo de questionar tudo para encontrar uma base segura para o conhecimento.",
     answer_b: "Negação da existência do mundo.",
     answer_c: "Aceitação dos sentidos como verdadeiros.",
@@ -2020,7 +2407,7 @@ questoes_ciencias_humanas = [
     explanation: "Descartes propõe duvidar de tudo para chegar a verdades indubitáveis."
   },
   {
-    content: "(ENEM 2011) O que é a teoria das ideias de Platão?",
+    content: "(ENEM 2011) Em um estudo sobre a origem do pensamento ocidental, filósofos analisam como Platão estabeleceu uma distinção fundamental entre o mundo sensível imperfeito e um mundo perfeito de essências imutáveis. O que é a teoria das ideias de Platão?",
     answer_a: "A existência de um mundo perfeito e imutável das ideias, distinto do mundo sensível.",
     answer_b: "A defesa do empirismo.",
     answer_c: "A valorização dos sentidos.",
@@ -2033,7 +2420,7 @@ questoes_ciencias_humanas = [
     explanation: "Platão distingue o mundo sensível do mundo das ideias, onde estão as essências perfeitas."
   },
   {
-    content: "(ENEM 2010) O que é a ética para Aristóteles?",
+    content: "(ENEM 2010) Em uma discussão sobre educação moral, educadores exploram como o filósofo grego Aristóteles conectou a busca pela felicidade com o desenvolvimento de hábitos virtuosos na vida prática. O que é a ética para Aristóteles?",
     answer_a: "A busca da felicidade por meio da virtude.",
     answer_b: "A obediência às leis do Estado.",
     answer_c: "A submissão à vontade divina.",
@@ -2046,7 +2433,7 @@ questoes_ciencias_humanas = [
     explanation: "Para Aristóteles, a ética visa a felicidade, alcançada pela prática das virtudes."
   },
   {
-    content: "(ENEM 2009) O que é o ceticismo filosófico?",
+    content: "(ENEM 2009) Em um debate sobre os limites do conhecimento humano, epistemólogos discutem correntes filosóficas que questionam nossa capacidade de alcançar verdades absolutas sobre o mundo. O que é o ceticismo filosófico?",
     answer_a: "Doutrina que questiona a possibilidade do conhecimento absoluto.",
     answer_b: "Crença na verdade absoluta.",
     answer_c: "Defesa da tradição.",
@@ -2059,7 +2446,7 @@ questoes_ciencias_humanas = [
     explanation: "O ceticismo duvida da possibilidade de se alcançar a verdade absoluta."
   },
   {
-    content: "(ENEM 2008) O que é a dialética, segundo Hegel?",
+    content: "(ENEM 2008) Em uma análise da evolução histórica das sociedades, historiadores aplicam o método dialético hegeliano para compreender como contradições sociais geram progresso e transformações. O que é a dialética, segundo Hegel?",
     answer_a: "Processo de desenvolvimento do pensamento por meio de contradições e superações.",
     answer_b: "Negação da razão.",
     answer_c: "Defesa do empirismo.",
@@ -2072,7 +2459,7 @@ questoes_ciencias_humanas = [
     explanation: "A dialética hegeliana é o movimento do pensamento por meio de tese, antítese e síntese."
   },
   {
-    content: "(ENEM 2007) O que é a 'vontade de potência' em Nietzsche?",
+    content: "(ENEM 2007) Em uma reflexão sobre motivações humanas profundas, psicólogos e filósofos exploram o impulso criador que leva indivíduos a superarem limites e criarem novos valores na vida. O que é a 'vontade de potência' em Nietzsche?",
     answer_a: "Força criadora e afirmadora da vida, que impulsiona o ser humano a superar limites.",
     answer_b: "Submissão à moral tradicional.",
     answer_c: "Busca pela felicidade.",
@@ -2085,7 +2472,7 @@ questoes_ciencias_humanas = [
     explanation: "A vontade de potência é o impulso vital de criação e superação em Nietzsche."
   },
   {
-    content: "(ENEM 2006) O que é a 'boa vontade' para Kant?",
+    content: "(ENEM 2006) Em uma discussão sobre decisões morais difíceis, juristas e filósofos avaliam ações que são realizadas por dever, independentemente de consequências pessoais ou sociais. O que é a 'boa vontade' para Kant?",
     answer_a: "A intenção de agir moralmente, independentemente das consequências.",
     answer_b: "A busca pelo prazer.",
     answer_c: "A obediência às leis do Estado.",
@@ -2098,7 +2485,7 @@ questoes_ciencias_humanas = [
     explanation: "Para Kant, a boa vontade é agir por dever, não por interesse."
   },
   {
-    content: "(ENEM 2005) O que é a 'vontade geral' em Rousseau?",
+    content: "(ENEM 2005) Em um debate sobre democracia participativa, cidadãos discutem como decisões coletivas devem priorizar o interesse comum acima dos interesses individuais particulares. O que é a 'vontade geral' em Rousseau?",
     answer_a: "A vontade coletiva que visa o bem comum, acima dos interesses individuais.",
     answer_b: "A vontade do governante.",
     answer_c: "A busca pelo prazer.",
@@ -2111,7 +2498,7 @@ questoes_ciencias_humanas = [
     explanation: "A vontade geral é o interesse coletivo, fundamento da soberania popular em Rousseau."
   },
   {
-    content: "(ENEM 2024) O que é cultura, segundo a Sociologia?",
+    content: "(ENEM 2024) Em um estudo sobre identidade cultural contemporânea, pesquisadores analisam como indivíduos constroem sua autoimagem em sociedade. O que é cultura, segundo a Sociologia?",
     answer_a: "O conjunto de valores, crenças, normas e práticas compartilhadas por um grupo.",
     answer_b: "Apenas manifestações artísticas.",
     answer_c: "Somente a língua falada.",
@@ -2121,10 +2508,10 @@ questoes_ciencias_humanas = [
     category: "humanas",
     subject: "Sociologia",
     year: 2024,
-    explanation: "Cultura é o conjunto de valores, normas, crenças e práticas compartilhadas por uma sociedade."
+    explanation: "Na sociologia, cultura é entendida como o conjunto de valores, crenças, normas, costumes e práticas compartilhadas por um grupo social, transmitidas entre gerações e fundamentais para a coesão social e a construção de identidades coletivas."
   },
   {
-    content: "(ENEM 2023) O que é socialização?",
+    content: "(ENEM 2023) Em um estudo sobre desenvolvimento infantil, psicólogos sociais observam como crianças aprendem normas, valores e comportamentos da sociedade através de interações familiares, escolares e comunitárias. O que é socialização?",
     answer_a: "Processo pelo qual o indivíduo aprende e internaliza normas e valores sociais.",
     answer_b: "Processo de industrialização.",
     answer_c: "Processo de urbanização.",
@@ -2137,7 +2524,7 @@ questoes_ciencias_humanas = [
     explanation: "Socialização é o processo de aprendizagem das normas e valores de uma sociedade."
   },
   {
-    content: "(ENEM 2022) O que é etnocentrismo?",
+    content: "(ENEM 2022) Em um projeto intercultural em escola multicultural, educadores trabalham para reduzir atitudes que julgam outras culturas pela lente dos próprios valores culturais. O que é etnocentrismo?",
     answer_a: "Tendência de considerar a própria cultura superior às demais.",
     answer_b: "Valorização da diversidade cultural.",
     answer_c: "Respeito às diferenças culturais.",
@@ -2150,7 +2537,7 @@ questoes_ciencias_humanas = [
     explanation: "Etnocentrismo é julgar outras culturas a partir dos valores da própria cultura."
   },
   {
-    content: "(ENEM 2021) O que é identidade social?",
+    content: "(ENEM 2021) Em uma pesquisa sobre juventude contemporânea, sociólogos analisam como características como gênero, classe social, etnia e profissão definem o lugar dos indivíduos nos grupos sociais. O que é identidade social?",
     answer_a: "Conjunto de características que definem o indivíduo em relação ao grupo.",
     answer_b: "Apenas o nome da pessoa.",
     answer_c: "Somente a profissão.",
@@ -2163,7 +2550,7 @@ questoes_ciencias_humanas = [
     explanation: "Identidade social é formada por características que situam o indivíduo em seu grupo social."
   },
   {
-    content: "(ENEM 2020) O que é estratificação social?",
+    content: "(ENEM 2020) Em um relatório sobre desigualdade no Brasil, pesquisadores analisam como a sociedade se organiza em camadas com diferentes níveis de riqueza, poder e prestígio social. O que é estratificação social?",
     answer_a: "Divisão da sociedade em camadas ou grupos hierarquizados.",
     answer_b: "Processo de urbanização.",
     answer_c: "Processo de industrialização.",
@@ -2176,7 +2563,7 @@ questoes_ciencias_humanas = [
     explanation: "Estratificação social é a divisão da sociedade em grupos com diferentes níveis de poder e prestígio."
   },
   {
-    content: "(ENEM 2019) O que é mobilidade social?",
+    content: "(ENEM 2019) Em uma análise sobre oportunidades educacionais, sociólogos estudam como indivíduos podem mudar sua posição na hierarquia social através de educação, trabalho e outros fatores. O que é mobilidade social?",
     answer_a: "Mudança de posição de um indivíduo ou grupo na estrutura social.",
     answer_b: "Mudança de endereço.",
     answer_c: "Mudança de profissão.",
@@ -2189,7 +2576,7 @@ questoes_ciencias_humanas = [
     explanation: "Mobilidade social é a possibilidade de ascensão ou descida na hierarquia social."
   },
   {
-    content: "(ENEM 2018) O que é preconceito?",
+    content: "(ENEM 2018) Em uma campanha contra discriminação racial, ativistas trabalham para conscientizar a população sobre julgamentos negativos infundados que afetam grupos minoritários na sociedade. O que é preconceito?",
     answer_a: "Julgamento prévio e negativo sobre pessoas ou grupos.",
     answer_b: "Respeito às diferenças.",
     answer_c: "Adoção de novos costumes.",
@@ -2202,7 +2589,7 @@ questoes_ciencias_humanas = [
     explanation: "Preconceito é um julgamento negativo sem conhecimento ou experiência real."
   },
   {
-    content: "(ENEM 2017) O que é papel social?",
+    content: "(ENEM 2017) Em um estudo sobre comportamento organizacional, psicólogos observam como funcionários se adaptam às expectativas de desempenho e conduta em diferentes ambientes de trabalho. O que é papel social?",
     answer_a: "Conjunto de comportamentos esperados de um indivíduo em determinada posição social.",
     answer_b: "Apenas a profissão de uma pessoa.",
     answer_c: "Apenas o cargo político.",
@@ -2215,7 +2602,7 @@ questoes_ciencias_humanas = [
     explanation: "Papel social é o conjunto de expectativas sobre o comportamento de alguém em determinado contexto."
   },
   {
-    content: "(ENEM 2016) O que é anomia, segundo Durkheim?",
+    content: "(ENEM 2016) Em uma análise sobre criminalidade urbana, sociólogos investigam como a ausência de normas claras em sociedades em rápida transformação leva ao aumento de comportamentos desviantes. O que é anomia, segundo Durkheim?",
     answer_a: "Ausência ou enfraquecimento das normas sociais.",
     answer_b: "Excesso de normas sociais.",
     answer_c: "Respeito absoluto às leis.",
@@ -2228,7 +2615,7 @@ questoes_ciencias_humanas = [
     explanation: "Anomia é a falta de normas claras, levando à desordem social."
   },
   {
-    content: "(ENEM 2015) O que é fato social, segundo Durkheim?",
+    content: "(ENEM 2015) Em uma aula sobre fundamentos da sociologia, estudantes aprendem a distinguir entre ações individuais e fenômenos coletivos que exercem influência coercitiva sobre os membros da sociedade. O que é fato social, segundo Durkheim?",
     answer_a: "Toda maneira de agir, sentir e pensar exterior ao indivíduo e dotada de poder de coerção.",
     answer_b: "Apenas ações individuais.",
     answer_c: "Apenas sentimentos pessoais.",
@@ -2241,7 +2628,7 @@ questoes_ciencias_humanas = [
     explanation: "Fato social é tudo aquilo que exerce influência sobre o indivíduo, vindo da sociedade."
   },
   {
-    content: "(ENEM 2014) O que é alienação, segundo Marx?",
+    content: "(ENEM 2014) Em uma pesquisa sobre satisfação no trabalho, psicólogos organizacionais analisam como o sistema capitalista afasta os trabalhadores do controle sobre seu processo produtivo e do significado de seu labor. O que é alienação, segundo Marx?",
     answer_a: "Separação do trabalhador do produto de seu trabalho e de sua essência humana.",
     answer_b: "Aproximação entre patrão e empregado.",
     answer_c: "Apenas desemprego.",
@@ -2254,7 +2641,7 @@ questoes_ciencias_humanas = [
     explanation: "Alienação é a perda do sentido do trabalho e da humanidade pelo trabalhador."
   },
   {
-    content: "(ENEM 2013) O que é ideologia?",
+    content: "(ENEM 2013) Em uma análise crítica de discursos políticos, cientistas políticos examinam como ideias e crenças servem para justificar e manter os interesses de grupos dominantes na sociedade. O que é ideologia?",
     answer_a: "Conjunto de ideias que justificam e legitimam interesses de grupos sociais.",
     answer_b: "Apenas crenças religiosas.",
     answer_c: "Apenas opiniões políticas.",
@@ -2267,7 +2654,7 @@ questoes_ciencias_humanas = [
     explanation: "Ideologia é um conjunto de ideias que serve para justificar interesses de grupos sociais."
   },
   {
-    content: "(ENEM 2012) O que é classe social?",
+    content: "(ENEM 2012) Em uma análise sobre distribuição de renda no Brasil, economistas classificam a população em grupos com condições econômicas e culturais semelhantes para entender padrões de consumo e acesso a serviços. O que é classe social?",
     answer_a: "Grupo de pessoas com condições econômicas e sociais semelhantes.",
     answer_b: "Apenas grupo religioso.",
     answer_c: "Apenas grupo étnico.",
@@ -2280,7 +2667,7 @@ questoes_ciencias_humanas = [
     explanation: "Classe social é um grupo definido por condições econômicas e sociais semelhantes."
   },
   {
-    content: "(ENEM 2011) O que é movimento social?",
+    content: "(ENEM 2011) Em uma cobertura jornalística sobre manifestações populares, repórteres analisam como grupos organizados buscam mudanças sociais, econômicas ou políticas através de ações coletivas. O que é movimento social?",
     answer_a: "Ação coletiva organizada para promover mudanças sociais.",
     answer_b: "Apenas festas populares.",
     answer_c: "Apenas reuniões familiares.",
@@ -2293,7 +2680,7 @@ questoes_ciencias_humanas = [
     explanation: "Movimento social é uma ação coletiva que busca mudanças na sociedade."
   },
   {
-    content: "(ENEM 2010) O que é cidadania?",
+    content: "(ENEM 2010) Em uma aula sobre educação para a democracia, professores explicam aos alunos como o exercício da cidadania envolve tanto direitos garantidos quanto responsabilidades sociais em uma comunidade organizada. O que é cidadania?",
     answer_a: "Conjunto de direitos e deveres do indivíduo na sociedade.",
     answer_b: "Apenas direito ao voto.",
     answer_c: "Apenas direito à educação.",
@@ -2306,7 +2693,7 @@ questoes_ciencias_humanas = [
     explanation: "Cidadania envolve direitos e deveres civis, políticos e sociais."
   },
   {
-    content: "(ENEM 2009) O que é desigualdade social?",
+    content: "(ENEM 2009) Em um relatório sobre desenvolvimento humano, organizações internacionais medem como diferentes grupos populacionais têm acesso desigual a educação, saúde, renda e oportunidades na sociedade. O que é desigualdade social?",
     answer_a: "Diferença de acesso a bens, serviços e oportunidades entre grupos sociais.",
     answer_b: "Apenas diferença de idade.",
     answer_c: "Apenas diferença de gênero.",
@@ -2319,7 +2706,7 @@ questoes_ciencias_humanas = [
     explanation: "Desigualdade social refere-se à distribuição desigual de recursos e oportunidades."
   },
   {
-    content: "(ENEM 2008) O que é patriarcado?",
+    content: "(ENEM 2008) Em um estudo sobre gênero e poder, pesquisadoras analisam como sistemas sociais concentram autoridade e recursos nas mãos dos homens, influenciando estruturas familiares e institucionais. O que é patriarcado?",
     answer_a: "Sistema social em que o poder está concentrado nas mãos dos homens.",
     answer_b: "Sistema matriarcal.",
     answer_c: "Sistema igualitário.",
@@ -2332,7 +2719,7 @@ questoes_ciencias_humanas = [
     explanation: "Patriarcado é um sistema em que os homens detêm o poder social e familiar."
   },
   {
-    content: "(ENEM 2007) O que é globalização?",
+    content: "(ENEM 2007) Em uma análise sobre comércio internacional, economistas observam como países se conectam através de fluxos de mercadorias, capitais, informações e pessoas, criando interdependências globais. O que é globalização?",
     answer_a: "Processo de integração econômica, social e cultural entre países.",
     answer_b: "Apenas industrialização.",
     answer_c: "Apenas urbanização.",
@@ -2345,7 +2732,7 @@ questoes_ciencias_humanas = [
     explanation: "Globalização é a integração entre países, culturas e economias."
   },
   {
-    content: "(ENEM 2006) O que é burocracia, segundo Max Weber?",
+    content: "(ENEM 2006) Em um estudo sobre administração pública moderna, especialistas avaliam como organizações governamentais e empresariais adotam sistemas hierárquicos e regras formais para garantir eficiência e previsibilidade. O que é burocracia, segundo Max Weber?",
     answer_a: "Organização baseada em regras, hierarquia e impessoalidade.",
     answer_b: "Apenas corrupção no governo.",
     answer_c: "Apenas excesso de papelada.",
@@ -2358,7 +2745,7 @@ questoes_ciencias_humanas = [
     explanation: "Burocracia é uma forma de organização racional baseada em regras e hierarquia."
   },
   {
-    content: "(ENEM 2005) O que é controle social?",
+    content: "(ENEM 2005) Em uma análise sobre comportamento coletivo, sociólogos examinam como famílias, escolas, leis e mídia influenciam o comportamento dos indivíduos para manter a ordem social. O que é controle social?",
     answer_a: "Conjunto de mecanismos que regulam o comportamento dos indivíduos na sociedade.",
     answer_b: "Apenas controle policial.",
     answer_c: "Apenas controle familiar.",
@@ -2371,7 +2758,7 @@ questoes_ciencias_humanas = [
     explanation: "Controle social são mecanismos formais e informais que regulam o comportamento social."
   },
   {
-    content: "(ENEM 2024) O que caracteriza a arte moderna?",
+    content: "(ENEM 2024) Em um debate sobre movimentos artísticos modernos, estudantes analisam rupturas estéticas e inovações formais no século XX. O que caracteriza a arte moderna?",
     answer_a: "Busca por inovação e rompimento com padrões tradicionais.",
     answer_b: "Imitação fiel da natureza.",
     answer_c: "Uso exclusivo de temas religiosos.",
@@ -2381,7 +2768,7 @@ questoes_ciencias_humanas = [
     category: "humanas",
     subject: "Artes",
     year: 2024,
-    explanation: "A arte moderna é marcada pela inovação, experimentação e ruptura com tradições anteriores."
+    explanation: "A arte moderna, surgida no final do século XIX e consolidada no século XX, caracteriza-se pela busca incessante de inovação, rompimento com padrões estéticos tradicionais, experimentação formal e questionamento dos conceitos estabelecidos de arte e representação."
   },
   {
     content: "(ENEM 2023) O que foi a Semana de Arte Moderna de 1922?",
@@ -2397,7 +2784,7 @@ questoes_ciencias_humanas = [
     explanation: "A Semana de Arte Moderna de 1922 foi um marco do modernismo brasileiro, propondo novas linguagens artísticas."
   },
   {
-    content: "(ENEM 2022) O que é arte abstrata?",
+    content: "(ENEM 2022) Em uma exposição de arte contemporânea, visitantes observam como artistas modernos romperam com a representação figurativa para explorar formas, cores e texturas como linguagens autônomas. O que é arte abstrata?",
     answer_a: "Arte que não representa figuras reconhecíveis da realidade.",
     answer_b: "Arte que imita a natureza.",
     answer_c: "Arte exclusivamente religiosa.",
@@ -2410,7 +2797,7 @@ questoes_ciencias_humanas = [
     explanation: "A arte abstrata não busca representar objetos reais, mas sim formas, cores e sensações."
   },
   {
-    content: "(ENEM 2021) O que é o expressionismo?",
+    content: "(ENEM 2021) Em um estudo sobre arte do início do século XX, historiadores analisam como artistas alemães expressaram angústias existenciais e críticas sociais através de formas distorcidas e cores intensas. O que é o expressionismo?",
     answer_a: "Movimento artístico que valoriza a expressão dos sentimentos e emoções.",
     answer_b: "Representação fiel da realidade.",
     answer_c: "Arte baseada em mitologia grega.",
@@ -2436,7 +2823,7 @@ questoes_ciencias_humanas = [
     explanation: "O cubismo utiliza formas geométricas para representar objetos sob diferentes ângulos."
   },
   {
-    content: "(ENEM 2019) O que é arte barroca?",
+    content: "(ENEM 2019) Em uma visita a igrejas coloniais brasileiras, estudantes observam como o estilo barroco europeu se manifestou em esculturas, pinturas e arquitetura com dramaticidade, movimento e riqueza ornamental. O que é arte barroca?",
     answer_a: "Estilo artístico marcado pelo exagero, dramaticidade e riqueza de detalhes.",
     answer_b: "Arte simples e sem ornamentos.",
     answer_c: "Movimento de arte abstrata.",
@@ -2462,7 +2849,7 @@ questoes_ciencias_humanas = [
     explanation: "O Renascimento foi um movimento que resgatou valores da Antiguidade clássica e promoveu avanços nas artes e ciências."
   },
   {
-    content: "(ENEM 2017) O que é arte popular?",
+    content: "(ENEM 2017) Em um festival cultural nordestino, pesquisadores documentam como comunidades tradicionais preservam técnicas artesanais e expressões culturais transmitidas oralmente através das gerações. O que é arte popular?",
     answer_a: "Expressão artística ligada à cultura do povo, geralmente transmitida oralmente.",
     answer_b: "Arte produzida apenas por artistas famosos.",
     answer_c: "Arte exclusiva de museus.",
@@ -2475,7 +2862,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte popular é aquela produzida por comunidades, refletindo tradições e costumes locais."
   },
   {
-    content: "(ENEM 2016) O que é arte efêmera?",
+    content: "(ENEM 2016) Em um evento de arte urbana contemporânea, artistas criam instalações temporárias em espaços públicos que existem apenas durante o período da exposição, desafiando noções tradicionais de permanência artística. O que é arte efêmera?",
     answer_a: "Arte que tem curta duração, como performances e intervenções urbanas.",
     answer_b: "Arte feita para durar séculos.",
     answer_c: "Arte apenas em esculturas.",
@@ -2488,7 +2875,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte efêmera é aquela criada para existir por pouco tempo, como happenings e performances."
   },
   {
-    content: "(ENEM 2015) O que é arte conceitual?",
+    content: "(ENEM 2015) Em uma exposição de arte contemporânea, curadores explicam como artistas valorizam ideias e conceitos acima da execução técnica ou material, desafiando definições tradicionais de arte. O que é arte conceitual?",
     answer_a: "Arte em que a ideia é mais importante que o objeto final.",
     answer_b: "Arte baseada em técnicas tradicionais.",
     answer_c: "Arte apenas figurativa.",
@@ -2514,7 +2901,7 @@ questoes_ciencias_humanas = [
     explanation: "O impressionismo busca captar a luz e as impressões visuais do instante, com pinceladas soltas."
   },
   {
-    content: "(ENEM 2013) O que é arte digital?",
+    content: "(ENEM 2013) Em um laboratório de arte computacional, designers criam obras interativas usando softwares, algoritmos e dispositivos digitais, expandindo as possibilidades expressivas da arte contemporânea. O que é arte digital?",
     answer_a: "Arte produzida com o uso de tecnologias digitais.",
     answer_b: "Arte feita apenas com tinta a óleo.",
     answer_c: "Arte exclusivamente escultural.",
@@ -2527,7 +2914,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte digital utiliza computadores, softwares e outras tecnologias para criar obras."
   },
   {
-    content: "(ENEM 2012) O que é performance artística?",
+    content: "(ENEM 2012) Em um festival de arte contemporânea, performers utilizam o próprio corpo e ações ao vivo como meio de expressão artística, criando experiências efêmeras e interativas com o público. O que é performance artística?",
     answer_a: "Ação artística realizada ao vivo, envolvendo o corpo do artista.",
     answer_b: "Pintura em tela.",
     answer_c: "Escultura em mármore.",
@@ -2540,7 +2927,7 @@ questoes_ciencias_humanas = [
     explanation: "Performance é uma manifestação artística em que o artista utiliza o próprio corpo e ações ao vivo."
   },
   {
-    content: "(ENEM 2011) O que é arte urbana?",
+    content: "(ENEM 2011) Em um tour por bairros periféricos de São Paulo, estudantes observam como artistas transformam muros, postes e espaços abandonados em manifestações culturais que dialogam com questões sociais urbanas. O que é arte urbana?",
     answer_a: "Expressão artística realizada em espaços públicos, como grafite e intervenções.",
     answer_b: "Arte feita apenas em museus.",
     answer_c: "Arte religiosa.",
@@ -2553,7 +2940,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte urbana é aquela feita em espaços públicos, como grafite, murais e intervenções."
   },
   {
-    content: "(ENEM 2010) O que é grafite?",
+    content: "(ENEM 2010) Em um documentário sobre cultura urbana, cineastas mostram como jovens artistas transformam fachadas de prédios em verdadeiras galerias ao ar livre, expressando mensagens sociais e estéticas. O que é grafite?",
     answer_a: "Expressão artística feita em muros e espaços urbanos.",
     answer_b: "Pintura em tela.",
     answer_c: "Escultura em pedra.",
@@ -2566,7 +2953,7 @@ questoes_ciencias_humanas = [
     explanation: "Grafite é uma manifestação artística urbana feita em muros e paredes das cidades."
   },
   {
-    content: "(ENEM 2009) O que é arte clássica?",
+    content: "(ENEM 2009) Em uma visita ao Museu do Louvre, estudantes aprendem como artistas da Grécia e Roma antigas estabeleceram princípios de harmonia, proporção e equilíbrio que influenciaram toda a arte ocidental posterior. O que é arte clássica?",
     answer_a: "Arte inspirada nos valores da Grécia e Roma antigas.",
     answer_b: "Arte baseada em experimentação.",
     answer_c: "Arte abstrata.",
@@ -2579,7 +2966,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte clássica valoriza a harmonia, proporção e equilíbrio, inspirada na Antiguidade clássica."
   },
   {
-    content: "(ENEM 2008) O que é arte indígena brasileira?",
+    content: "(ENEM 2008) Em uma exposição etnográfica no Museu do Índio, visitantes descobrem a riqueza de técnicas, materiais e simbolismos utilizados pelos povos originários brasileiros em suas expressões artísticas tradicionais. O que é arte indígena brasileira?",
     answer_a: "Expressão artística dos povos originários do Brasil.",
     answer_b: "Arte feita apenas por europeus.",
     answer_c: "Arte digital.",
@@ -2592,7 +2979,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte indígena brasileira é produzida pelos povos originários, com grande diversidade de técnicas e estilos."
   },
   {
-    content: "(ENEM 2007) O que é escultura?",
+    content: "(ENEM 2007) Em um ateliê de artes plásticas, estudantes experimentam modelar argila e outros materiais para criar formas tridimensionais que ocupam espaço real, desde pequenas peças até monumentos públicos. O que é escultura?",
     answer_a: "Arte de criar formas tridimensionais em diversos materiais.",
     answer_b: "Arte feita apenas em papel.",
     answer_c: "Arte digital.",
@@ -2605,7 +2992,7 @@ questoes_ciencias_humanas = [
     explanation: "Escultura é a arte de criar formas tridimensionais em materiais como pedra, madeira, metal ou argila."
   },
   {
-    content: "(ENEM 2006) O que é arte minimalista?",
+    content: "(ENEM 2006) Em uma galeria de arte contemporânea, visitantes observam como artistas reduzem formas e cores ao essencial, criando obras que privilegiam a simplicidade e a reflexão sobre espaço e materialidade. O que é arte minimalista?",
     answer_a: "Estilo artístico que valoriza a simplicidade e o uso de poucos elementos.",
     answer_b: "Arte barroca.",
     answer_c: "Arte clássica.",
@@ -2618,7 +3005,7 @@ questoes_ciencias_humanas = [
     explanation: "Arte minimalista busca a simplicidade, reduzindo formas e cores ao essencial."
   },
   {
-    content: "(ENEM 2005) O que é arte românica?",
+    content: "(ENEM 2005) Em uma viagem pela Europa medieval, estudantes visitam mosteiros e igrejas cujas paredes grossas, arcos semicirculares e esculturas expressam a espiritualidade e a organização social da Idade Média. O que é arte românica?",
     answer_a: "Estilo artístico europeu da Idade Média, marcado por igrejas de arcos semicirculares.",
     answer_b: "Arte moderna.",
     answer_c: "Arte digital.",
@@ -2636,8 +3023,6 @@ questoes_ciencias_humanas.each do |questao|
   Question.create!(questao.merge(user_id: User.first.id))
 end
 
-# Questões de Linguagens e suas Tecnologias
-
 questoes_linguagens = [
     {
       content: "(ENEM 2019) Qual característica é marcante no Parnasianismo brasileiro?",
@@ -2653,7 +3038,7 @@ questoes_linguagens = [
       explanation: "O Parnasianismo caracteriza-se pelo culto à forma perfeita, objetividade descritiva, linguagem rebuscada, uso de métrica rigorosa e valorização da arte pela arte, com busca da perfeição formal."
     },
     {
-      content: "(ENEM 2019) O que é um período composto por subordinação?",
+    content: "(ENEM 2019) Em uma aula de análise sintática, estudantes aprendem a identificar estruturas complexas onde uma oração completa o sentido da outra, estabelecendo relações de dependência gramatical. O que é um período composto por subordinação?",
       answer_a: "Conjunto de orações independentes sintaticamente",
       answer_b: "Frase sem verbo ou com verbo subentendido",
       answer_c: "Oração que contém apenas o sujeito e o predicado essenciais",
@@ -2848,7 +3233,7 @@ questoes_linguagens = [
     explanation: "O Romantismo brasileiro se caracteriza pela idealização do indígena como herói nacional, valorização da natureza brasileira, subjetivismo, nacionalismo e sentimentalismo."
   },
   {
-    content: "(ENEM 2023) O que é coesão sequencial em um texto?",
+    content: "(ENEM 2023) Em uma oficina de produção textual, escritores aprendem a usar conectivos adequados para organizar ideias em sequência lógica, garantindo que o texto flua naturalmente do início ao fim. O que é coesão sequencial em um texto?",
     answer_a: "O uso de conectivos para estabelecer relações lógicas entre partes do texto",
     answer_b: "A repetição de palavras para enfatizar uma ideia",
     answer_c: "O uso de pronomes para retomar referentes anteriores",
@@ -2861,7 +3246,7 @@ questoes_linguagens = [
     explanation: "A coesão sequencial estabelece conexões lógico-semânticas entre partes do texto através de conectivos e expressões que indicam tempo, causa, consequência, oposição, etc."
   },
   {
-    content: "(ENEM 2021) O que é denotação?",
+    content: "(ENEM 2021) Em um debate sobre interpretação de textos literários, linguistas explicam a diferença entre o significado literal das palavras e suas conotações simbólicas ou emocionais. O que é denotação?",
     answer_a: "Uso figurado da linguagem",
     answer_b: "Sentido literal da palavra",
     answer_c: "Expressão com duplo sentido",
@@ -2874,7 +3259,7 @@ questoes_linguagens = [
     explanation: "Denotação é o sentido básico, literal ou dicionarizado de uma palavra, sem acréscimos subjetivos ou contextuais."
   },
   {
-    content: "(ENEM 2024) O que é uma crônica?",
+    content: "(ENEM 2024) Em uma coluna semanal de jornal, leitores acompanham reflexões leves sobre o cotidiano, onde o autor compartilha observações pessoais com humor e crítica social bem-humorada. O que é uma crônica?",
     answer_a: "Texto curto que narra um fato cotidiano com uma visão crítica ou humorística.",
     answer_b: "Texto científico que apresenta dados e pesquisas.",
     answer_c: "Texto literário longo com enredo complexo.",
@@ -2887,7 +3272,7 @@ questoes_linguagens = [
     explanation: "A crônica é um gênero textual que aborda temas do cotidiano, geralmente com uma linguagem leve e crítica."
   },
   {
-    content: "(ENEM 2023) O que é uma metáfora?",
+    content: "(ENEM 2023) Em uma aula de literatura, estudantes analisam como poetas estabelecem relações criativas entre elementos diferentes, enriquecendo a linguagem poética com imagens originais. O que é uma metáfora?",
     answer_a: "Comparação implícita entre dois elementos diferentes.",
     answer_b: "Repetição de sons consonantais.",
     answer_c: "Exagero para efeito dramático.",
@@ -2991,7 +3376,7 @@ questoes_linguagens = [
     explanation: "A obra de Conceição Evaristo é marcada pela abordagem de questões relacionadas à identidade negra, à condição feminina e às desigualdades sociais, em um conceito que a própria autora denomina 'escrevivência'."
   },
   {
-    content: "(ENEM 2021) O que é o plurilinguismo, conceito presente nos estudos de Mikhail Bakhtin?",
+    content: "(ENEM 2021) Em uma discussão sobre diversidade linguística, pesquisadores analisam como textos incorporam múltiplas vozes sociais, refletindo a heterogeneidade cultural e ideológica da sociedade. O que é o plurilinguismo, conceito presente nos estudos de Mikhail Bakhtin?",
     answer_a: "Capacidade de uma pessoa falar vários idiomas",
     answer_b: "Presença de diferentes vozes sociais em um mesmo texto",
     answer_c: "Sistema de tradução automática entre línguas",
@@ -3030,7 +3415,7 @@ questoes_linguagens = [
     explanation: "'Vidas Secas' é uma obra da segunda fase do Modernismo brasileiro (Geração de 30) que retrata de forma realista e crítica as condições de vida no sertão nordestino, abordando temas como a seca, a miséria e a opressão social."
   },
   {
-    content: "(ENEM 2020) O que é intertextualidade?",
+    content: "(ENEM 2020) Em uma análise literária comparada, estudantes identificam como obras contemporâneas fazem referências a textos clássicos, criando camadas de significado através de diálogos entre diferentes produções culturais. O que é intertextualidade?",
     answer_a: "Método de formatação de textos em editores digitais",
     answer_b: "Capacidade de um texto fazer referência a outros textos",
     answer_c: "Técnica para aumentar o número de palavras em redações",
@@ -3082,7 +3467,7 @@ questoes_linguagens = [
     explanation: "O argumento de autoridade consiste em citar uma pessoa, instituição ou fonte reconhecida como especialista em determinado assunto para dar credibilidade à tese defendida."
   },
   {
-    content: "(ENEM 2020) O que é coesão referencial em um texto?",
+    content: "(ENEM 2020) Em uma revisão de texto acadêmico, editores verificam se pronomes e expressões retomam adequadamente os referentes mencionados anteriormente, garantindo clareza e fluidez na comunicação. O que é coesão referencial em um texto?",
     answer_a: "Uso de verbos no mesmo tempo ao longo do texto",
     answer_b: "Mecanismo que estabelece conexões entre parágrafos usando conjunções",
     answer_c: "Utilização de elementos que retomam informações já apresentadas",
@@ -3329,7 +3714,7 @@ questoes_linguagens = [
     explanation: "O **texto dissertativo-argumentativo** tem como principal característica a defesa de um ponto de vista (tese) sobre um tema, fundamentada em argumentos e provas que visam convencer o leitor."
   },
   {
-    content: "(ENEM 2022) O que é **hipérbole** como figura de linguagem?",
+    content: "(ENEM 2022) Em uma análise de discurso político, linguistas observam como candidatos exageram qualidades ou problemas para causar impacto emocional no eleitorado e reforçar argumentos. O que é **hipérbole** como figura de linguagem?",
     answer_a: "Uma comparação explícita entre dois elementos, usando conectivos comparativos.",
     answer_b: "A omissão de um termo que pode ser facilmente subentendido no contexto.",
     answer_c: "O uso de uma expressão para suavizar uma ideia desagradável.",

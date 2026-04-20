@@ -19,50 +19,53 @@ class User < ApplicationRecord
   validates :nickname, presence: true, uniqueness: true
 
   def media_por_materia_from_exams
-    exam_averages = exams
-      .joins(:questions)
-      .group('questions.category')
-      .select('questions.category, AVG(exams.score) as average_score')
-
-    exam_averages.map { |result| {
-      materia: categoria_formatada(result.category),
-      media: result.average_score.to_i
-    }}
+    exams
+      .where.not(score: nil)
+      .select('category, AVG(score) as average_score')
+      .group('category')
+      .map { |result| {
+        materia: categoria_formatada(result.category),
+        media: result.average_score.round(1)
+      }}
   end
 
   def evolucao_notas_from_exams
     if ActiveRecord::Base.connection.adapter_name.downcase.include?('sqlite')
       # Versão SQLite
       exams
+        .where.not(score: nil)
         .select("strftime('%Y-%m', created_at) as month, AVG(score) as average_score")
         .group('month')
         .order('month')
         .last(6)
         .map { |result| {
           mes: Date.parse(result.month + '-01').strftime('%b'),
-          media: result.average_score.to_i
+          media: result.average_score.round(1)
         }}
     else
       # Versão PostgreSQL
       exams
+        .where.not(score: nil)
         .select("DATE_TRUNC('month', created_at) as month, AVG(score) as average_score")
         .group('month')
         .order('month')
         .last(6)
         .map { |result| {
           mes: result.month.strftime('%b'),
-          media: result.average_score.to_i
+          media: result.average_score.round(1)
         }}
     end
   end
 
   def avatar_thumbnail
-    return unless avatar.attached?
+    return nil unless avatar.attached?
     
-    avatar.variant(resize_to_fill: [100, 100]).processed
-  rescue StandardError => e
-    Rails.logger.error("Erro ao processar thumbnail: #{e.message}")
-    nil
+    begin
+      avatar.variant(resize_to_fill: [100, 100]).processed
+    rescue StandardError => e
+      Rails.logger.error("Erro ao processar thumbnail: #{e.message}")
+      nil
+    end
   end
 
   private
